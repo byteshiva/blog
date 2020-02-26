@@ -1,97 +1,201 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://byteshiva.github.io/blog/feed.xml" rel="self" type="application/atom+xml" /><link href="https://byteshiva.github.io/blog/" rel="alternate" type="text/html" /><updated>2020-02-26T15:19:23-06:00</updated><id>https://byteshiva.github.io/blog/feed.xml</id><title type="html">fastpages</title><subtitle>An easy to use blogging platform with support for Jupyter Notebooks.</subtitle><entry><title type="html">Title</title><link href="https://byteshiva.github.io/blog/2020/02/27/Diagram-as-Code.html" rel="alternate" type="text/html" title="Title" /><published>2020-02-27T00:00:00-06:00</published><updated>2020-02-27T00:00:00-06:00</updated><id>https://byteshiva.github.io/blog/2020/02/27/Diagram-as-Code</id><content type="html" xml:base="https://byteshiva.github.io/blog/2020/02/27/Diagram-as-Code.html">&lt;!--
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><link rel="shortcut icon" type="image/x-icon" href="/blog/favicon.ico"><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Title | fastpages</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Title" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="summary" />
+<meta property="og:description" content="summary" />
+<link rel="canonical" href="https://byteshiva.github.io/blog/2020/02/27/Diagram-as-Code.html" />
+<meta property="og:url" content="https://byteshiva.github.io/blog/2020/02/27/Diagram-as-Code.html" />
+<meta property="og:site_name" content="fastpages" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-02-27T00:00:00-06:00" />
+<script type="application/ld+json">
+{"mainEntityOfPage":{"@type":"WebPage","@id":"https://byteshiva.github.io/blog/2020/02/27/Diagram-as-Code.html"},"description":"summary","@type":"BlogPosting","url":"https://byteshiva.github.io/blog/2020/02/27/Diagram-as-Code.html","headline":"Title","dateModified":"2020-02-27T00:00:00-06:00","datePublished":"2020-02-27T00:00:00-06:00","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  <link href="https://unpkg.com/@primer/css/dist/primer.css" rel="stylesheet" />
+  <link rel="stylesheet" href="/blog/assets/main.css">
+  <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css"><link type="application/atom+xml" rel="alternate" href="https://byteshiva.github.io/blog/feed.xml" title="fastpages" />
+
+  <script>
+  function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+  }
+  window.onload = wrap_img;
+  </script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function(){
+      // add link icon to anchor tags
+      var elem = document.querySelectorAll(".anchor-link")
+      elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+      // remove paragraph tags in rendered toc (happens from notebooks)
+      var toctags = document.querySelectorAll(".toc-entry")
+      toctags.forEach(e => (e.firstElementChild.innerText = e.firstElementChild.innerText.replace('¶', '')))
+    });
+  </script>
+</head><body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/blog/">fastpages</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/blog/about/">About Me</a><a class="page-link" href="/blog/search/">Search</a><a class="page-link" href="/blog/categories/">Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Title</h1><p class="page-description">summary</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2020-02-27T00:00:00-06:00" itemprop="datePublished">
+        Feb 27, 2020
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      2 min read
+    
+</span></p>
+
+    
+
+    
+      
+        <div class="pb-5 d-flex flex-wrap flex-justify-end">
+          <div class="px-2">
+<a href="https://github.com/byteshiva/blog/tree/master/_notebooks/2020-02-27-Diagram-as-Code.ipynb" role="button">
+    <img class="notebook-badge-image" src="https://img.shields.io/static/v1?label=&message=View%20On%20GitHub&color=586069&logo=github&labelColor=2f363d">
+</a>
+</div><div class="px-2">
+    <a href="https://colab.research.google.com/github/byteshiva/blog/blob/master/_notebooks/2020-02-27-Diagram-as-Code.ipynb">
+        <img class="notebook-badge-image" src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
+    </a>
+</div>
+        </div>
+      </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <!--
 #################################################
 ### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
 #################################################
 # file to edit: _notebooks/2020-02-27-Diagram-as-Code.ipynb
---&gt;
+-->
 
-&lt;div class=&quot;container&quot; id=&quot;notebook-container&quot;&gt;
+<div class="container" id="notebook-container">
         
     
     
-&lt;div class=&quot;cell border-box-sizing code_cell rendered&quot;&gt;
+<div class="cell border-box-sizing code_cell rendered">
 
-&lt;/div&gt;
+</div>
     
 
-&lt;div class=&quot;cell border-box-sizing text_cell rendered&quot;&gt;&lt;div class=&quot;inner_cell&quot;&gt;
-&lt;div class=&quot;text_cell_render border-box-sizing rendered_html&quot;&gt;
-&lt;p&gt;&lt;a href=&quot;https://colab.research.google.com/gist/byteshiva/531a575a26fc027d9fa436545444eb36/diagram-as-code.ipynb&quot; target=&quot;_parent&quot;&gt;&lt;img src=&quot;https://colab.research.google.com/assets/colab-badge.svg&quot; alt=&quot;Open In Colab&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><a href="https://colab.research.google.com/gist/byteshiva/531a575a26fc027d9fa436545444eb36/diagram-as-code.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" /></a></p>
 
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
+</div>
+</div>
+</div>
     
     
-&lt;div class=&quot;cell border-box-sizing code_cell rendered&quot;&gt;
-&lt;div class=&quot;input&quot;&gt;
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
 
-&lt;div class=&quot;inner_cell&quot;&gt;
-    &lt;div class=&quot;input_area&quot;&gt;
-&lt;div class=&quot; highlight hl-ipython3&quot;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;diagrams&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Diagram&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;diagrams.aws.compute&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;EC2&lt;/span&gt;
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">diagrams</span> <span class="kn">import</span> <span class="n">Diagram</span>
+<span class="kn">from</span> <span class="nn">diagrams.aws.compute</span> <span class="kn">import</span> <span class="n">EC2</span>
 
-&lt;span class=&quot;k&quot;&gt;with&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Diagram&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;Simple Diagram&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;diag&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;EC2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;web&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;diag&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
+<span class="k">with</span> <span class="n">Diagram</span><span class="p">(</span><span class="s2">&quot;Simple Diagram&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">diag</span><span class="p">:</span>
+    <span class="n">EC2</span><span class="p">(</span><span class="s2">&quot;web&quot;</span><span class="p">)</span>
+<span class="n">diag</span>
+</pre></div>
 
-    &lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
+    </div>
+</div>
+</div>
 
-&lt;div class=&quot;output_wrapper&quot;&gt;
-&lt;div class=&quot;output&quot;&gt;
+<div class="output_wrapper">
+<div class="output">
 
-&lt;div class=&quot;output_area&quot;&gt;
+<div class="output_area">
 
 
 
-&lt;div class=&quot;output_png output_subarea output_execute_result&quot;&gt;
-&lt;img src=&quot;data:image/png;base64,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fTkOPPSw2O/g18cnP3tqPPvPf0VExMLGxvj62efE6484KqYecGC8/8MnxxNPzq441r/+/e849QtfigMPPSymHXhwfODkj8TMPz844Of66OOPx6lf+FK8/oijYu/9DohDjz6ma/xq2XXnneOjJ50UERFXXXt91/ZKP7OIiCeenB3fOP/bccI7/yOmHXhw7P/6Q+PEkz9atlTYqb29PS697PI47m3viH0OODCOOPbN8f0Lfxytra1x0BsPjyOPe3PJ/qW/lxfii6d/LQ4+/MjYY9q+8djjfxnwHKr5ewb6xzs3MAA7br993BARV15zbRz0ugNi9OjRaz3mwoWN8d4TPxQvLVzYte2ue+6NOXPnxaW/+FmcePJH47nnn+96bNYjj8bJn/hk3HLdNWXnf2nhwnjvBz8UjY0vd217eNYjcfInPxUXnP+teMMhB/drTldde22c883zo31VzEVELFjwUlx/401x+513xaU/vyi223bbNX3KJY458si44Ac/jDlz58aypqYYNXJkr/u/833/WbbtoVmz4qFZs+Jzp3wm/vM97y557Kxzz4trrr+h6/7zL7wQF//q0pg7b14Ui8WK53lp4cJ4zwdOjIWNjWs9h4jq/p6B3nnnBgbgHW99S0zeaqt48OGH4w1HHRMf+/QpceFFP4s77ro7lixZskZj3nv//TFp0uZx2SUXx4y77oir/vd/Ysftt48XXnwx3v3+E2PUqJFx8U9/Eg/ceUfccNUVsdeee8QrixfHlddcWzbWffc/EGNGj4mf//hHcf+dt8cNV10Rxx59VLS3t8eZ554Xzc3Nfc7n708/E+ee/18xYfz4OPfMM+JPt9wUD957d9x87dXxgfe+J5YsWRLnfOv8NXquWTbZZGKM3WijaG9vj5deeqnP/Xffbdf41jlnx41XXxUP3nt33Pb7m+Osr50eo0aOjB/99KKS38OMP/85rrn+hhgxYkSc/sUvxG2/vznu+MPv44yvfjkefPjheGXx4ornue/+B2LChPHxi5/8OB6484547M8zuv6yayBz6FTN3zPQO3EDAzB8+PC47JJfxHve9c4Y3tAQ995/f1z0i4vj06d9Lg454qg4/ayze33BzLLRRmPiwv/+XkzZfbcYMWJEbL/dtvGZT348IiKWLl0aP/reBTH1tXvHyJEjYuvJk+NLp50WERFPzC5fsqivr48L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gKSIGwAgKeIGAEiKuAEAkiJuAICkiBsAICniBgBIirgBAJIibgCApIgbACAp4gYASIq4AQCSIm4AgKSIGwAgKeIGAEiKuAEAkiJuAICkiBsAICniBgBIirgBAJIibgCApIgbACAp4gYASIq4AQCSIm4AgKSIGwAgKeIGAEiKuAEAkiJuAICkiBsAICniBgBIirgBAJIibgCApIgbACAp4gYASIq4AQCSIm4AgKSIGwAgKeIGAEiKuAEAkiJuAICkiBsAICniBgBIirgBAJIibgCApIgbACAp4gYASIq4AQCSIm4AgKSIGwAgKeIGAEiKuAEAkiJuAICkiBsAICniBgBIirgBAJIibgCApIgbACAp4gYASIq4AQCSIm4AgKSIGwAgKeIGAEiKuAEAkiJuAICkiBsAICniBgBIirgBAJIibgCApIgbACAp4gYASIq4AQCSIm4AgKSIGwAgKeIGAEiKuAEAkiJuAICkiBsAICniBgBIirgBAJIibgCApIgbACAp4gYASIq4AQCSIm4AgKSIGwAgKeIGAEiKuAEAkiJuAICkiBsAICniBgBIirgBAJIibgCApIgbACAp4gYASIq4AQCSIm4AgKSIGwAgKeIGAEiKuAEAkiJuAICkiBsAICniBgBIirgBAJIibgCApIgbACAp4gYASIq4AQCSIm4AgKSIGwAgKeIGAEiKuAEAkiJuAICkiBsAICniBgBIirgBAJIibgCApIgbACAp4gYASIq4AQCSIm4AgKSIGwAgKeIGAEiKuAEAkiJuAICkiBsAICniBgBIirgBAJIibgCApIgbACAp4gYASIq4AQCSIm4AgKSIGwAgKeIGAEiKuAEAkiJuAICkiBsAICniBgBIirgBAJIibgCApIgbACAp4gYASIq4AQCSIm4AgKSIGwAgKeIGAEiKuAEAkiJuAICkiBsAICniBgBIirgBAJIibgCApIgbACAp4gYASIq4AQCSIm4AgKSIGwAgKeIGAEiKuAEAkiJuAICk/H/kDm7ycb9a4wAAAABJRU5ErkJggg==
-&quot; /&gt;
-&lt;/div&gt;
+<div class="output_png output_subarea output_execute_result">
+<img src="data:image/png;base64,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fTkOPPSw2O/g18cnP3tqPPvPf0VExMLGxvj62efE6484KqYecGC8/8MnxxNPzq441r/+/e849QtfigMPPSymHXhwfODkj8TMPz844Of66OOPx6lf+FK8/oijYu/9DohDjz6ma/xq2XXnneOjJ50UERFXXXt91/ZKP7OIiCeenB3fOP/bccI7/yOmHXhw7P/6Q+PEkz9atlTYqb29PS697PI47m3viH0OODCOOPbN8f0Lfxytra1x0BsPjyOPe3PJ/qW/lxfii6d/LQ4+/MjYY9q+8djjfxnwHKr5ewb6xzs3MAA7br993BARV15zbRz0ugNi9OjRaz3mwoWN8d4TPxQvLVzYte2ue+6NOXPnxaW/+FmcePJH47nnn+96bNYjj8bJn/hk3HLdNWXnf2nhwnjvBz8UjY0vd217eNYjcfInPxUXnP+teMMhB/drTldde22c883zo31VzEVELFjwUlx/401x+513xaU/vyi223bbNX3KJY458si44Ac/jDlz58aypqYYNXJkr/u/833/WbbtoVmz4qFZs+Jzp3wm/vM97y557Kxzz4trrr+h6/7zL7wQF//q0pg7b14Ui8WK53lp4cJ4zwdOjIWNjWs9h4jq/p6B3nnnBgbgHW99S0zeaqt48OGH4w1HHRMf+/QpceFFP4s77ro7lixZskZj3nv//TFp0uZx2SUXx4y77oir/vd/Ysftt48XXnwx3v3+E2PUqJFx8U9/Eg/ceUfccNUVsdeee8QrixfHlddcWzbWffc/EGNGj4mf//hHcf+dt8cNV10Rxx59VLS3t8eZ554Xzc3Nfc7n708/E+ee/18xYfz4OPfMM+JPt9wUD957d9x87dXxgfe+J5YsWRLnfOv8NXquWTbZZGKM3WijaG9vj5deeqnP/Xffbdf41jlnx41XXxUP3nt33Pb7m+Osr50eo0aOjB/99KKS38OMP/85rrn+hhgxYkSc/sUvxG2/vznu+MPv44yvfjkefPjheGXx4ornue/+B2LChPHxi5/8OB6484547M8zuv6yayBz6FTN3zPQO3EDAzB8+PC47JJfxHve9c4Y3tAQ995/f1z0i4vj06d9Lg454qg4/ayze33BzLLRRmPiwv/+XkzZfbcYMWJEbL/dtvGZT348IiKWLl0aP/reBTH1tXvHyJEjYuvJk+NLp50WERFPzC5fsqivr48L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gKSIGwAgKeIGAEiKuAEAkiJuAICkiBsAICniBgBIirgBAJIibgCApIgbACAp4gYASIq4AQCSIm4AgKSIGwAgKeIGAEiKuAEAkiJuAICkiBsAICniBgBIirgBAJIibgCApIgbACAp4gYASIq4AQCSIm4AgKSIGwAgKeIGAEiKuAEAkiJuAICkiBsAICniBgBIirgBAJIibgCApIgbACAp4gYASIq4AQCSIm4AgKSIGwAgKeIGAEiKuAEAkiJuAICkiBsAICniBgBIirgBAJIibgCApIgbACAp4gYASIq4AQCSIm4AgKSIGwAgKeIGAEiKuAEAkiJuAICkiBsAICniBgBIirgBAJIibgCApIgbACAp4gYASIq4AQCSIm4AgKSIGwAgKeIGAEiKuAEAkiJuAICkiBsAICniBgBIirgBAJIibgCApIgbACAp4gYASIq4AQCSIm4AgKSIGwAgKeIGAEiKuAEAkiJuAICkiBsAICniBgBIirgBAJIibgCApIgbACAp4gYASIq4AQCSIm4AgKSIGwAgKeIGAEiKuAEAkiJuAICkiBsAICniBgBIirgBAJIibgCApIgbACAp4gYASIq4AQCSIm4AgKSIGwAgKeIGAEiKuAEAkiJuAICkiBsAICniBgBIirgBAJIibgCApIgbACAp4gYASIq4AQCSIm4AgKSIGwAgKeIGAEiKuAEAkiJuAICkiBsAICniBgBIirgBAJIibgCApIgbACAp4gYASIq4AQCSIm4AgKSIGwAgKeIGAEiKuAEAkiJuAICkiBsAICniBgBIirgBAJIibgCApIgbACAp4gYASIq4AQCSIm4AgKSIGwAgKeIGAEiKuAEAkiJuAICkiBsAICniBgBIirgBAJIibgCApIgbACAp4gYASIq4AQCSIm4AgKSIGwAgKeIGAEiKuAEAkiJuAICkiBsAICniBgBIirgBAJIibgCApIgbACAp4gYASIq4AQCSIm4AgKSIGwAgKeIGAEiKuAEAkiJuAICk/H/kDm7ycb9a4wAAAABJRU5ErkJggg==
+" />
+</div>
 
-&lt;/div&gt;
+</div>
 
-&lt;/div&gt;
-&lt;/div&gt;
+</div>
+</div>
 
-&lt;/div&gt;
+</div>
     
 
     
     
-&lt;div class=&quot;cell border-box-sizing code_cell rendered&quot;&gt;
-&lt;div class=&quot;input&quot;&gt;
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
 
-&lt;div class=&quot;inner_cell&quot;&gt;
-    &lt;div class=&quot;input_area&quot;&gt;
-&lt;div class=&quot; highlight hl-ipython3&quot;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pip&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;diagrams&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">diagrams</span>
+</pre></div>
 
-    &lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
+    </div>
+</div>
+</div>
 
-&lt;div class=&quot;output_wrapper&quot;&gt;
-&lt;div class=&quot;output&quot;&gt;
+<div class="output_wrapper">
+<div class="output">
 
-&lt;div class=&quot;output_area&quot;&gt;
+<div class="output_area">
 
-&lt;div class=&quot;output_subarea output_stream output_stdout output_text&quot;&gt;
-&lt;pre&gt;Collecting diagrams
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Collecting diagrams
   Downloading https://files.pythonhosted.org/packages/59/41/24fbab973c1449faefd09a3197cb11311971df6db05ade2d15d554b7d8ef/diagrams-0.6.3-py3-none-any.whl (8.8MB)
      |████████████████████████████████| 8.8MB 2.5MB/s 
-Collecting contextvars&amp;lt;3.0,&amp;gt;=2.4; python_version &amp;gt;= &amp;#34;3.6&amp;#34; and python_version &amp;lt; &amp;#34;3.7&amp;#34;
+Collecting contextvars&lt;3.0,&gt;=2.4; python_version &gt;= &#34;3.6&#34; and python_version &lt; &#34;3.7&#34;
   Downloading https://files.pythonhosted.org/packages/83/96/55b82d9f13763be9d672622e1b8106c85acb83edd7cc2fa5bc67cd9877e9/contextvars-2.4.tar.gz
-Collecting graphviz&amp;lt;0.14.0,&amp;gt;=0.13.2
+Collecting graphviz&lt;0.14.0,&gt;=0.13.2
   Downloading https://files.pythonhosted.org/packages/f5/74/dbed754c0abd63768d3a7a7b472da35b08ac442cf87d73d5850a6f32391e/graphviz-0.13.2-py2.py3-none-any.whl
-Requirement already satisfied: jinja2&amp;lt;3.0,&amp;gt;=2.10 in /usr/local/lib/python3.6/dist-packages (from diagrams) (2.11.1)
-Collecting immutables&amp;gt;=0.9
+Requirement already satisfied: jinja2&lt;3.0,&gt;=2.10 in /usr/local/lib/python3.6/dist-packages (from diagrams) (2.11.1)
+Collecting immutables&gt;=0.9
   Downloading https://files.pythonhosted.org/packages/62/cc/3961b18a1a689a7e3232d923a8546cb901c49b4a33be6987c03a89175c4f/immutables-0.11-cp36-cp36m-manylinux1_x86_64.whl (92kB)
      |████████████████████████████████| 102kB 6.6MB/s 
-Requirement already satisfied: MarkupSafe&amp;gt;=0.23 in /usr/local/lib/python3.6/dist-packages (from jinja2&amp;lt;3.0,&amp;gt;=2.10-&amp;gt;diagrams) (1.1.1)
+Requirement already satisfied: MarkupSafe&gt;=0.23 in /usr/local/lib/python3.6/dist-packages (from jinja2&lt;3.0,&gt;=2.10-&gt;diagrams) (1.1.1)
 Building wheels for collected packages: contextvars
   Building wheel for contextvars (setup.py) ... done
   Created wheel for contextvars: filename=contextvars-2.4-cp36-none-any.whl size=7666 sha256=c200628de2974404757d0f52fff9f5fedc667bb391a842d8e356f0bc2748bcc8
@@ -102,64 +206,64 @@ Installing collected packages: immutables, contextvars, graphviz, diagrams
     Uninstalling graphviz-0.10.1:
       Successfully uninstalled graphviz-0.10.1
 Successfully installed contextvars-2.4 diagrams-0.6.3 graphviz-0.13.2 immutables-0.11
-&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
+</pre>
+</div>
+</div>
 
-&lt;/div&gt;
-&lt;/div&gt;
+</div>
+</div>
 
-&lt;/div&gt;
+</div>
     
 
     
     
-&lt;div class=&quot;cell border-box-sizing code_cell rendered&quot;&gt;
-&lt;div class=&quot;input&quot;&gt;
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
 
-&lt;div class=&quot;inner_cell&quot;&gt;
-    &lt;div class=&quot;input_area&quot;&gt;
-&lt;div class=&quot; highlight hl-ipython3&quot;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;diagrams&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Cluster&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Diagram&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;diagrams.aws.compute&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ECS&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;diagrams.aws.database&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ElastiCache&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;RDS&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;diagrams.aws.network&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ELB&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;diagrams.aws.network&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Route53&lt;/span&gt;
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">diagrams</span> <span class="kn">import</span> <span class="n">Cluster</span><span class="p">,</span> <span class="n">Diagram</span>
+<span class="kn">from</span> <span class="nn">diagrams.aws.compute</span> <span class="kn">import</span> <span class="n">ECS</span>
+<span class="kn">from</span> <span class="nn">diagrams.aws.database</span> <span class="kn">import</span> <span class="n">ElastiCache</span><span class="p">,</span> <span class="n">RDS</span>
+<span class="kn">from</span> <span class="nn">diagrams.aws.network</span> <span class="kn">import</span> <span class="n">ELB</span>
+<span class="kn">from</span> <span class="nn">diagrams.aws.network</span> <span class="kn">import</span> <span class="n">Route53</span>
 
-&lt;span class=&quot;k&quot;&gt;with&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Diagram&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;Clustered Web Services&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;show&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;False&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;diag_clus_webservices&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;dns&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Route53&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;dns&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;lb&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ELB&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;lb&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+<span class="k">with</span> <span class="n">Diagram</span><span class="p">(</span><span class="s2">&quot;Clustered Web Services&quot;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> <span class="k">as</span> <span class="n">diag_clus_webservices</span><span class="p">:</span>
+    <span class="n">dns</span> <span class="o">=</span> <span class="n">Route53</span><span class="p">(</span><span class="s2">&quot;dns&quot;</span><span class="p">)</span>
+    <span class="n">lb</span> <span class="o">=</span> <span class="n">ELB</span><span class="p">(</span><span class="s2">&quot;lb&quot;</span><span class="p">)</span>
 
-    &lt;span class=&quot;k&quot;&gt;with&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Cluster&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;Services&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;svc_group&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ECS&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;web1&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
-                     &lt;span class=&quot;n&quot;&gt;ECS&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;web2&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
-                     &lt;span class=&quot;n&quot;&gt;ECS&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;web3&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)]&lt;/span&gt;
+    <span class="k">with</span> <span class="n">Cluster</span><span class="p">(</span><span class="s2">&quot;Services&quot;</span><span class="p">):</span>
+        <span class="n">svc_group</span> <span class="o">=</span> <span class="p">[</span><span class="n">ECS</span><span class="p">(</span><span class="s2">&quot;web1&quot;</span><span class="p">),</span>
+                     <span class="n">ECS</span><span class="p">(</span><span class="s2">&quot;web2&quot;</span><span class="p">),</span>
+                     <span class="n">ECS</span><span class="p">(</span><span class="s2">&quot;web3&quot;</span><span class="p">)]</span>
 
-    &lt;span class=&quot;k&quot;&gt;with&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Cluster&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;DB Cluster&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;db_master&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;RDS&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;userdb&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;db_master&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;RDS&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;userdb ro&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)]&lt;/span&gt;
+    <span class="k">with</span> <span class="n">Cluster</span><span class="p">(</span><span class="s2">&quot;DB Cluster&quot;</span><span class="p">):</span>
+        <span class="n">db_master</span> <span class="o">=</span> <span class="n">RDS</span><span class="p">(</span><span class="s2">&quot;userdb&quot;</span><span class="p">)</span>
+        <span class="n">db_master</span> <span class="o">-</span> <span class="p">[</span><span class="n">RDS</span><span class="p">(</span><span class="s2">&quot;userdb ro&quot;</span><span class="p">)]</span>
 
-    &lt;span class=&quot;n&quot;&gt;memcached&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ElastiCache&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;memcached&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    <span class="n">memcached</span> <span class="o">=</span> <span class="n">ElastiCache</span><span class="p">(</span><span class="s2">&quot;memcached&quot;</span><span class="p">)</span>
 
-    &lt;span class=&quot;n&quot;&gt;dns&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;lb&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;svc_group&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;svc_group&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;db_master&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;svc_group&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;memcached&lt;/span&gt;
+    <span class="n">dns</span> <span class="o">&gt;&gt;</span> <span class="n">lb</span> <span class="o">&gt;&gt;</span> <span class="n">svc_group</span>
+    <span class="n">svc_group</span> <span class="o">&gt;&gt;</span> <span class="n">db_master</span>
+    <span class="n">svc_group</span> <span class="o">&gt;&gt;</span> <span class="n">memcached</span>
 
-&lt;span class=&quot;n&quot;&gt;diag_clus_webservices&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
+<span class="n">diag_clus_webservices</span>
+</pre></div>
 
-    &lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
+    </div>
+</div>
+</div>
 
-&lt;div class=&quot;output_wrapper&quot;&gt;
-&lt;div class=&quot;output&quot;&gt;
+<div class="output_wrapper">
+<div class="output">
 
-&lt;div class=&quot;output_area&quot;&gt;
+<div class="output_area">
 
 
 
-&lt;div class=&quot;output_png output_subarea output_execute_result&quot;&gt;
-&lt;img src=&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABVcAAASACAYAAAD7632qAAAABmJLR0QA/wD/AP+gvaeTAAAgAElE
+<div class="output_png output_subarea output_execute_result">
+<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABVcAAASACAYAAAD7632qAAAABmJLR0QA/wD/AP+gvaeTAAAgAElE
 QVR4nOzdd5xcZaH/8e9sTdv0hARCSyd0EFHEBgqIDa+KXbEggoKIgujVe73ee3+oVyxgRSlSVRRR
 UVFpATSiFIHQW+hEElI3m81udn5/BJLs7myye5LsZpP3+w+ZOXPOc56ZqK/48ZlnSuVyuRwAAAAA
 AHri0qq+ngEAAAAAQH8krgIAAAAAFCCuAgAAAAAUIK4CAAAAABQgrgIAAAAAFCCuAgAAAAAUIK4C
@@ -2206,68 +2310,68 @@ AAAUEFcBAAAAAAqIqwAAAAAABcRVAAAAAIAC4ioAAAAAQAFxFQAAAACggLgKAAAAAFBAXAUAAAAA
 KCCuAgAAAAAUEFcBAAAAAAqIqwAAAAAABcRVAAAAAIAC4ioAAAAAQAFxFQAAAACggLgKAAAAAFBA
 XAUAAAAAKCCuAgAAAAAUEFcBAAAAAAqIqwAAAAAABcRVAAAAAIAC4ioAAAAAQAFxFQAAAACggLgK
 AAAAAFBAXAUAAAAAKPD/AQU4WFglbjBmAAAAAElFTkSuQmCC
-&quot; /&gt;
-&lt;/div&gt;
+" />
+</div>
 
-&lt;/div&gt;
+</div>
 
-&lt;/div&gt;
-&lt;/div&gt;
+</div>
+</div>
 
-&lt;/div&gt;
+</div>
     
 
     
     
-&lt;div class=&quot;cell border-box-sizing code_cell rendered&quot;&gt;
-&lt;div class=&quot;input&quot;&gt;
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
 
-&lt;div class=&quot;inner_cell&quot;&gt;
-    &lt;div class=&quot;input_area&quot;&gt;
-&lt;div class=&quot; highlight hl-ipython3&quot;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;diagrams&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Cluster&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Diagram&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;diagrams.aws.compute&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ECS&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;EKS&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Lambda&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;diagrams.aws.database&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Redshift&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;diagrams.aws.integration&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;SQS&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;diagrams.aws.storage&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;S3&lt;/span&gt;
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">diagrams</span> <span class="kn">import</span> <span class="n">Cluster</span><span class="p">,</span> <span class="n">Diagram</span>
+<span class="kn">from</span> <span class="nn">diagrams.aws.compute</span> <span class="kn">import</span> <span class="n">ECS</span><span class="p">,</span> <span class="n">EKS</span><span class="p">,</span> <span class="n">Lambda</span>
+<span class="kn">from</span> <span class="nn">diagrams.aws.database</span> <span class="kn">import</span> <span class="n">Redshift</span>
+<span class="kn">from</span> <span class="nn">diagrams.aws.integration</span> <span class="kn">import</span> <span class="n">SQS</span>
+<span class="kn">from</span> <span class="nn">diagrams.aws.storage</span> <span class="kn">import</span> <span class="n">S3</span>
 
-&lt;span class=&quot;k&quot;&gt;with&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Diagram&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;Event Processing&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;show&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;False&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Event_Processing_on_AWS&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;source&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;EKS&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;k8s source&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+<span class="k">with</span> <span class="n">Diagram</span><span class="p">(</span><span class="s2">&quot;Event Processing&quot;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> <span class="k">as</span> <span class="n">Event_Processing_on_AWS</span><span class="p">:</span>
+    <span class="n">source</span> <span class="o">=</span> <span class="n">EKS</span><span class="p">(</span><span class="s2">&quot;k8s source&quot;</span><span class="p">)</span>
 
-    &lt;span class=&quot;k&quot;&gt;with&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Cluster&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;Event Flows&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;with&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Cluster&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;Event Workers&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;workers&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ECS&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;worker1&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
-                       &lt;span class=&quot;n&quot;&gt;ECS&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;worker2&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
-                       &lt;span class=&quot;n&quot;&gt;ECS&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;worker3&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)]&lt;/span&gt;
+    <span class="k">with</span> <span class="n">Cluster</span><span class="p">(</span><span class="s2">&quot;Event Flows&quot;</span><span class="p">):</span>
+        <span class="k">with</span> <span class="n">Cluster</span><span class="p">(</span><span class="s2">&quot;Event Workers&quot;</span><span class="p">):</span>
+            <span class="n">workers</span> <span class="o">=</span> <span class="p">[</span><span class="n">ECS</span><span class="p">(</span><span class="s2">&quot;worker1&quot;</span><span class="p">),</span>
+                       <span class="n">ECS</span><span class="p">(</span><span class="s2">&quot;worker2&quot;</span><span class="p">),</span>
+                       <span class="n">ECS</span><span class="p">(</span><span class="s2">&quot;worker3&quot;</span><span class="p">)]</span>
 
-        &lt;span class=&quot;n&quot;&gt;queue&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;SQS&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;event queue&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        <span class="n">queue</span> <span class="o">=</span> <span class="n">SQS</span><span class="p">(</span><span class="s2">&quot;event queue&quot;</span><span class="p">)</span>
 
-        &lt;span class=&quot;k&quot;&gt;with&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Cluster&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;Processing&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;handlers&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Lambda&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;proc1&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
-                        &lt;span class=&quot;n&quot;&gt;Lambda&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;proc2&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
-                        &lt;span class=&quot;n&quot;&gt;Lambda&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;proc3&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)]&lt;/span&gt;
+        <span class="k">with</span> <span class="n">Cluster</span><span class="p">(</span><span class="s2">&quot;Processing&quot;</span><span class="p">):</span>
+            <span class="n">handlers</span> <span class="o">=</span> <span class="p">[</span><span class="n">Lambda</span><span class="p">(</span><span class="s2">&quot;proc1&quot;</span><span class="p">),</span>
+                        <span class="n">Lambda</span><span class="p">(</span><span class="s2">&quot;proc2&quot;</span><span class="p">),</span>
+                        <span class="n">Lambda</span><span class="p">(</span><span class="s2">&quot;proc3&quot;</span><span class="p">)]</span>
 
-    &lt;span class=&quot;n&quot;&gt;store&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;S3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;events store&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;dw&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Redshift&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;analytics&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    <span class="n">store</span> <span class="o">=</span> <span class="n">S3</span><span class="p">(</span><span class="s2">&quot;events store&quot;</span><span class="p">)</span>
+    <span class="n">dw</span> <span class="o">=</span> <span class="n">Redshift</span><span class="p">(</span><span class="s2">&quot;analytics&quot;</span><span class="p">)</span>
 
-    &lt;span class=&quot;n&quot;&gt;source&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;workers&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;queue&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;handlers&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;handlers&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;store&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;handlers&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dw&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;Event_Processing_on_AWS&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
+    <span class="n">source</span> <span class="o">&gt;&gt;</span> <span class="n">workers</span> <span class="o">&gt;&gt;</span> <span class="n">queue</span> <span class="o">&gt;&gt;</span> <span class="n">handlers</span>
+    <span class="n">handlers</span> <span class="o">&gt;&gt;</span> <span class="n">store</span>
+    <span class="n">handlers</span> <span class="o">&gt;&gt;</span> <span class="n">dw</span>
+<span class="n">Event_Processing_on_AWS</span>
+</pre></div>
 
-    &lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
+    </div>
+</div>
+</div>
 
-&lt;div class=&quot;output_wrapper&quot;&gt;
-&lt;div class=&quot;output&quot;&gt;
+<div class="output_wrapper">
+<div class="output">
 
-&lt;div class=&quot;output_area&quot;&gt;
+<div class="output_area">
 
 
 
-&lt;div class=&quot;output_png output_subarea output_execute_result&quot;&gt;
-&lt;img src=&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABUEAAASxCAIAAACRH89aAAAABmJLR0QA/wD/AP+gvaeTAAAgAElE
+<div class="output_png output_subarea output_execute_result">
+<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABUEAAASxCAIAAACRH89aAAAABmJLR0QA/wD/AP+gvaeTAAAgAElE
 QVR4nOzdd3hUVcLH8XOnT3pCidTQpHdQRESERSm6imtD13UVGzbsdS2ra3t17bpiQVFQQcW6thU7
 XTqEDqEkgVTSpmTaff+YZDKZlkmdOfL9PD5P5t577jnn5nEO55d75o6iqqoAAAAAAABxTxPrDgAA
 AAAAgKiQ4QEAAAAAkAMZHgAAAAAAOZDhAQAAAACQAxkeAAAAAAA5kOEBAAAAAJADGR4AAAAAADmQ
@@ -4465,71 +4569,71 @@ AACIg4YHAACAOGh4AAAAiIOGBwAAgDhoeAAAAIiDhgcAAIA4aHgAAACIg4YHAACAOGh4AAAAiIOG
 BwAAgDhoeAAAAIiDhgcAAIA4aHgAAACIg4YHAACAOGh4AAAAiIOGBwAAgDhoeAAAAIiDhgcAAIA4
 aHgAAACIg4YHAACAOGh4AAAAiIOGBwAAgDhoeAAAAIiDhgcAAIA4aHgAAACIg4YHAACAOGh4AAAA
 iIOGBwAAgDhoeAAAAIiDhgcAAIA4/D8XHkxFxRrABwAAAABJRU5ErkJggg==
-&quot; /&gt;
-&lt;/div&gt;
+" />
+</div>
 
-&lt;/div&gt;
+</div>
 
-&lt;/div&gt;
-&lt;/div&gt;
+</div>
+</div>
 
-&lt;/div&gt;
+</div>
     
 
     
     
-&lt;div class=&quot;cell border-box-sizing code_cell rendered&quot;&gt;
-&lt;div class=&quot;input&quot;&gt;
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
 
-&lt;div class=&quot;inner_cell&quot;&gt;
-    &lt;div class=&quot;input_area&quot;&gt;
-&lt;div class=&quot; highlight hl-ipython3&quot;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;diagrams&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Cluster&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Diagram&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;diagrams.gcp.analytics&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;BigQuery&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Dataflow&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;PubSub&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;diagrams.gcp.compute&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;AppEngine&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Functions&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;diagrams.gcp.database&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;BigTable&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;diagrams.gcp.iot&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;IotCore&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;diagrams.gcp.storage&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;GCS&lt;/span&gt;
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">diagrams</span> <span class="kn">import</span> <span class="n">Cluster</span><span class="p">,</span> <span class="n">Diagram</span>
+<span class="kn">from</span> <span class="nn">diagrams.gcp.analytics</span> <span class="kn">import</span> <span class="n">BigQuery</span><span class="p">,</span> <span class="n">Dataflow</span><span class="p">,</span> <span class="n">PubSub</span>
+<span class="kn">from</span> <span class="nn">diagrams.gcp.compute</span> <span class="kn">import</span> <span class="n">AppEngine</span><span class="p">,</span> <span class="n">Functions</span>
+<span class="kn">from</span> <span class="nn">diagrams.gcp.database</span> <span class="kn">import</span> <span class="n">BigTable</span>
+<span class="kn">from</span> <span class="nn">diagrams.gcp.iot</span> <span class="kn">import</span> <span class="n">IotCore</span>
+<span class="kn">from</span> <span class="nn">diagrams.gcp.storage</span> <span class="kn">import</span> <span class="n">GCS</span>
 
-&lt;span class=&quot;k&quot;&gt;with&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Diagram&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;Message Collecting&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;show&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;False&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Message_Collecting_System_on_GCP&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;pubsub&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;PubSub&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;pubsub&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+<span class="k">with</span> <span class="n">Diagram</span><span class="p">(</span><span class="s2">&quot;Message Collecting&quot;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> <span class="k">as</span> <span class="n">Message_Collecting_System_on_GCP</span><span class="p">:</span>
+    <span class="n">pubsub</span> <span class="o">=</span> <span class="n">PubSub</span><span class="p">(</span><span class="s2">&quot;pubsub&quot;</span><span class="p">)</span>
 
-    &lt;span class=&quot;k&quot;&gt;with&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Cluster&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;Source of Data&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;IotCore&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;core1&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
-         &lt;span class=&quot;n&quot;&gt;IotCore&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;core2&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
-         &lt;span class=&quot;n&quot;&gt;IotCore&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;core3&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pubsub&lt;/span&gt;
+    <span class="k">with</span> <span class="n">Cluster</span><span class="p">(</span><span class="s2">&quot;Source of Data&quot;</span><span class="p">):</span>
+        <span class="p">[</span><span class="n">IotCore</span><span class="p">(</span><span class="s2">&quot;core1&quot;</span><span class="p">),</span>
+         <span class="n">IotCore</span><span class="p">(</span><span class="s2">&quot;core2&quot;</span><span class="p">),</span>
+         <span class="n">IotCore</span><span class="p">(</span><span class="s2">&quot;core3&quot;</span><span class="p">)]</span> <span class="o">&gt;&gt;</span> <span class="n">pubsub</span>
 
-    &lt;span class=&quot;k&quot;&gt;with&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Cluster&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;Targets&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;with&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Cluster&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;Data Flow&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;flow&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Dataflow&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;data flow&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    <span class="k">with</span> <span class="n">Cluster</span><span class="p">(</span><span class="s2">&quot;Targets&quot;</span><span class="p">):</span>
+        <span class="k">with</span> <span class="n">Cluster</span><span class="p">(</span><span class="s2">&quot;Data Flow&quot;</span><span class="p">):</span>
+            <span class="n">flow</span> <span class="o">=</span> <span class="n">Dataflow</span><span class="p">(</span><span class="s2">&quot;data flow&quot;</span><span class="p">)</span>
 
-        &lt;span class=&quot;k&quot;&gt;with&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Cluster&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;Data Lake&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;flow&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;BigQuery&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;bq&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
-                     &lt;span class=&quot;n&quot;&gt;GCS&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;storage&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)]&lt;/span&gt;
+        <span class="k">with</span> <span class="n">Cluster</span><span class="p">(</span><span class="s2">&quot;Data Lake&quot;</span><span class="p">):</span>
+            <span class="n">flow</span> <span class="o">&gt;&gt;</span> <span class="p">[</span><span class="n">BigQuery</span><span class="p">(</span><span class="s2">&quot;bq&quot;</span><span class="p">),</span>
+                     <span class="n">GCS</span><span class="p">(</span><span class="s2">&quot;storage&quot;</span><span class="p">)]</span>
 
-        &lt;span class=&quot;k&quot;&gt;with&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Cluster&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;Event Driven&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;with&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Cluster&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;Processing&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-                &lt;span class=&quot;n&quot;&gt;flow&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;AppEngine&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;engine&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;BigTable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;bigtable&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        <span class="k">with</span> <span class="n">Cluster</span><span class="p">(</span><span class="s2">&quot;Event Driven&quot;</span><span class="p">):</span>
+            <span class="k">with</span> <span class="n">Cluster</span><span class="p">(</span><span class="s2">&quot;Processing&quot;</span><span class="p">):</span>
+                <span class="n">flow</span> <span class="o">&gt;&gt;</span> <span class="n">AppEngine</span><span class="p">(</span><span class="s2">&quot;engine&quot;</span><span class="p">)</span> <span class="o">&gt;&gt;</span> <span class="n">BigTable</span><span class="p">(</span><span class="s2">&quot;bigtable&quot;</span><span class="p">)</span>
 
-            &lt;span class=&quot;k&quot;&gt;with&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Cluster&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;Serverless&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-                &lt;span class=&quot;n&quot;&gt;flow&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Functions&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;func&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;AppEngine&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;appengine&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+            <span class="k">with</span> <span class="n">Cluster</span><span class="p">(</span><span class="s2">&quot;Serverless&quot;</span><span class="p">):</span>
+                <span class="n">flow</span> <span class="o">&gt;&gt;</span> <span class="n">Functions</span><span class="p">(</span><span class="s2">&quot;func&quot;</span><span class="p">)</span> <span class="o">&gt;&gt;</span> <span class="n">AppEngine</span><span class="p">(</span><span class="s2">&quot;appengine&quot;</span><span class="p">)</span>
 
-    &lt;span class=&quot;n&quot;&gt;pubsub&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;flow&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;Message_Collecting_System_on_GCP&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
+    <span class="n">pubsub</span> <span class="o">&gt;&gt;</span> <span class="n">flow</span>
+<span class="n">Message_Collecting_System_on_GCP</span>
+</pre></div>
 
-    &lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
+    </div>
+</div>
+</div>
 
-&lt;div class=&quot;output_wrapper&quot;&gt;
-&lt;div class=&quot;output&quot;&gt;
+<div class="output_wrapper">
+<div class="output">
 
-&lt;div class=&quot;output_area&quot;&gt;
+<div class="output_area">
 
 
 
-&lt;div class=&quot;output_png output_subarea output_execute_result&quot;&gt;
-&lt;img src=&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABYUAAAXbCAYAAABgMdFeAAAABmJLR0QA/wD/AP+gvaeTAAAgAElE
+<div class="output_png output_subarea output_execute_result">
+<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABYUAAAXbCAYAAABgMdFeAAAABmJLR0QA/wD/AP+gvaeTAAAgAElE
 QVR4nOzdZ5yddZ3///eZmjLpnYAkIQQSQIrYVhFhVUBXQV0buvu3I7qUn9jWwq5td11lLehaUVaa
 oFQL6qqIuNJLGgFCGklI75mZTDvX/wYaHSkhkORk5no+7+Qx13zPNZ9zJjOPmde55nsqRVEUAQAA
 AACgFOpqPQAAAAAAAHuOKAwAAAAAUCKiMAAAAABAiYjCAAAAAAAlIgoDAAAAAJSIKAwAAAAAUCKi
@@ -6704,76 +6808,76 @@ CkQUBgAAAAAoEFEYAAAAAKBARGEAAAAAgAIRhQEAAAAACkQUBgAAAAAoEFEYAAAAAKBARGEAAAAA
 gAIRhQEAAAAACkQUBgAAAAAoEFEYAAAAAKBARGEAAAAAgAIRhQEAAAAACkQUBgAAAAAoEFEYAAAA
 AKBARGEAAAAAgAIRhQEAAAAACkQUBgAAAAAoEFEYAAAAAKBARGEAAAAAgAIRhQEAAAAACkQUBgAA
 AAAoEFEYAAAAAKBARGEAAAAAgAKpTjKv0kMAAAAAANA9/j+/kgGhcnVkKAAAAABJRU5ErkJggg==
-&quot; /&gt;
-&lt;/div&gt;
+" />
+</div>
 
-&lt;/div&gt;
+</div>
 
-&lt;/div&gt;
-&lt;/div&gt;
+</div>
+</div>
 
-&lt;/div&gt;
+</div>
     
 
     
     
-&lt;div class=&quot;cell border-box-sizing code_cell rendered&quot;&gt;
-&lt;div class=&quot;input&quot;&gt;
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
 
-&lt;div class=&quot;inner_cell&quot;&gt;
-    &lt;div class=&quot;input_area&quot;&gt;
-&lt;div class=&quot; highlight hl-ipython3&quot;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;diagrams&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Cluster&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Diagram&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;diagrams.onprem.analytics&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Spark&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;diagrams.onprem.compute&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Server&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;diagrams.onprem.database&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;PostgreSQL&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;diagrams.onprem.inmemory&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Redis&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;diagrams.onprem.logging&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Fluentd&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;diagrams.onprem.monitoring&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Grafana&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Prometheus&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;diagrams.onprem.network&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Nginx&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;diagrams.onprem.queue&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Kafka&lt;/span&gt;
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">diagrams</span> <span class="kn">import</span> <span class="n">Cluster</span><span class="p">,</span> <span class="n">Diagram</span>
+<span class="kn">from</span> <span class="nn">diagrams.onprem.analytics</span> <span class="kn">import</span> <span class="n">Spark</span>
+<span class="kn">from</span> <span class="nn">diagrams.onprem.compute</span> <span class="kn">import</span> <span class="n">Server</span>
+<span class="kn">from</span> <span class="nn">diagrams.onprem.database</span> <span class="kn">import</span> <span class="n">PostgreSQL</span>
+<span class="kn">from</span> <span class="nn">diagrams.onprem.inmemory</span> <span class="kn">import</span> <span class="n">Redis</span>
+<span class="kn">from</span> <span class="nn">diagrams.onprem.logging</span> <span class="kn">import</span> <span class="n">Fluentd</span>
+<span class="kn">from</span> <span class="nn">diagrams.onprem.monitoring</span> <span class="kn">import</span> <span class="n">Grafana</span><span class="p">,</span> <span class="n">Prometheus</span>
+<span class="kn">from</span> <span class="nn">diagrams.onprem.network</span> <span class="kn">import</span> <span class="n">Nginx</span>
+<span class="kn">from</span> <span class="nn">diagrams.onprem.queue</span> <span class="kn">import</span> <span class="n">Kafka</span>
 
-&lt;span class=&quot;k&quot;&gt;with&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Diagram&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;Advanced Web Service with On-Premise&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;show&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;False&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Advanced_Web_Service_with_On_Premise&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;ingress&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Nginx&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;ingress&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+<span class="k">with</span> <span class="n">Diagram</span><span class="p">(</span><span class="s2">&quot;Advanced Web Service with On-Premise&quot;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> <span class="k">as</span> <span class="n">Advanced_Web_Service_with_On_Premise</span><span class="p">:</span>
+    <span class="n">ingress</span> <span class="o">=</span> <span class="n">Nginx</span><span class="p">(</span><span class="s2">&quot;ingress&quot;</span><span class="p">)</span>
 
-    &lt;span class=&quot;n&quot;&gt;metrics&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Prometheus&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;metric&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;metrics&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Grafana&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;monitoring&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    <span class="n">metrics</span> <span class="o">=</span> <span class="n">Prometheus</span><span class="p">(</span><span class="s2">&quot;metric&quot;</span><span class="p">)</span>
+    <span class="n">metrics</span> <span class="o">&lt;&lt;</span> <span class="n">Grafana</span><span class="p">(</span><span class="s2">&quot;monitoring&quot;</span><span class="p">)</span>
 
-    &lt;span class=&quot;k&quot;&gt;with&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Cluster&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;Service Cluster&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;grpcsvc&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;Server&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;grpc1&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;Server&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;grpc2&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;Server&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;grpc3&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)]&lt;/span&gt;
+    <span class="k">with</span> <span class="n">Cluster</span><span class="p">(</span><span class="s2">&quot;Service Cluster&quot;</span><span class="p">):</span>
+        <span class="n">grpcsvc</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="n">Server</span><span class="p">(</span><span class="s2">&quot;grpc1&quot;</span><span class="p">),</span>
+            <span class="n">Server</span><span class="p">(</span><span class="s2">&quot;grpc2&quot;</span><span class="p">),</span>
+            <span class="n">Server</span><span class="p">(</span><span class="s2">&quot;grpc3&quot;</span><span class="p">)]</span>
 
-    &lt;span class=&quot;k&quot;&gt;with&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Cluster&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;Sessions HA&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;master&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Redis&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;session&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;master&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Redis&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;replica&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;metrics&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;grpcsvc&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;master&lt;/span&gt;
+    <span class="k">with</span> <span class="n">Cluster</span><span class="p">(</span><span class="s2">&quot;Sessions HA&quot;</span><span class="p">):</span>
+        <span class="n">master</span> <span class="o">=</span> <span class="n">Redis</span><span class="p">(</span><span class="s2">&quot;session&quot;</span><span class="p">)</span>
+        <span class="n">master</span> <span class="o">-</span> <span class="n">Redis</span><span class="p">(</span><span class="s2">&quot;replica&quot;</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">metrics</span>
+        <span class="n">grpcsvc</span> <span class="o">&gt;&gt;</span> <span class="n">master</span>
 
-    &lt;span class=&quot;k&quot;&gt;with&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Cluster&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;Database HA&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;master&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;PostgreSQL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;users&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;master&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;PostgreSQL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;slave&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;metrics&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;grpcsvc&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;master&lt;/span&gt;
+    <span class="k">with</span> <span class="n">Cluster</span><span class="p">(</span><span class="s2">&quot;Database HA&quot;</span><span class="p">):</span>
+        <span class="n">master</span> <span class="o">=</span> <span class="n">PostgreSQL</span><span class="p">(</span><span class="s2">&quot;users&quot;</span><span class="p">)</span>
+        <span class="n">master</span> <span class="o">-</span> <span class="n">PostgreSQL</span><span class="p">(</span><span class="s2">&quot;slave&quot;</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">metrics</span>
+        <span class="n">grpcsvc</span> <span class="o">&gt;&gt;</span> <span class="n">master</span>
 
-    &lt;span class=&quot;n&quot;&gt;aggregator&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Fluentd&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;logging&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;aggregator&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Kafka&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;stream&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Spark&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;analytics&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    <span class="n">aggregator</span> <span class="o">=</span> <span class="n">Fluentd</span><span class="p">(</span><span class="s2">&quot;logging&quot;</span><span class="p">)</span>
+    <span class="n">aggregator</span> <span class="o">&gt;&gt;</span> <span class="n">Kafka</span><span class="p">(</span><span class="s2">&quot;stream&quot;</span><span class="p">)</span> <span class="o">&gt;&gt;</span> <span class="n">Spark</span><span class="p">(</span><span class="s2">&quot;analytics&quot;</span><span class="p">)</span>
 
-    &lt;span class=&quot;n&quot;&gt;ingress&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;grpcsvc&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;aggregator&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;Advanced_Web_Service_with_On_Premise&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
+    <span class="n">ingress</span> <span class="o">&gt;&gt;</span> <span class="n">grpcsvc</span> <span class="o">&gt;&gt;</span> <span class="n">aggregator</span>
+<span class="n">Advanced_Web_Service_with_On_Premise</span>
+</pre></div>
 
-    &lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
+    </div>
+</div>
+</div>
 
-&lt;div class=&quot;output_wrapper&quot;&gt;
-&lt;div class=&quot;output&quot;&gt;
+<div class="output_wrapper">
+<div class="output">
 
-&lt;div class=&quot;output_area&quot;&gt;
+<div class="output_area">
 
 
 
-&lt;div class=&quot;output_png output_subarea output_execute_result&quot;&gt;
-&lt;img src=&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABiAAAASECAIAAABib1ALAAAABmJLR0QA/wD/AP+gvaeTAAAgAElE
+<div class="output_png output_subarea output_execute_result">
+<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABiAAAASECAIAAABib1ALAAAABmJLR0QA/wD/AP+gvaeTAAAgAElE
 QVR4nOzdd2BV9f3/8bPuvbkjewNhhQ2COEFQQAFR0Wptba2j2m+1rXXVaq32+/v22/bbrdXWOooD
 B25RljJEluwhe88QAmTnJrm544zP74+0KYUkJPcTCJDn4y9yzzmf884lJPm8+HzeRxVCKAAAAAAA
 AEC8tPYuAAAAAAAAAGc3AiYAAAAAAABIIWACAAAAAACAFAImAAAAAAAASCFgAgAAAAAAgBQCJgAA
@@ -9265,64 +9369,64 @@ BAAAAECIwAQAAABAiMAEAAAAQIjABAAAAECIwAQAAABAiMAEAAAAQIjABAAAAECIwAQAAABAiMAE
 AAAAQIjABAAAAECIwAQAAABAiMAEAAAAQIjABAAAAECIwAQAAABAiMAEAAAAQIjABAAAAECIwAQA
 AABAiMAEAAAAQIjABAAAAECIwAQAAABAiMAEAAAAQIjABAAAAEDIvwB6zr0ZK3F05wAAAABJRU5E
 rkJggg==
-&quot; /&gt;
-&lt;/div&gt;
+" />
+</div>
 
-&lt;/div&gt;
+</div>
 
-&lt;/div&gt;
-&lt;/div&gt;
+</div>
+</div>
 
-&lt;/div&gt;
+</div>
     
 
     
     
-&lt;div class=&quot;cell border-box-sizing code_cell rendered&quot;&gt;
-&lt;div class=&quot;input&quot;&gt;
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
 
-&lt;div class=&quot;inner_cell&quot;&gt;
-    &lt;div class=&quot;input_area&quot;&gt;
-&lt;div class=&quot; highlight hl-ipython3&quot;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;urllib.request&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;urlretrieve&lt;/span&gt;
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">urllib.request</span> <span class="kn">import</span> <span class="n">urlretrieve</span>
 
-&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;diagrams&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Cluster&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Diagram&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;diagrams.custom&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Custom&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;diagrams.aws.database&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Aurora&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;diagrams.k8s.compute&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Pod&lt;/span&gt;
+<span class="kn">from</span> <span class="nn">diagrams</span> <span class="kn">import</span> <span class="n">Cluster</span><span class="p">,</span> <span class="n">Diagram</span>
+<span class="kn">from</span> <span class="nn">diagrams.custom</span> <span class="kn">import</span> <span class="n">Custom</span>
+<span class="kn">from</span> <span class="nn">diagrams.aws.database</span> <span class="kn">import</span> <span class="n">Aurora</span>
+<span class="kn">from</span> <span class="nn">diagrams.k8s.compute</span> <span class="kn">import</span> <span class="n">Pod</span>
 
-&lt;span class=&quot;c1&quot;&gt;# Download an image to be used into a Custom Node class&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;rabbitmq_url&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;https://jpadilla.github.io/rabbitmqapp/assets/img/icon.png&amp;quot;&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;rabbitmq_icon&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;rabbitmq.png&amp;quot;&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;urlretrieve&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rabbitmq_url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rabbitmq_icon&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-
-&lt;span class=&quot;k&quot;&gt;with&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Diagram&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;Broker Consumers&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;show&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;False&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;RabbitMQ_Consumers_with_Custom_Nodes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;with&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Cluster&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;Consumers&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;consumers&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;Pod&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;worker&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;Pod&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;worker&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;Pod&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;worker&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-
-    &lt;span class=&quot;n&quot;&gt;queue&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Custom&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;Message queue&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rabbitmq_icon&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-    &lt;span class=&quot;n&quot;&gt;queue&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;consumers&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Aurora&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;Database&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;RabbitMQ_Consumers_with_Custom_Nodes&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-    &lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;output_wrapper&quot;&gt;
-&lt;div class=&quot;output&quot;&gt;
-
-&lt;div class=&quot;output_area&quot;&gt;
+<span class="c1"># Download an image to be used into a Custom Node class</span>
+<span class="n">rabbitmq_url</span> <span class="o">=</span> <span class="s2">&quot;https://jpadilla.github.io/rabbitmqapp/assets/img/icon.png&quot;</span>
+<span class="n">rabbitmq_icon</span> <span class="o">=</span> <span class="s2">&quot;rabbitmq.png&quot;</span>
+<span class="n">urlretrieve</span><span class="p">(</span><span class="n">rabbitmq_url</span><span class="p">,</span> <span class="n">rabbitmq_icon</span><span class="p">)</span>
 
 
+<span class="k">with</span> <span class="n">Diagram</span><span class="p">(</span><span class="s2">&quot;Broker Consumers&quot;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> <span class="k">as</span> <span class="n">RabbitMQ_Consumers_with_Custom_Nodes</span><span class="p">:</span>
+    <span class="k">with</span> <span class="n">Cluster</span><span class="p">(</span><span class="s2">&quot;Consumers&quot;</span><span class="p">):</span>
+        <span class="n">consumers</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="n">Pod</span><span class="p">(</span><span class="s2">&quot;worker&quot;</span><span class="p">),</span>
+            <span class="n">Pod</span><span class="p">(</span><span class="s2">&quot;worker&quot;</span><span class="p">),</span>
+            <span class="n">Pod</span><span class="p">(</span><span class="s2">&quot;worker&quot;</span><span class="p">)</span>
+        <span class="p">]</span>
 
-&lt;div class=&quot;output_png output_subarea output_execute_result&quot;&gt;
-&lt;img src=&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAA6QAAASACAIAAABnRxckAAAABmJLR0QA/wD/AP+gvaeTAAAgAElE
+    <span class="n">queue</span> <span class="o">=</span> <span class="n">Custom</span><span class="p">(</span><span class="s2">&quot;Message queue&quot;</span><span class="p">,</span> <span class="n">rabbitmq_icon</span><span class="p">)</span>
+
+    <span class="n">queue</span> <span class="o">&gt;&gt;</span> <span class="n">consumers</span> <span class="o">&gt;&gt;</span> <span class="n">Aurora</span><span class="p">(</span><span class="s2">&quot;Database&quot;</span><span class="p">)</span>
+<span class="n">RabbitMQ_Consumers_with_Custom_Nodes</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_png output_subarea output_execute_result">
+<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAA6QAAASACAIAAABnRxckAAAABmJLR0QA/wD/AP+gvaeTAAAgAElE
 QVR4nOzdd3hc1Z3w8d+5d5pm1N27LRfZcgO8mGaa6TUJEBJqSNsNCZAGIckmS0KyYZdNeZNssgsp
 hBogJIGEsITgELobuMuWi9xwkYusMqOZuXPvPe8fI8kjueAiezRH38+TPIxmRqMjwzP+6ujcc5TW
 WgAAAAATWfkeAAAAAHCsELsAAAAwFrELAAAAYxG7AAAAMBaxCwAAAGMRuwAAADAWsQsAAABjEbsA
@@ -10401,793 +10505,65 @@ S+wCABAtsQsAQLTELgAA0RK7AABES+wCABAtsQsAQLTELgAA0RK7AABES+wCABAtsQsAQLTELgAA
 0RK7AABES+wCABAtsQsAQLTELgAA0RK7AABES+wCABAtsQsAQLTELgAA0RK7AABES+wCABAtsQsA
 QLTELgAA0RK7AABES+wCABAtsQsAQLTELgAA0RK7AABES+wCABAtsQsAQLTELgAA0RK7AABES+wC
 ABAtsQsAQLTELgAA0RK7AABES+wCABAtsQsAQLT+P9Pm8430A1iHAAAAAElFTkSuQmCC
-&quot; /&gt;
-&lt;/div&gt;
+" />
+</div>
 
-&lt;/div&gt;
+</div>
 
-&lt;/div&gt;
-&lt;/div&gt;
+</div>
+</div>
 
-&lt;/div&gt;
+</div>
     
 
-&lt;div class=&quot;cell border-box-sizing text_cell rendered&quot;&gt;&lt;div class=&quot;inner_cell&quot;&gt;
-&lt;div class=&quot;text_cell_render border-box-sizing rendered_html&quot;&gt;
-&lt;h2 id=&quot;Reference-:&quot;&gt;Reference :&lt;a class=&quot;anchor-link&quot; href=&quot;#Reference-:&quot;&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;https://diagrams.mingrammer.com/&quot;&gt;https://diagrams.mingrammer.com/&lt;/a&gt;&lt;/p&gt;
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Reference-:">Reference :<a class="anchor-link" href="#Reference-:">&#182;</a></h2><p><a href="https://diagrams.mingrammer.com/">https://diagrams.mingrammer.com/</a></p>
 
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;cell border-box-sizing text_cell rendered&quot;&gt;&lt;div class=&quot;inner_cell&quot;&gt;
-&lt;div class=&quot;text_cell_render border-box-sizing rendered_html&quot;&gt;
-&lt;h2 id=&quot;How-to-run-jupyter-notebook-locally&quot;&gt;How to run jupyter notebook locally&lt;a class=&quot;anchor-link&quot; href=&quot;#How-to-run-jupyter-notebook-locally&quot;&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;
-&lt;pre&gt;&lt;code&gt;    $ git clone &amp;lt;&amp;lt;path-to-github&amp;gt;&amp;gt;
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="How-to-run-jupyter-notebook-locally">How to run jupyter notebook locally<a class="anchor-link" href="#How-to-run-jupyter-notebook-locally">&#182;</a></h2>
+<pre><code>    $ git clone &lt;&lt;path-to-github&gt;&gt;
     $ pip install jupyterlab
-    $ jupyter lab&lt;/code&gt;&lt;/pre&gt;
+    $ jupyter lab</code></pre>
 
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;</content><author><name></name></author><summary type="html"></summary></entry><entry><title type="html">Fastpages Notebook Blog Post</title><link href="https://byteshiva.github.io/blog/fastpages/jupyter/2020/02/20/test.html" rel="alternate" type="text/html" title="Fastpages Notebook Blog Post" /><published>2020-02-20T00:00:00-06:00</published><updated>2020-02-20T00:00:00-06:00</updated><id>https://byteshiva.github.io/blog/fastpages/jupyter/2020/02/20/test</id><content type="html" xml:base="https://byteshiva.github.io/blog/fastpages/jupyter/2020/02/20/test.html">&lt;!--
-#################################################
-### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
-#################################################
-# file to edit: _notebooks/2020-02-20-test.ipynb
---&gt;
+</div>
+</div>
+</div>
+</div>
 
-&lt;div class=&quot;container&quot; id=&quot;notebook-container&quot;&gt;
-        
-    
-    
-&lt;div class=&quot;cell border-box-sizing code_cell rendered&quot;&gt;
 
-&lt;/div&gt;
-    
+  </div><a class="u-url" href="/blog/2020/02/27/Diagram-as-Code.html" hidden></a>
+</article>
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/blog/"></data>
 
-&lt;div class=&quot;cell border-box-sizing text_cell rendered&quot;&gt;&lt;div class=&quot;inner_cell&quot;&gt;
-&lt;div class=&quot;text_cell_render border-box-sizing rendered_html&quot;&gt;
-&lt;h1 id=&quot;About&quot;&gt;About&lt;a class=&quot;anchor-link&quot; href=&quot;#About&quot;&gt;&amp;#182;&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;This notebook is a demonstration of some of capabilities of &lt;a href=&quot;https://github.com/fastai/fastpages&quot;&gt;fastpages&lt;/a&gt; with notebooks.&lt;/p&gt;
-&lt;p&gt;With &lt;code&gt;fastpages&lt;/code&gt; you can save your jupyter notebooks into the &lt;code&gt;_notebooks&lt;/code&gt; folder at the root of your repository, and they will be automatically be converted to Jekyll compliant blog posts!&lt;/p&gt;
+  <div class="wrapper">
 
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;cell border-box-sizing text_cell rendered&quot;&gt;&lt;div class=&quot;inner_cell&quot;&gt;
-&lt;div class=&quot;text_cell_render border-box-sizing rendered_html&quot;&gt;
-&lt;h2 id=&quot;Front-Matter&quot;&gt;Front Matter&lt;a class=&quot;anchor-link&quot; href=&quot;#Front-Matter&quot;&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Front Matter is a markdown cell at the beginning of your notebook that allows you to inject metadata into your notebook. For example:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Setting &lt;code&gt;toc: true&lt;/code&gt; will automatically generate a table of contents&lt;/li&gt;
-&lt;li&gt;Setting &lt;code&gt;badges: true&lt;/code&gt; will automatically include GitHub and Google Colab links to your notebook.&lt;/li&gt;
-&lt;li&gt;Setting &lt;code&gt;comments: true&lt;/code&gt; will enable commenting on your blog post, powered by &lt;a href=&quot;https://github.com/utterance/utterances&quot;&gt;utterances&lt;/a&gt;.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;More details and options for front matter can be viewed on the &lt;a href=&quot;https://github.com/fastai/fastpages#front-matter-related-options&quot;&gt;front matter section&lt;/a&gt; of the README.&lt;/p&gt;
+    <h2 class="footer-heading">fastpages</h2>
 
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;cell border-box-sizing text_cell rendered&quot;&gt;&lt;div class=&quot;inner_cell&quot;&gt;
-&lt;div class=&quot;text_cell_render border-box-sizing rendered_html&quot;&gt;
-&lt;h2 id=&quot;Markdown-Shortcuts&quot;&gt;Markdown Shortcuts&lt;a class=&quot;anchor-link&quot; href=&quot;#Markdown-Shortcuts&quot;&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;cell border-box-sizing text_cell rendered&quot;&gt;&lt;div class=&quot;inner_cell&quot;&gt;
-&lt;div class=&quot;text_cell_render border-box-sizing rendered_html&quot;&gt;
-&lt;p&gt;put a &lt;code&gt;#hide&lt;/code&gt; flag at the top of any cell you want to completely hide in the docs&lt;/p&gt;
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">fastpages</li></ul>
+      </div>
 
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;cell border-box-sizing text_cell rendered&quot;&gt;&lt;div class=&quot;inner_cell&quot;&gt;
-&lt;div class=&quot;text_cell_render border-box-sizing rendered_html&quot;&gt;
-&lt;p&gt;put a &lt;code&gt;#collapse&lt;/code&gt; flag at the top of any cell if you want to hide that cell by default, but stil have it be visible to the reader:&lt;/p&gt;
+      <div class="footer-col footer-col-2"><ul class="social-media-list">
+  <li><a href="https://github.com/byteshiva"><svg class="social svg-icon"><use xlink:href="/blog/assets/minima-social-icons.svg#github"></use></svg> <span class="username">byteshiva</span></a></li><li><a href="https://www.twitter.com/byteshiva"><svg class="social svg-icon"><use xlink:href="/blog/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">byteshiva</span></a></li></ul>
+</div>
 
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-    
-    
-&lt;div class=&quot;cell border-box-sizing code_cell rendered&quot;&gt;
-&lt;details class=&quot;description&quot;&gt;
-      &lt;summary class=&quot;btn btn-sm&quot; data-open=&quot;Hide Code&quot; data-close=&quot;Show Code&quot;&gt;&lt;/summary&gt;
-        &lt;p&gt;&lt;div class=&quot;input&quot;&gt;
+      <div class="footer-col footer-col-3">
+        <p>An easy to use blogging platform with support for Jupyter Notebooks.</p>
+      </div>
+    </div>
 
-&lt;div class=&quot;inner_cell&quot;&gt;
-    &lt;div class=&quot;input_area&quot;&gt;
-&lt;div class=&quot; highlight hl-ipython3&quot;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;#collapse&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;pandas&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;pd&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;altair&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;alt&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
+  </div>
 
-    &lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/p&gt;
-    &lt;/details&gt;
-&lt;/div&gt;
-    
+</footer>
+</body>
 
-&lt;div class=&quot;cell border-box-sizing text_cell rendered&quot;&gt;&lt;div class=&quot;inner_cell&quot;&gt;
-&lt;div class=&quot;text_cell_render border-box-sizing rendered_html&quot;&gt;
-&lt;p&gt;put a &lt;code&gt;#collapse_show&lt;/code&gt; flag at the top of any cell if you want to &lt;strong&gt;show&lt;/strong&gt; that cell by default, but give the reader the option to hide it:&lt;/p&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-    
-    
-&lt;div class=&quot;cell border-box-sizing code_cell rendered&quot;&gt;
-&lt;details class=&quot;description&quot; open=&quot;&quot;&gt;
-      &lt;summary class=&quot;btn btn-sm&quot; data-open=&quot;Hide Code&quot; data-close=&quot;Show Code&quot;&gt;&lt;/summary&gt;
-        &lt;p&gt;&lt;div class=&quot;input&quot;&gt;
-
-&lt;div class=&quot;inner_cell&quot;&gt;
-    &lt;div class=&quot;input_area&quot;&gt;
-&lt;div class=&quot; highlight hl-ipython3&quot;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;#collapse_show&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;cars&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;https://vega.github.io/vega-datasets/data/cars.json&amp;#39;&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;movies&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;https://vega.github.io/vega-datasets/data/movies.json&amp;#39;&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;sp500&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;https://vega.github.io/vega-datasets/data/sp500.csv&amp;#39;&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;stocks&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;https://vega.github.io/vega-datasets/data/stocks.csv&amp;#39;&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;flights&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;https://vega.github.io/vega-datasets/data/flights-5k.json&amp;#39;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-    &lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/p&gt;
-    &lt;/details&gt;
-&lt;/div&gt;
-    
-
-&lt;div class=&quot;cell border-box-sizing text_cell rendered&quot;&gt;&lt;div class=&quot;inner_cell&quot;&gt;
-&lt;div class=&quot;text_cell_render border-box-sizing rendered_html&quot;&gt;
-&lt;h2 id=&quot;Interactive-Charts-With-Altair&quot;&gt;Interactive Charts With Altair&lt;a class=&quot;anchor-link&quot; href=&quot;#Interactive-Charts-With-Altair&quot;&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Charts made with Altair remain interactive.  Example charts taken from &lt;a href=&quot;https://github.com/uwdata/visualization-curriculum&quot;&gt;this repo&lt;/a&gt;, specifically &lt;a href=&quot;https://github.com/uwdata/visualization-curriculum/blob/master/altair_interaction.ipynb&quot;&gt;this notebook&lt;/a&gt;.&lt;/p&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;cell border-box-sizing text_cell rendered&quot;&gt;&lt;div class=&quot;inner_cell&quot;&gt;
-&lt;div class=&quot;text_cell_render border-box-sizing rendered_html&quot;&gt;
-&lt;h3 id=&quot;Example-1:-DropDown&quot;&gt;Example 1: DropDown&lt;a class=&quot;anchor-link&quot; href=&quot;#Example-1:-DropDown&quot;&gt;&amp;#182;&lt;/a&gt;&lt;/h3&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-    
-    
-&lt;div class=&quot;cell border-box-sizing code_cell rendered&quot;&gt;
-&lt;div class=&quot;input&quot;&gt;
-
-&lt;div class=&quot;inner_cell&quot;&gt;
-    &lt;div class=&quot;input_area&quot;&gt;
-&lt;div class=&quot; highlight hl-ipython3&quot;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;# single-value selection over [Major_Genre, MPAA_Rating] pairs&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# use specific hard-wired values as the initial selected values&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;selection&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;alt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;selection_single&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;Select&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;fields&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;Major_Genre&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;MPAA_Rating&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;init&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;Major_Genre&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;Drama&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;MPAA_Rating&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;R&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;bind&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;Major_Genre&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;alt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;binding_select&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;options&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;genres&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;MPAA_Rating&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;alt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;binding_radio&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;options&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mpaa&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  
-&lt;span class=&quot;c1&quot;&gt;# scatter plot, modify opacity based on selection&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;alt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Chart&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;movies&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mark_circle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;add_selection&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;selection&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;encode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;Rotten_Tomatoes_Rating:Q&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;IMDB_Rating:Q&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;tooltip&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;Title:N&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;opacity&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;alt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;condition&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;selection&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;alt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.75&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;alt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.05&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-    &lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;output_wrapper&quot;&gt;
-&lt;div class=&quot;output&quot;&gt;
-
-&lt;div class=&quot;output_area&quot;&gt;
-
-
-&lt;div class=&quot;output_html rendered_html output_subarea output_execute_result&quot;&gt;
-
-&lt;div id=&quot;altair-viz-1a49e83878ce4d678d7b162f3d6b510f&quot;&gt;&lt;/div&gt;
-&lt;script type=&quot;text/javascript&quot;&gt;
-  (function(spec, embedOpt){
-    const outputDiv = document.getElementById(&quot;altair-viz-1a49e83878ce4d678d7b162f3d6b510f&quot;);
-    const paths = {
-      &quot;vega&quot;: &quot;https://cdn.jsdelivr.net/npm//vega@5?noext&quot;,
-      &quot;vega-lib&quot;: &quot;https://cdn.jsdelivr.net/npm//vega-lib?noext&quot;,
-      &quot;vega-lite&quot;: &quot;https://cdn.jsdelivr.net/npm//vega-lite@4.0.2?noext&quot;,
-      &quot;vega-embed&quot;: &quot;https://cdn.jsdelivr.net/npm//vega-embed@6?noext&quot;,
-    };
-
-    function loadScript(lib) {
-      return new Promise(function(resolve, reject) {
-        var s = document.createElement('script');
-        s.src = paths[lib];
-        s.async = true;
-        s.onload = () =&gt; resolve(paths[lib]);
-        s.onerror = () =&gt; reject(`Error loading script: ${paths[lib]}`);
-        document.getElementsByTagName(&quot;head&quot;)[0].appendChild(s);
-      });
-    }
-
-    function showError(err) {
-      outputDiv.innerHTML = `&lt;div class=&quot;error&quot; style=&quot;color:red;&quot;&gt;${err}&lt;/div&gt;`;
-      throw err;
-    }
-
-    function displayChart(vegaEmbed) {
-      vegaEmbed(outputDiv, spec, embedOpt)
-        .catch(err =&gt; showError(`Javascript Error: ${err.message}&lt;br&gt;This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
-    }
-
-    if(typeof define === &quot;function&quot; &amp;&amp; define.amd) {
-      requirejs.config({paths});
-      require([&quot;vega-embed&quot;], displayChart, err =&gt; showError(`Error loading script: ${err.message}`));
-    } else if (typeof vegaEmbed === &quot;function&quot;) {
-      displayChart(vegaEmbed);
-    } else {
-      loadScript(&quot;vega&quot;)
-        .then(() =&gt; loadScript(&quot;vega-lite&quot;))
-        .then(() =&gt; loadScript(&quot;vega-embed&quot;))
-        .catch(showError)
-        .then(() =&gt; displayChart(vegaEmbed));
-    }
-  })({&quot;config&quot;: {&quot;view&quot;: {&quot;continuousWidth&quot;: 400, &quot;continuousHeight&quot;: 300}}, &quot;data&quot;: {&quot;url&quot;: &quot;https://vega.github.io/vega-datasets/data/movies.json&quot;}, &quot;mark&quot;: &quot;circle&quot;, &quot;encoding&quot;: {&quot;opacity&quot;: {&quot;condition&quot;: {&quot;value&quot;: 0.75, &quot;selection&quot;: &quot;Select&quot;}, &quot;value&quot;: 0.05}, &quot;tooltip&quot;: {&quot;type&quot;: &quot;nominal&quot;, &quot;field&quot;: &quot;Title&quot;}, &quot;x&quot;: {&quot;type&quot;: &quot;quantitative&quot;, &quot;field&quot;: &quot;Rotten_Tomatoes_Rating&quot;}, &quot;y&quot;: {&quot;type&quot;: &quot;quantitative&quot;, &quot;field&quot;: &quot;IMDB_Rating&quot;}}, &quot;selection&quot;: {&quot;Select&quot;: {&quot;type&quot;: &quot;single&quot;, &quot;fields&quot;: [&quot;Major_Genre&quot;, &quot;MPAA_Rating&quot;], &quot;init&quot;: {&quot;Major_Genre&quot;: &quot;Drama&quot;, &quot;MPAA_Rating&quot;: &quot;R&quot;}, &quot;bind&quot;: {&quot;Major_Genre&quot;: {&quot;input&quot;: &quot;select&quot;, &quot;options&quot;: [&quot;Action&quot;, &quot;Adventure&quot;, &quot;Black Comedy&quot;, &quot;Comedy&quot;, &quot;Concert/Performance&quot;, &quot;Documentary&quot;, &quot;Drama&quot;, &quot;Horror&quot;, &quot;Musical&quot;, &quot;Romantic Comedy&quot;, &quot;Thriller/Suspense&quot;, &quot;Western&quot;]}, &quot;MPAA_Rating&quot;: {&quot;input&quot;: &quot;radio&quot;, &quot;options&quot;: [&quot;G&quot;, &quot;PG&quot;, &quot;PG-13&quot;, &quot;R&quot;, &quot;NC-17&quot;, &quot;Not Rated&quot;]}}}}, &quot;$schema&quot;: &quot;https://vega.github.io/schema/vega-lite/v4.0.2.json&quot;}, {&quot;mode&quot;: &quot;vega-lite&quot;});
-&lt;/script&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;
-    
-
-&lt;div class=&quot;cell border-box-sizing text_cell rendered&quot;&gt;&lt;div class=&quot;inner_cell&quot;&gt;
-&lt;div class=&quot;text_cell_render border-box-sizing rendered_html&quot;&gt;
-&lt;h3 id=&quot;Example-2:-Tooltips&quot;&gt;Example 2: Tooltips&lt;a class=&quot;anchor-link&quot; href=&quot;#Example-2:-Tooltips&quot;&gt;&amp;#182;&lt;/a&gt;&lt;/h3&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-    
-    
-&lt;div class=&quot;cell border-box-sizing code_cell rendered&quot;&gt;
-&lt;div class=&quot;input&quot;&gt;
-
-&lt;div class=&quot;inner_cell&quot;&gt;
-    &lt;div class=&quot;input_area&quot;&gt;
-&lt;div class=&quot; highlight hl-ipython3&quot;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;alt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Chart&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;movies&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mark_circle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;add_selection&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;alt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;selection_interval&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bind&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;scales&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;encodings&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;x&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;encode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;Rotten_Tomatoes_Rating:Q&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;alt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;IMDB_Rating:Q&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;axis&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;alt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Axis&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;minExtent&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;30&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)),&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# use min extent to stabilize axis title placement&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;tooltip&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;Title:N&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;Release_Date:N&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;IMDB_Rating:Q&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;Rotten_Tomatoes_Rating:Q&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;properties&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;600&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;height&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;400&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-    &lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;output_wrapper&quot;&gt;
-&lt;div class=&quot;output&quot;&gt;
-
-&lt;div class=&quot;output_area&quot;&gt;
-
-
-&lt;div class=&quot;output_html rendered_html output_subarea output_execute_result&quot;&gt;
-
-&lt;div id=&quot;altair-viz-c022b476f4fb482ca6f609bf6ed082d2&quot;&gt;&lt;/div&gt;
-&lt;script type=&quot;text/javascript&quot;&gt;
-  (function(spec, embedOpt){
-    const outputDiv = document.getElementById(&quot;altair-viz-c022b476f4fb482ca6f609bf6ed082d2&quot;);
-    const paths = {
-      &quot;vega&quot;: &quot;https://cdn.jsdelivr.net/npm//vega@5?noext&quot;,
-      &quot;vega-lib&quot;: &quot;https://cdn.jsdelivr.net/npm//vega-lib?noext&quot;,
-      &quot;vega-lite&quot;: &quot;https://cdn.jsdelivr.net/npm//vega-lite@4.0.2?noext&quot;,
-      &quot;vega-embed&quot;: &quot;https://cdn.jsdelivr.net/npm//vega-embed@6?noext&quot;,
-    };
-
-    function loadScript(lib) {
-      return new Promise(function(resolve, reject) {
-        var s = document.createElement('script');
-        s.src = paths[lib];
-        s.async = true;
-        s.onload = () =&gt; resolve(paths[lib]);
-        s.onerror = () =&gt; reject(`Error loading script: ${paths[lib]}`);
-        document.getElementsByTagName(&quot;head&quot;)[0].appendChild(s);
-      });
-    }
-
-    function showError(err) {
-      outputDiv.innerHTML = `&lt;div class=&quot;error&quot; style=&quot;color:red;&quot;&gt;${err}&lt;/div&gt;`;
-      throw err;
-    }
-
-    function displayChart(vegaEmbed) {
-      vegaEmbed(outputDiv, spec, embedOpt)
-        .catch(err =&gt; showError(`Javascript Error: ${err.message}&lt;br&gt;This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
-    }
-
-    if(typeof define === &quot;function&quot; &amp;&amp; define.amd) {
-      requirejs.config({paths});
-      require([&quot;vega-embed&quot;], displayChart, err =&gt; showError(`Error loading script: ${err.message}`));
-    } else if (typeof vegaEmbed === &quot;function&quot;) {
-      displayChart(vegaEmbed);
-    } else {
-      loadScript(&quot;vega&quot;)
-        .then(() =&gt; loadScript(&quot;vega-lite&quot;))
-        .then(() =&gt; loadScript(&quot;vega-embed&quot;))
-        .catch(showError)
-        .then(() =&gt; displayChart(vegaEmbed));
-    }
-  })({&quot;config&quot;: {&quot;view&quot;: {&quot;continuousWidth&quot;: 400, &quot;continuousHeight&quot;: 300}}, &quot;data&quot;: {&quot;url&quot;: &quot;https://vega.github.io/vega-datasets/data/movies.json&quot;}, &quot;mark&quot;: &quot;circle&quot;, &quot;encoding&quot;: {&quot;tooltip&quot;: [{&quot;type&quot;: &quot;nominal&quot;, &quot;field&quot;: &quot;Title&quot;}, {&quot;type&quot;: &quot;nominal&quot;, &quot;field&quot;: &quot;Release_Date&quot;}, {&quot;type&quot;: &quot;quantitative&quot;, &quot;field&quot;: &quot;IMDB_Rating&quot;}, {&quot;type&quot;: &quot;quantitative&quot;, &quot;field&quot;: &quot;Rotten_Tomatoes_Rating&quot;}], &quot;x&quot;: {&quot;type&quot;: &quot;quantitative&quot;, &quot;field&quot;: &quot;Rotten_Tomatoes_Rating&quot;}, &quot;y&quot;: {&quot;type&quot;: &quot;quantitative&quot;, &quot;axis&quot;: {&quot;minExtent&quot;: 30}, &quot;field&quot;: &quot;IMDB_Rating&quot;}}, &quot;height&quot;: 400, &quot;selection&quot;: {&quot;selector001&quot;: {&quot;type&quot;: &quot;interval&quot;, &quot;bind&quot;: &quot;scales&quot;, &quot;encodings&quot;: [&quot;x&quot;]}}, &quot;width&quot;: 600, &quot;$schema&quot;: &quot;https://vega.github.io/schema/vega-lite/v4.0.2.json&quot;}, {&quot;mode&quot;: &quot;vega-lite&quot;});
-&lt;/script&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;
-    
-
-&lt;div class=&quot;cell border-box-sizing text_cell rendered&quot;&gt;&lt;div class=&quot;inner_cell&quot;&gt;
-&lt;div class=&quot;text_cell_render border-box-sizing rendered_html&quot;&gt;
-&lt;h3 id=&quot;Example-3:-More-Tooltips&quot;&gt;Example 3: More Tooltips&lt;a class=&quot;anchor-link&quot; href=&quot;#Example-3:-More-Tooltips&quot;&gt;&amp;#182;&lt;/a&gt;&lt;/h3&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-    
-    
-&lt;div class=&quot;cell border-box-sizing code_cell rendered&quot;&gt;
-&lt;div class=&quot;input&quot;&gt;
-
-&lt;div class=&quot;inner_cell&quot;&gt;
-    &lt;div class=&quot;input_area&quot;&gt;
-&lt;div class=&quot; highlight hl-ipython3&quot;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;# select a point for which to provide details-on-demand&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;label&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;alt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;selection_single&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;encodings&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;x&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# limit selection to x-axis value&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;on&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;mouseover&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;# select on mouseover events&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;nearest&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;    &lt;span class=&quot;c1&quot;&gt;# select data point nearest the cursor&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;empty&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;none&amp;#39;&lt;/span&gt;     &lt;span class=&quot;c1&quot;&gt;# empty selection includes no data points&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-&lt;span class=&quot;c1&quot;&gt;# define our base line chart of stock prices&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;base&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;alt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Chart&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mark_line&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;encode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;alt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;X&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;date:T&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;alt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;price:Q&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;scale&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;alt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Scale&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;log&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)),&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;alt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;symbol:N&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;alt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;layer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;base&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# base line chart&lt;/span&gt;
-    
-    &lt;span class=&quot;c1&quot;&gt;# add a rule mark to serve as a guide line&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;alt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Chart&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mark_rule&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;#aaa&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;encode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;date:T&amp;#39;&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;transform_filter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;label&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
-    
-    &lt;span class=&quot;c1&quot;&gt;# add circle marks for selected time points, hide unselected points&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;base&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mark_circle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;encode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;opacity&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;alt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;condition&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;label&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;alt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;alt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;add_selection&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;label&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
-
-    &lt;span class=&quot;c1&quot;&gt;# add white stroked text to provide a legible background for labels&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;base&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mark_text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;align&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;left&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dx&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dy&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;stroke&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;white&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;strokeWidth&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;encode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;price:Q&amp;#39;&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;transform_filter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;label&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
-
-    &lt;span class=&quot;c1&quot;&gt;# add text labels for stock prices&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;base&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mark_text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;align&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;left&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dx&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dy&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;encode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;price:Q&amp;#39;&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;transform_filter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;label&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
-    
-    &lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;stocks&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;properties&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;700&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;height&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;400&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-    &lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;output_wrapper&quot;&gt;
-&lt;div class=&quot;output&quot;&gt;
-
-&lt;div class=&quot;output_area&quot;&gt;
-
-
-&lt;div class=&quot;output_html rendered_html output_subarea output_execute_result&quot;&gt;
-
-&lt;div id=&quot;altair-viz-9283d3681fd24aafa3d1e2f9ad193ecf&quot;&gt;&lt;/div&gt;
-&lt;script type=&quot;text/javascript&quot;&gt;
-  (function(spec, embedOpt){
-    const outputDiv = document.getElementById(&quot;altair-viz-9283d3681fd24aafa3d1e2f9ad193ecf&quot;);
-    const paths = {
-      &quot;vega&quot;: &quot;https://cdn.jsdelivr.net/npm//vega@5?noext&quot;,
-      &quot;vega-lib&quot;: &quot;https://cdn.jsdelivr.net/npm//vega-lib?noext&quot;,
-      &quot;vega-lite&quot;: &quot;https://cdn.jsdelivr.net/npm//vega-lite@4.0.2?noext&quot;,
-      &quot;vega-embed&quot;: &quot;https://cdn.jsdelivr.net/npm//vega-embed@6?noext&quot;,
-    };
-
-    function loadScript(lib) {
-      return new Promise(function(resolve, reject) {
-        var s = document.createElement('script');
-        s.src = paths[lib];
-        s.async = true;
-        s.onload = () =&gt; resolve(paths[lib]);
-        s.onerror = () =&gt; reject(`Error loading script: ${paths[lib]}`);
-        document.getElementsByTagName(&quot;head&quot;)[0].appendChild(s);
-      });
-    }
-
-    function showError(err) {
-      outputDiv.innerHTML = `&lt;div class=&quot;error&quot; style=&quot;color:red;&quot;&gt;${err}&lt;/div&gt;`;
-      throw err;
-    }
-
-    function displayChart(vegaEmbed) {
-      vegaEmbed(outputDiv, spec, embedOpt)
-        .catch(err =&gt; showError(`Javascript Error: ${err.message}&lt;br&gt;This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
-    }
-
-    if(typeof define === &quot;function&quot; &amp;&amp; define.amd) {
-      requirejs.config({paths});
-      require([&quot;vega-embed&quot;], displayChart, err =&gt; showError(`Error loading script: ${err.message}`));
-    } else if (typeof vegaEmbed === &quot;function&quot;) {
-      displayChart(vegaEmbed);
-    } else {
-      loadScript(&quot;vega&quot;)
-        .then(() =&gt; loadScript(&quot;vega-lite&quot;))
-        .then(() =&gt; loadScript(&quot;vega-embed&quot;))
-        .catch(showError)
-        .then(() =&gt; displayChart(vegaEmbed));
-    }
-  })({&quot;config&quot;: {&quot;view&quot;: {&quot;continuousWidth&quot;: 400, &quot;continuousHeight&quot;: 300}}, &quot;layer&quot;: [{&quot;mark&quot;: &quot;line&quot;, &quot;encoding&quot;: {&quot;color&quot;: {&quot;type&quot;: &quot;nominal&quot;, &quot;field&quot;: &quot;symbol&quot;}, &quot;x&quot;: {&quot;type&quot;: &quot;temporal&quot;, &quot;field&quot;: &quot;date&quot;}, &quot;y&quot;: {&quot;type&quot;: &quot;quantitative&quot;, &quot;field&quot;: &quot;price&quot;, &quot;scale&quot;: {&quot;type&quot;: &quot;log&quot;}}}}, {&quot;mark&quot;: {&quot;type&quot;: &quot;rule&quot;, &quot;color&quot;: &quot;#aaa&quot;}, &quot;encoding&quot;: {&quot;x&quot;: {&quot;type&quot;: &quot;temporal&quot;, &quot;field&quot;: &quot;date&quot;}}, &quot;transform&quot;: [{&quot;filter&quot;: {&quot;selection&quot;: &quot;selector002&quot;}}]}, {&quot;mark&quot;: &quot;circle&quot;, &quot;encoding&quot;: {&quot;color&quot;: {&quot;type&quot;: &quot;nominal&quot;, &quot;field&quot;: &quot;symbol&quot;}, &quot;opacity&quot;: {&quot;condition&quot;: {&quot;value&quot;: 1, &quot;selection&quot;: &quot;selector002&quot;}, &quot;value&quot;: 0}, &quot;x&quot;: {&quot;type&quot;: &quot;temporal&quot;, &quot;field&quot;: &quot;date&quot;}, &quot;y&quot;: {&quot;type&quot;: &quot;quantitative&quot;, &quot;field&quot;: &quot;price&quot;, &quot;scale&quot;: {&quot;type&quot;: &quot;log&quot;}}}, &quot;selection&quot;: {&quot;selector002&quot;: {&quot;type&quot;: &quot;single&quot;, &quot;encodings&quot;: [&quot;x&quot;], &quot;on&quot;: &quot;mouseover&quot;, &quot;nearest&quot;: true, &quot;empty&quot;: &quot;none&quot;}}}, {&quot;mark&quot;: {&quot;type&quot;: &quot;text&quot;, &quot;align&quot;: &quot;left&quot;, &quot;dx&quot;: 5, &quot;dy&quot;: -5, &quot;stroke&quot;: &quot;white&quot;, &quot;strokeWidth&quot;: 2}, &quot;encoding&quot;: {&quot;color&quot;: {&quot;type&quot;: &quot;nominal&quot;, &quot;field&quot;: &quot;symbol&quot;}, &quot;text&quot;: {&quot;type&quot;: &quot;quantitative&quot;, &quot;field&quot;: &quot;price&quot;}, &quot;x&quot;: {&quot;type&quot;: &quot;temporal&quot;, &quot;field&quot;: &quot;date&quot;}, &quot;y&quot;: {&quot;type&quot;: &quot;quantitative&quot;, &quot;field&quot;: &quot;price&quot;, &quot;scale&quot;: {&quot;type&quot;: &quot;log&quot;}}}, &quot;transform&quot;: [{&quot;filter&quot;: {&quot;selection&quot;: &quot;selector002&quot;}}]}, {&quot;mark&quot;: {&quot;type&quot;: &quot;text&quot;, &quot;align&quot;: &quot;left&quot;, &quot;dx&quot;: 5, &quot;dy&quot;: -5}, &quot;encoding&quot;: {&quot;color&quot;: {&quot;type&quot;: &quot;nominal&quot;, &quot;field&quot;: &quot;symbol&quot;}, &quot;text&quot;: {&quot;type&quot;: &quot;quantitative&quot;, &quot;field&quot;: &quot;price&quot;}, &quot;x&quot;: {&quot;type&quot;: &quot;temporal&quot;, &quot;field&quot;: &quot;date&quot;}, &quot;y&quot;: {&quot;type&quot;: &quot;quantitative&quot;, &quot;field&quot;: &quot;price&quot;, &quot;scale&quot;: {&quot;type&quot;: &quot;log&quot;}}}, &quot;transform&quot;: [{&quot;filter&quot;: {&quot;selection&quot;: &quot;selector002&quot;}}]}], &quot;data&quot;: {&quot;url&quot;: &quot;https://vega.github.io/vega-datasets/data/stocks.csv&quot;}, &quot;height&quot;: 400, &quot;width&quot;: 700, &quot;$schema&quot;: &quot;https://vega.github.io/schema/vega-lite/v4.0.2.json&quot;}, {&quot;mode&quot;: &quot;vega-lite&quot;});
-&lt;/script&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;
-    
-
-&lt;div class=&quot;cell border-box-sizing text_cell rendered&quot;&gt;&lt;div class=&quot;inner_cell&quot;&gt;
-&lt;div class=&quot;text_cell_render border-box-sizing rendered_html&quot;&gt;
-&lt;h2 id=&quot;Data-Tables&quot;&gt;Data Tables&lt;a class=&quot;anchor-link&quot; href=&quot;#Data-Tables&quot;&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;You can display tables per the usual way in your blog:&lt;/p&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-    
-    
-&lt;div class=&quot;cell border-box-sizing code_cell rendered&quot;&gt;
-&lt;div class=&quot;input&quot;&gt;
-
-&lt;div class=&quot;inner_cell&quot;&gt;
-    &lt;div class=&quot;input_area&quot;&gt;
-&lt;div class=&quot; highlight hl-ipython3&quot;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;movies&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;https://vega.github.io/vega-datasets/data/movies.json&amp;#39;&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;df&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pd&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;read_json&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;movies&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# display table with pandas&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;df&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;Title&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;Worldwide_Gross&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; 
-    &lt;span class=&quot;s1&quot;&gt;&amp;#39;Production_Budget&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;IMDB_Rating&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;head&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-    &lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;output_wrapper&quot;&gt;
-&lt;div class=&quot;output&quot;&gt;
-
-&lt;div class=&quot;output_area&quot;&gt;
-
-
-&lt;div class=&quot;output_html rendered_html output_subarea output_execute_result&quot;&gt;
-&lt;div&gt;
-&lt;style scoped=&quot;&quot;&gt;
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-&lt;/style&gt;
-&lt;table border=&quot;1&quot; class=&quot;dataframe&quot;&gt;
-  &lt;thead&gt;
-    &lt;tr style=&quot;text-align: right;&quot;&gt;
-      &lt;th&gt;&lt;/th&gt;
-      &lt;th&gt;Title&lt;/th&gt;
-      &lt;th&gt;Worldwide_Gross&lt;/th&gt;
-      &lt;th&gt;Production_Budget&lt;/th&gt;
-      &lt;th&gt;IMDB_Rating&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;th&gt;0&lt;/th&gt;
-      &lt;td&gt;The Land Girls&lt;/td&gt;
-      &lt;td&gt;146083.0&lt;/td&gt;
-      &lt;td&gt;8000000.0&lt;/td&gt;
-      &lt;td&gt;6.1&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;th&gt;1&lt;/th&gt;
-      &lt;td&gt;First Love, Last Rites&lt;/td&gt;
-      &lt;td&gt;10876.0&lt;/td&gt;
-      &lt;td&gt;300000.0&lt;/td&gt;
-      &lt;td&gt;6.9&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;th&gt;2&lt;/th&gt;
-      &lt;td&gt;I Married a Strange Person&lt;/td&gt;
-      &lt;td&gt;203134.0&lt;/td&gt;
-      &lt;td&gt;250000.0&lt;/td&gt;
-      &lt;td&gt;6.8&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;th&gt;3&lt;/th&gt;
-      &lt;td&gt;Let's Talk About Sex&lt;/td&gt;
-      &lt;td&gt;373615.0&lt;/td&gt;
-      &lt;td&gt;300000.0&lt;/td&gt;
-      &lt;td&gt;NaN&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;th&gt;4&lt;/th&gt;
-      &lt;td&gt;Slam&lt;/td&gt;
-      &lt;td&gt;1087521.0&lt;/td&gt;
-      &lt;td&gt;1000000.0&lt;/td&gt;
-      &lt;td&gt;3.4&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;
-    
-
-&lt;div class=&quot;cell border-box-sizing text_cell rendered&quot;&gt;&lt;div class=&quot;inner_cell&quot;&gt;
-&lt;div class=&quot;text_cell_render border-box-sizing rendered_html&quot;&gt;
-&lt;h2 id=&quot;Images&quot;&gt;Images&lt;a class=&quot;anchor-link&quot; href=&quot;#Images&quot;&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;h3 id=&quot;Local-Images&quot;&gt;Local Images&lt;a class=&quot;anchor-link&quot; href=&quot;#Local-Images&quot;&gt;&amp;#182;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;You can reference local images and they will be copied and rendered on your blog automatically.  You can include these with the following markdown syntax:&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;![](my_icons/fastai_logo.png)&lt;/code&gt;&lt;/p&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;cell border-box-sizing text_cell rendered&quot;&gt;&lt;div class=&quot;inner_cell&quot;&gt;
-&lt;div class=&quot;text_cell_render border-box-sizing rendered_html&quot;&gt;
-&lt;p&gt;&lt;img src=&quot;/images/copied_from_nb/my_icons/fastai_logo.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;cell border-box-sizing text_cell rendered&quot;&gt;&lt;div class=&quot;inner_cell&quot;&gt;
-&lt;div class=&quot;text_cell_render border-box-sizing rendered_html&quot;&gt;
-&lt;h3 id=&quot;Remote-Images&quot;&gt;Remote Images&lt;a class=&quot;anchor-link&quot; href=&quot;#Remote-Images&quot;&gt;&amp;#182;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Remote images can be included with the following markdown syntax:&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;![](https://image.flaticon.com/icons/svg/36/36686.svg)&lt;/code&gt;&lt;/p&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;cell border-box-sizing text_cell rendered&quot;&gt;&lt;div class=&quot;inner_cell&quot;&gt;
-&lt;div class=&quot;text_cell_render border-box-sizing rendered_html&quot;&gt;
-&lt;p&gt;&lt;img src=&quot;https://image.flaticon.com/icons/svg/36/36686.svg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;cell border-box-sizing text_cell rendered&quot;&gt;&lt;div class=&quot;inner_cell&quot;&gt;
-&lt;div class=&quot;text_cell_render border-box-sizing rendered_html&quot;&gt;
-&lt;h3 id=&quot;Animated-Gifs&quot;&gt;Animated Gifs&lt;a class=&quot;anchor-link&quot; href=&quot;#Animated-Gifs&quot;&gt;&amp;#182;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Animated Gifs work, too!&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;![](https://upload.wikimedia.org/wikipedia/commons/7/71/ChessPawnSpecialMoves.gif)&lt;/code&gt;&lt;/p&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;cell border-box-sizing text_cell rendered&quot;&gt;&lt;div class=&quot;inner_cell&quot;&gt;
-&lt;div class=&quot;text_cell_render border-box-sizing rendered_html&quot;&gt;
-&lt;p&gt;&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/7/71/ChessPawnSpecialMoves.gif&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;cell border-box-sizing text_cell rendered&quot;&gt;&lt;div class=&quot;inner_cell&quot;&gt;
-&lt;div class=&quot;text_cell_render border-box-sizing rendered_html&quot;&gt;
-&lt;h3 id=&quot;Captions&quot;&gt;Captions&lt;a class=&quot;anchor-link&quot; href=&quot;#Captions&quot;&gt;&amp;#182;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;You can include captions with markdown images like this:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;![](https://www.fast.ai/images/fastai_paper/show_batch.png &quot;Credit: https://www.fast.ai/2020/02/13/fastai-A-Layered-API-for-Deep-Learning/&quot;)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&quot;https://www.fast.ai/images/fastai_paper/show_batch.png&quot; alt=&quot;&quot; title=&quot;Credit: https://www.fast.ai/2020/02/13/fastai-A-Layered-API-for-Deep-Learning/&quot; /&gt;&lt;/p&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;cell border-box-sizing text_cell rendered&quot;&gt;&lt;div class=&quot;inner_cell&quot;&gt;
-&lt;div class=&quot;text_cell_render border-box-sizing rendered_html&quot;&gt;
-&lt;h1 id=&quot;Other-Elements&quot;&gt;Other Elements&lt;a class=&quot;anchor-link&quot; href=&quot;#Other-Elements&quot;&gt;&amp;#182;&lt;/a&gt;&lt;/h1&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;cell border-box-sizing text_cell rendered&quot;&gt;&lt;div class=&quot;inner_cell&quot;&gt;
-&lt;div class=&quot;text_cell_render border-box-sizing rendered_html&quot;&gt;
-&lt;h2 id=&quot;Tweetcards&quot;&gt;Tweetcards&lt;a class=&quot;anchor-link&quot; href=&quot;#Tweetcards&quot;&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Typing &lt;code&gt;&amp;gt; twitter: https://twitter.com/jakevdp/status/1204765621767901185?s=20&lt;/code&gt; will render this:
-
-&lt;center&gt;
-&lt;div class=&quot;jekyll-twitter-plugin&quot;&gt;&lt;blockquote class=&quot;twitter-tweet&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;Altair 4.0 is released! &lt;a href=&quot;https://t.co/PCyrIOTcvv&quot;&gt;https://t.co/PCyrIOTcvv&lt;/a&gt;&lt;br /&gt;Try it with:&lt;br /&gt;&lt;br /&gt;  pip install -U altair&lt;br /&gt;&lt;br /&gt;The full list of changes is at &lt;a href=&quot;https://t.co/roXmzcsT58&quot;&gt;https://t.co/roXmzcsT58&lt;/a&gt; ...read on for some highlights. &lt;a href=&quot;https://t.co/vWJ0ZveKbZ&quot;&gt;pic.twitter.com/vWJ0ZveKbZ&lt;/a&gt;&lt;/p&gt;&amp;mdash; Jake VanderPlas (@jakevdp) &lt;a href=&quot;https://twitter.com/jakevdp/status/1204765621767901185?ref_src=twsrc%5Etfw&quot;&gt;December 11, 2019&lt;/a&gt;&lt;/blockquote&gt;
-&lt;script async=&quot;&quot; src=&quot;https://platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
-&lt;/div&gt;
-&lt;/center&gt;&lt;/p&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;cell border-box-sizing text_cell rendered&quot;&gt;&lt;div class=&quot;inner_cell&quot;&gt;
-&lt;div class=&quot;text_cell_render border-box-sizing rendered_html&quot;&gt;
-&lt;h2 id=&quot;Youtube-Videos&quot;&gt;Youtube Videos&lt;a class=&quot;anchor-link&quot; href=&quot;#Youtube-Videos&quot;&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Typing &lt;code&gt;&amp;gt; youtube: https://youtu.be/XfoYk_Z5AkI&lt;/code&gt; will render this:
-
-&lt;center&gt;
-&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/XfoYk_Z5AkI&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
-&lt;/center&gt;&lt;/p&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;cell border-box-sizing text_cell rendered&quot;&gt;&lt;div class=&quot;inner_cell&quot;&gt;
-&lt;div class=&quot;text_cell_render border-box-sizing rendered_html&quot;&gt;
-&lt;h2 id=&quot;Boxes-/-Callouts&quot;&gt;Boxes / Callouts&lt;a class=&quot;anchor-link&quot; href=&quot;#Boxes-/-Callouts&quot;&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Typing &lt;code&gt;&amp;gt; Warning: There will be no second warning!&lt;/code&gt; will render this:
-&lt;div class=&quot;flash flash-error&quot;&gt;
-    &lt;svg class=&quot;octicon octicon-alert&quot; viewBox=&quot;0 0 16 16&quot; version=&quot;1.1&quot; width=&quot;16&quot; height=&quot;16&quot; aria-hidden=&quot;true&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 000 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 00.01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z&quot; /&gt;&lt;/svg&gt;
-    &lt;strong&gt;Warning: &lt;/strong&gt;There will be no second warning!
-&lt;/div&gt;&lt;/p&gt;
-&lt;p&gt;Typing &lt;code&gt;&amp;gt; Important: Pay attention! It's important.&lt;/code&gt; will render this:
-&lt;div class=&quot;flash flash-warn&quot;&gt;
-    &lt;svg class=&quot;octicon octicon-zap&quot; viewBox=&quot;0 0 10 16&quot; version=&quot;1.1&quot; width=&quot;10&quot; height=&quot;16&quot; aria-hidden=&quot;true&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M10 7H6l3-7-9 9h4l-3 7 9-9z&quot; /&gt;&lt;/svg&gt;
-    &lt;strong&gt;Important: &lt;/strong&gt;Pay attention! It&amp;#8217;s important.
-&lt;/div&gt;&lt;/p&gt;
-&lt;p&gt;Typing &lt;code&gt;&amp;gt; Tip: This is my tip.&lt;/code&gt; will render this:
-&lt;div class=&quot;flash flash-success&quot;&gt;
-    &lt;svg class=&quot;octicon octicon-checklist&quot; viewBox=&quot;0 0 16 16&quot; version=&quot;1.1&quot; width=&quot;16&quot; height=&quot;16&quot; aria-hidden=&quot;true&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M16 8.5l-6 6-3-3L8.5 10l1.5 1.5L14.5 7 16 8.5zM5.7 12.2l.8.8H2c-.55 0-1-.45-1-1V3c0-.55.45-1 1-1h7c.55 0 1 .45 1 1v6.5l-.8-.8c-.39-.39-1.03-.39-1.42 0L5.7 10.8a.996.996 0 000 1.41v-.01zM4 4h5V3H4v1zm0 2h5V5H4v1zm0 2h3V7H4v1zM3 9H2v1h1V9zm0-2H2v1h1V7zm0-2H2v1h1V5zm0-2H2v1h1V3z&quot; /&gt;&lt;/svg&gt;
-    &lt;strong&gt;Tip: &lt;/strong&gt;This is my tip.
-&lt;/div&gt;&lt;/p&gt;
-&lt;p&gt;Typing &lt;code&gt;&amp;gt; Note: Take note of this.&lt;/code&gt; will render this:
-&lt;div class=&quot;flash&quot;&gt;
-    &lt;svg class=&quot;octicon octicon-info&quot; viewBox=&quot;0 0 14 16&quot; version=&quot;1.1&quot; width=&quot;14&quot; height=&quot;16&quot; aria-hidden=&quot;true&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M6.3 5.69a.942.942 0 01-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 01-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z&quot; /&gt;&lt;/svg&gt;
-    &lt;strong&gt;Note: &lt;/strong&gt;Take note of this.
-&lt;/div&gt;&lt;/p&gt;
-&lt;p&gt;Typing &lt;code&gt;&amp;gt; Note: A doc link to [an example website: fast.ai](https://www.fast.ai/) should also work fine.&lt;/code&gt; will render in the docs:
-&lt;div class=&quot;flash&quot;&gt;
-    &lt;svg class=&quot;octicon octicon-info octicon octicon-info&quot; viewBox=&quot;0 0 14 16&quot; version=&quot;1.1&quot; width=&quot;14&quot; height=&quot;16&quot; aria-hidden=&quot;true&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M6.3 5.69a.942.942 0 01-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 01-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z&quot; /&gt;&lt;/svg&gt;
-    &lt;strong&gt;Note: &lt;/strong&gt;A doc link to &lt;a href=&quot;https://www.fast.ai/&quot;&gt;an example website: fast.ai&lt;/a&gt; should also work fine.
-&lt;/div&gt;&lt;/p&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;</content><author><name></name></author><summary type="html"></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://byteshiva.github.io/blog/images/chart-preview.png" /><media:content medium="image" url="https://byteshiva.github.io/blog/images/chart-preview.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Example Markdown Post</title><link href="https://byteshiva.github.io/blog/fastpages/markdown/2020/01/14/test-markdown-post.html" rel="alternate" type="text/html" title="Example Markdown Post" /><published>2020-01-14T00:00:00-06:00</published><updated>2020-01-14T00:00:00-06:00</updated><id>https://byteshiva.github.io/blog/fastpages/markdown/2020/01/14/test-markdown-post</id><content type="html" xml:base="https://byteshiva.github.io/blog/fastpages/markdown/2020/01/14/test-markdown-post.html">&lt;h2 id=&quot;basic-setup&quot;&gt;Basic setup&lt;/h2&gt;
-
-&lt;p&gt;Jekyll requires blog post files to be named according to the following format:&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;YEAR-MONTH-DAY-filename.md&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;Where &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;YEAR&lt;/code&gt; is a four-digit number, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;MONTH&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;DAY&lt;/code&gt; are both two-digit numbers, and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;filename&lt;/code&gt; is whatever file name you choose, to remind yourself what this post is about. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.md&lt;/code&gt; is the file extension for markdown files.&lt;/p&gt;
-
-&lt;p&gt;The first line of the file should start with a single hash character, then a space, then your title. This is how you create a “&lt;em&gt;level 1 heading&lt;/em&gt;” in markdown. Then you can create level 2, 3, etc headings as you wish but repeating the hash character, such as you see in the line &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;## File names&lt;/code&gt; above.&lt;/p&gt;
-
-&lt;h2 id=&quot;basic-formatting&quot;&gt;Basic formatting&lt;/h2&gt;
-
-&lt;p&gt;You can use &lt;em&gt;italics&lt;/em&gt;, &lt;strong&gt;bold&lt;/strong&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;code font text&lt;/code&gt;, and create &lt;a href=&quot;https://www.markdownguide.org/cheat-sheet/&quot;&gt;links&lt;/a&gt;. Here’s a footnote &lt;sup id=&quot;fnref:1&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;. Here’s a horizontal rule:&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;lists&quot;&gt;Lists&lt;/h2&gt;
-
-&lt;p&gt;Here’s a list:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;item 1&lt;/li&gt;
-  &lt;li&gt;item 2&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;And a numbered list:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;item 1&lt;/li&gt;
-  &lt;li&gt;item 2&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&quot;boxes-and-stuff&quot;&gt;Boxes and stuff&lt;/h2&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;This is a quotation&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;div class=&quot;Toast Toast--warning googoo&quot;&gt;
-   &lt;span class=&quot;Toast-icon&quot;&gt;&lt;svg class=&quot;octicon octicon-alert&quot; viewBox=&quot;0 0 16 16&quot; version=&quot;1.1&quot; width=&quot;16&quot; height=&quot;16&quot; aria-hidden=&quot;true&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 000 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 00.01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z&quot; /&gt;&lt;/svg&gt;&lt;/span&gt;
-   &lt;span class=&quot;Toast-content&quot;&gt;You can include alert boxes&lt;/span&gt;
-&lt;/div&gt;
-
-&lt;p&gt;…and…&lt;/p&gt;
-
-&lt;div class=&quot;Toast&quot;&gt;
-   &lt;span class=&quot;Toast-icon&quot;&gt;&lt;svg class=&quot;octicon octicon-info&quot; viewBox=&quot;0 0 14 16&quot; version=&quot;1.1&quot; width=&quot;14&quot; height=&quot;16&quot; aria-hidden=&quot;true&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M6.3 5.69a.942.942 0 01-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 01-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z&quot; /&gt;&lt;/svg&gt;&lt;/span&gt;
-   &lt;span class=&quot;Toast-content&quot;&gt;You can include info boxes&lt;/span&gt;
-&lt;/div&gt;
-
-&lt;h2 id=&quot;images&quot;&gt;Images&lt;/h2&gt;
-
-&lt;p&gt;&lt;img src=&quot;/blog/images/logo.png&quot; alt=&quot;&quot; title=&quot;fast.ai's logo&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;code&quot;&gt;Code&lt;/h2&gt;
-
-&lt;p&gt;General preformatted text:&lt;/p&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# Do a thing
-do_thing()
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Python code and output:&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;# Prints '2'
-&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;2
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h2 id=&quot;tables&quot;&gt;Tables&lt;/h2&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;Column 1&lt;/th&gt;
-      &lt;th&gt;Column 2&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;A thing&lt;/td&gt;
-      &lt;td&gt;Another thing&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;h2 id=&quot;tweetcards&quot;&gt;Tweetcards&lt;/h2&gt;
-
-&lt;div class=&quot;jekyll-twitter-plugin&quot;&gt;&lt;blockquote class=&quot;twitter-tweet&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;Altair 4.0 is released! &lt;a href=&quot;https://t.co/PCyrIOTcvv&quot;&gt;https://t.co/PCyrIOTcvv&lt;/a&gt;&lt;br /&gt;Try it with:&lt;br /&gt;&lt;br /&gt;  pip install -U altair&lt;br /&gt;&lt;br /&gt;The full list of changes is at &lt;a href=&quot;https://t.co/roXmzcsT58&quot;&gt;https://t.co/roXmzcsT58&lt;/a&gt; ...read on for some highlights. &lt;a href=&quot;https://t.co/vWJ0ZveKbZ&quot;&gt;pic.twitter.com/vWJ0ZveKbZ&lt;/a&gt;&lt;/p&gt;&amp;mdash; Jake VanderPlas (@jakevdp) &lt;a href=&quot;https://twitter.com/jakevdp/status/1204765621767901185?ref_src=twsrc%5Etfw&quot;&gt;December 11, 2019&lt;/a&gt;&lt;/blockquote&gt;
-&lt;script async=&quot;&quot; src=&quot;https://platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
-&lt;/div&gt;
-
-&lt;h2 id=&quot;footnotes&quot;&gt;Footnotes&lt;/h2&gt;
-
-&lt;div class=&quot;footnotes&quot;&gt;
-  &lt;ol&gt;
-    &lt;li id=&quot;fn:1&quot;&gt;
-      &lt;p&gt;This is the footnote. &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
-    &lt;/li&gt;
-  &lt;/ol&gt;
-&lt;/div&gt;</content><author><name></name></author><summary type="html">Basic setup</summary></entry></feed>
+</html>
