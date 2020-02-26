@@ -14,11 +14,11 @@ github_repo: "fastpages-template"
 
 # OPTIONAL: override baseurl and url if using a custom domain
 url: "https://byteshiva.github.io" # the base hostname & protocol for your site, e.g. http://example.com
-baseurl: "/fastpages-template" # the subpath of your site, e.g. "/blog".  WARNING: if you are not using a custom domain, the baseurl *must* be set to your repo name.
+baseurl: "/blog" # the subpath of your site, e.g. "/blog".  WARNING: if you are not using a custom domain, the baseurl *must* be set to your repo name.
 
 # Email and twitter are optional:
 email: 
-twitter_username: "fastdotai"
+twitter_username: "byteshiva"
 
 # Set this to true to get LaTeX math equation support
 use_math: 
