@@ -195,13 +195,14 @@ table td { border: 1px solid #e8e8e8; }
 .highlight .vi { color: #008080; }
 .highlight .il { color: #099; }
 
+/* Variables */
 .post img { display: block; vertical-align: top; margin-left: auto; margin-right: auto; }
 
 .post figcaption { text-align: center; font-size: .8rem; font-style: italic; color: light-grey; }
 
 .language-python + .language-plaintext { border-left: 1px solid grey; margin-left: 1rem !important; }
 
-[class^="language-"]:not(.language-plaintext) pre, [class^="language-"]:not(.language-plaintext) code { background-color: #323443 !important; }
+[class^="language-"]:not(.language-plaintext) pre, [class^="language-"]:not(.language-plaintext) code { background-color: #323443 !important; color: #f8f8f2; }
 
 .language-python + .language-plaintext code { background-color: white !important; }
 
@@ -209,7 +210,7 @@ table td { border: 1px solid #e8e8e8; }
 
 .input_area pre, .input_area div { margin-bottom: 2rem !important; margin-top: 1.5rem !important; padding-bottom: 0 !important; padding-top: 0 !important; background: #323443 !important; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; font-family: Menlo, Monaco, Consolas, "Lucida Console", Roboto, Ubuntu, monospace; border-radius: 5px; }
 
-.output_area pre, .output_area div { margin-bottom: 0.1rem !important; margin-top: 0.1rem !important; padding-bottom: 0 !important; padding-top: 0 !important; }
+.output_area pre, .output_area div { margin-bottom: 1rem !important; margin-top: 1rem !important; padding-bottom: 0 !important; padding-top: 0 !important; }
 
 .input_area pre { border-left: 1px solid lightcoral; }
 
@@ -233,7 +234,6 @@ li h3, li h4 { margin-top: .05rem !important; margin-bottom: .05rem !important; 
 li .post-meta-description { color: #585858; font-size: 15px; margin-bottom: .05rem !important; }
 
 /* Dracula Theme v1.2.5  https://github.com/zenorocha/dracula-theme  Copyright 2016, All rights reserved  Code licensed under the MIT license  */
-/* Variables */
 /* Styles */
 .highlight .hll, .highlight .s, .highlight .sa, .highlight .sb, .highlight .sc, .highlight .dl, .highlight .sd, .highlight .s2, .highlight .se, .highlight .sh, .highlight .si, .highlight .sx, .highlight .sr, .highlight .s1, .highlight .ss { color: #e7997a; }
 .highlight .go { color: #44475a; }
@@ -265,26 +265,44 @@ details.description:not([open]) summary::after { content: attr(data-close); }
 
 h1:hover .anchor-link, h2:hover .anchor-link, h3:hover .anchor-link, h4:hover .anchor-link, h5:hover .anchor-link, h6:hover .anchor-link { opacity: 1; }
 
-.page-description { color: #585858; font-size: 110%; }
-
 .category-tags { margin-top: .25rem !important; margin-bottom: .25rem !important; }
 
 .post-meta-title { margin-top: .25em; margin-bottom: .25em; }
+
+.page-description { color: #585858; font-size: 110%; }
 
 .category-tags-icon { font-size: 75% !important; padding-left: 0.375em; opacity: 35%; }
 
 .category-tags-link { color: #bb8181 !important; font-size: 13px !important; }
 
-#lunrsearchresults { padding-top: 0.2rem; }
+.js-search-results { padding-top: 0.2rem; }
 
-.lunrsearchresult { padding-bottom: 1rem; }
+.search-results-list-item { padding-bottom: 1rem; }
 
-.lunrsearchresult .title { color: #d9230f; }
+.search-results-list-item .search-result-title { font-size: 16px; color: #d9230f; }
 
-.lunrsearchresult .url { color: silver; }
+.search-result-rel-url { color: silver; }
 
-.lunrsearchresult a { display: block; color: #777; }
+.search-results-list-item a { display: block; color: #777; }
 
-.lunrsearchresult a:hover, .lunrsearchresult a:focus { text-decoration: none; }
+.search-results-list-item a:hover, .search-results-list-item a:focus { text-decoration: none; }
 
-.lunrsearchresult a:hover .title { text-decoration: underline; }
+.search-results-list-item a:hover .search-result-title { text-decoration: underline; }
+
+.search-result-rel-date { color: #6d788a; font-size: 14px; }
+
+.search-result-preview { color: #777; font-size: 16px; margin-top: .02rem !important; margin-bottom: .02rem !important; }
+
+.search-result-highlight { color: #2e0137; font-weight: bold; }
+
+table { display: block !important; overflow-x: auto; white-space: nowrap; font-size: 75%; border: none; }
+table th { text-align: center !important; }
+table td { text-overflow: ellipsis; overflow: hidden; max-width: 15em; }
+
+::-webkit-scrollbar { width: 14px; height: 18px; }
+
+::-webkit-scrollbar-thumb { height: 6px; border: 4px solid rgba(0, 0, 0, 0); background-clip: padding-box; -webkit-border-radius: 7px; background-color: #9D9D9D; -webkit-box-shadow: inset -1px -1px 0px rgba(0, 0, 0, 0.05), inset 1px 1px 0px rgba(0, 0, 0, 0.05); }
+
+::-webkit-scrollbar-button { width: 0; height: 0; display: none; }
+
+::-webkit-scrollbar-corner { background-color: transparent; }

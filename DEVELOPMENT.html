@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><link rel="shortcut icon" type="image/x-icon" href="/blog/assets/icons/favicon.ico">
+<!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Development Guide | fastpages</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Development Guide" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="An easy to use blogging platform with support for Jupyter Notebooks." />
+<meta property="og:description" content="An easy to use blogging platform with support for Jupyter Notebooks." />
+<link rel="canonical" href="https://byteshiva.github.io/blog/DEVELOPMENT.html" />
+<meta property="og:url" content="https://byteshiva.github.io/blog/DEVELOPMENT.html" />
+<meta property="og:site_name" content="fastpages" />
+<script type="application/ld+json">
+{"description":"An easy to use blogging platform with support for Jupyter Notebooks.","@type":"WebPage","url":"https://byteshiva.github.io/blog/DEVELOPMENT.html","headline":"Development Guide","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  <link href="https://unpkg.com/@primer/css/dist/primer.css" rel="stylesheet" />
+  <link rel="stylesheet" href="/blog/assets/main.css">
+  <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css"><link type="application/atom+xml" rel="alternate" href="https://byteshiva.github.io/blog/feed.xml" title="fastpages" />
+
+  <script>
+  function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+  }
+  window.onload = wrap_img;
+  </script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function(){
+      // add link icon to anchor tags
+      var elem = document.querySelectorAll(".anchor-link")
+      elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+      // remove paragraph tags in rendered toc (happens from notebooks)
+      var toctags = document.querySelectorAll(".toc-entry")
+      toctags.forEach(e => (e.firstElementChild.innerText = e.firstElementChild.innerText.replace('¶', '')))
+    });
+  </script>
+</head><body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/blog/">fastpages</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/blog/about/">About Me</a><a class="page-link" href="/blog/about/">About Me</a><a class="page-link" href="/blog/search/">Search</a><a class="page-link" href="/blog/search/">Search</a><a class="page-link" href="/blog/categories/">Tags</a><a class="page-link" href="/blog/categories/">Tags</a><a class="page-link" href="/blog/DEVELOPMENT.html">Development Guide</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Development Guide</h1>
+  </header>
+
+  <div class="post-content">
+    <ul>
+  <li><a href="#seeing-all-commands-in-the-terminal">Seeing All Options From the Terminal</a>
+    <ul>
+      <li><a href="#basic-usage-viewing-your-blog">Basic usage: viewing your blog</a></li>
+      <li><a href="#converting-the-pages-locally">Converting the pages locally</a></li>
+      <li><a href="#visual-studio-code-integration">Visual Studio Code integration</a></li>
+      <li><a href="#advanced-usage">Advanced usage</a>
+        <ul>
+          <li><a href="#rebuild-all-the-containers">Rebuild all the containers</a></li>
+          <li><a href="#removing-all-the-containers">Removing all the containers</a></li>
+          <li><a href="#attaching-a-shell-to-a-container">Attaching a shell to a container</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p>You can run your fastpages blog on your local machine, and view any changes you make to your posts, including Jupyter Notebooks and Word documents, live.
+The live preview requires that you have Docker installed on your machine. <a href="https://www.docker.com/products/docker-desktop">Follow the instructions on this page if you need to install Docker.</a></p>
+
+<h2 id="seeing-all-commands-in-the-terminal">Seeing All Commands In The Terminal</h2>
+
+<p>There are many different <code class="language-plaintext highlighter-rouge">docker-compose</code> commands that are necessary to manage the lifecycle of the fastpages Docker containers.  To make this easier, we aliased common commands in a <a href="https://www.gnu.org/software/make/manual/html_node/Introduction.html">Makefile</a>.</p>
+
+<p>You can quickly see all available commands by running this command in the root of your repository:</p>
+
+<p><code class="language-plaintext highlighter-rouge">make</code></p>
+
+<h2 id="basic-usage-viewing-your-blog">Basic usage: viewing your blog</h2>
+
+<p>All of the commands in this block assume that you’re in your blog root directory.
+To run the blog with live preview:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>make server
+</code></pre></div></div>
+
+<p>When you run this command for the first time, it’ll build the required Docker images, and the process might take a couple minutes.</p>
+
+<p>This command will build all the necessary containers and run the following services:</p>
+<ol>
+  <li>A service that monitors any changes in <code class="language-plaintext highlighter-rouge">./_notebooks/*.ipynb/</code> and <code class="language-plaintext highlighter-rouge">./_word/*.docx;*.doc</code> and rebuild the blog on change.</li>
+  <li>A Jupyter Notebook server — use this to write and edit your posts.  <strong>You must see your terminal logs to find the link</strong>, which will start with <code class="language-plaintext highlighter-rouge">https://127.0.0.1:8888</code></li>
+  <li>A Jekyll server on https://127.0.0.1:4000 — use this to preview your blog.</li>
+</ol>
+
+<p>The services will output to your terminal. If you close the terminal or hit <code class="language-plaintext highlighter-rouge">Ctrl-C</code>, the services will stop.
+If you want to run the services in the background:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># run all services in the background</span>
+make server-detached
+
+<span class="c"># stop the services</span>
+make stop
+</code></pre></div></div>
+
+<p>If you need to restart just the Jekyll server, and it’s running in the background — you can do <code class="language-plaintext highlighter-rouge">make restart-jekyll</code>.</p>
+
+<p><em>Note that the blog won’t autoreload on change, you’ll have to refresh your browser manually.</em></p>
+
+<p><strong>If containers won’t start</strong>: try <code class="language-plaintext highlighter-rouge">make build</code> first, this would rebuild all the containers from scratch, This might fix the majority of update problems.</p>
+
+<p><strong>To get the Jupyter Notebook Token</strong>: look for the Jupyter Notebook link in the output log of <code class="language-plaintext highlighter-rouge">make server</code> command, it’ll post the link with the token param in it. If you’re running containers in background, you can get the token by running the following command:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># assuming you're running containers in background with docker-compose up -d</span>
+<span class="c"># attach to bash in jupyter container</span>
+make bash-nb
+
+<span class="c"># get notebook list &amp; token</span>
+jupyter notebook list
+</code></pre></div></div>
+
+<h2 id="converting-the-pages-locally">Converting the pages locally</h2>
+
+<p>If you just want to convert your notebooks and word documents to <code class="language-plaintext highlighter-rouge">.md</code> posts in <code class="language-plaintext highlighter-rouge">_posts</code>, this command will do it for you:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>make convert
+</code></pre></div></div>
+
+<p>You can launch just the jekyll server with <code class="language-plaintext highlighter-rouge">make server</code>.</p>
+
+<h2 id="visual-studio-code-integration">Visual Studio Code integration</h2>
+
+<p>If you’re using VSCode with the Docker extension, you can run three containers from the sidebar: <code class="language-plaintext highlighter-rouge">fastpages_jupyter_1</code>,<code class="language-plaintext highlighter-rouge">fastpages_watcher_1</code>, and <code class="language-plaintext highlighter-rouge">fastpages_jekyll_1</code>.
+The containers will only show up in the list after you run or build them for the first time. So if they’re not in the list — try <code class="language-plaintext highlighter-rouge">make build</code> in the console.</p>
+
+<h2 id="advanced-usage">Advanced usage</h2>
+
+<h3 id="rebuild-all-the-containers">Rebuild all the containers</h3>
+<p>If you changed files in <code class="language-plaintext highlighter-rouge">_action_files</code> directory, you might need to rebuild the containers manually, without cache.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>make build
+</code></pre></div></div>
+
+<h3 id="removing-all-the-containers">Removing all the containers</h3>
+<p>Want to start from scratch and remove all the containers?</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>make remove
+</code></pre></div></div>
+
+<h3 id="attaching-a-shell-to-a-container">Attaching a shell to a container</h3>
+<p>You can attach a terminal to a running service:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="c"># If the container is already running:</span>
+
+<span class="c"># attach to a bash shell in the jekyll service</span>
+make bash-jekyll
+
+<span class="c"># attach to a bash shell in the jupyter / watcher service.</span>
+<span class="c"># they're essentially running the same software inside.</span>
+make bash-nb
+</code></pre></div></div>
+
+<p><em>Note: you can use <code class="language-plaintext highlighter-rouge">docker-compose run</code> instead of <code class="language-plaintext highlighter-rouge">make bash-nb</code> or <code class="language-plaintext highlighter-rouge">make bash-jekyll</code> to start a service and then attach to it.
+Or you can run all your services in the background, <code class="language-plaintext highlighter-rouge">make server-detached</code>, and then use <code class="language-plaintext highlighter-rouge">make bash-nb</code> or <code class="language-plaintext highlighter-rouge">make bash-jekyll</code> as in the examples above.</em></p>
+
+  </div>
+
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/blog/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">fastpages</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">fastpages</li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list">
+  <li><a href="https://github.com/byteshiva"><svg class="social svg-icon"><use xlink:href="/blog/assets/minima-social-icons.svg#github"></use></svg> <span class="username">byteshiva</span></a></li><li><a href="https://www.twitter.com/byteshiva"><svg class="social svg-icon"><use xlink:href="/blog/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">byteshiva</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>An easy to use blogging platform with support for Jupyter Notebooks.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
