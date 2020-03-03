@@ -2,7 +2,7 @@
 <html lang="en"><head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1"><link rel="shortcut icon" type="image/x-icon" href="/blog/assets/icons/favicon.ico">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><link rel="shortcut icon" type="image/x-icon" href="/blog/images/favicon.ico">
 <!-- Begin Jekyll SEO tag v2.6.1 -->
 <title>Search | fastpages</title>
 <meta name="generator" content="Jekyll v3.8.5" />
@@ -65,22 +65,23 @@
           </span>
         </label>
 
-        <div class="trigger"><a class="page-link" href="/blog/about/">About Me</a><a class="page-link" href="/blog/about/">About Me</a><a class="page-link" href="/blog/search/">Search</a><a class="page-link" href="/blog/search/">Search</a><a class="page-link" href="/blog/categories/">Tags</a><a class="page-link" href="/blog/categories/">Tags</a><a class="page-link" href="/blog/DEVELOPMENT.html">Development Guide</a></div>
+        <div class="trigger"><a class="page-link" href="/blog/about/">About Me</a><a class="page-link" href="/blog/search/">Search</a><a class="page-link" href="/blog/categories/">Tags</a><a class="page-link" href="/blog/DEVELOPMENT.html">Development Guide</a></div>
       </nav></div>
 </header>
 <main class="page-content" aria-label="Content">
       <div class="wrapper">
-        <!-- adapted from https://jekyllcodex.org/without-plugin/search-lunr/ -->
+        <!-- adapted from https://github.com/pmarsceill/just-the-docs -->
+<script type="text/javascript" src="/blog/assets/js/search.js"></script>
+<script type="text/javascript" src="/blog/assets/js/vendor/lunr.min.js"></script>
 
-<script src="/assets/js/vendor/lunr.min.js"></script>
-<script src="/assets/js/search.js"></script>
-
-<form onSubmit="return lunr_search(document.getElementById('lunrsearch').value);">
-    <p><input type="text" class="form-control input-block form-control" id="lunrsearch" name="q" maxlength="500" value="" placeholder="Search" /></p>
-</form>
-<div id="lunrsearchresults">
-    <ul></ul>
+<div class="search">
+    <div class="search-input-wrap">
+    <input type="text" class="js-search-input search-input input-block form-control" tabindex="0" placeholder="Search fastpages" aria-label="Search fastpages" autocomplete="off">
+    </div>
+    <br>
+    <div class="js-search-results search-results-wrap"></div>
 </div>
+
       </div>
     </main><footer class="site-footer h-card">
   <data class="u-url" href="/blog/"></data>
