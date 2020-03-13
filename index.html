@@ -13,10 +13,9 @@
 <meta property="og:url" content="https://byteshiva.github.io/blog/" />
 <meta property="og:site_name" content="fastpages" />
 <script type="application/ld+json">
-{"headline":"fastpages","description":"An easy to use blogging platform with support for Jupyter Notebooks.","@type":"WebSite","url":"https://byteshiva.github.io/blog/","name":"fastpages","@context":"https://schema.org"}</script>
+{"description":"An easy to use blogging platform with support for Jupyter Notebooks.","@type":"WebSite","url":"https://byteshiva.github.io/blog/","name":"fastpages","headline":"fastpages","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
-<link rel="stylesheet" href="/blog/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://byteshiva.github.io/blog/feed.xml" title="fastpages" /><link rel="shortcut icon" type="image/x-icon" href="/blog/images/favicon.ico">
-<!-- Begin Jekyll SEO tag v2.6.1 -->
+<link rel="stylesheet" href="/blog/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://byteshiva.github.io/blog/feed.xml" title="fastpages" /><link rel="shortcut icon" type="image/x-icon" href="/blog/images/favicon.ico"><!-- Begin Jekyll SEO tag v2.6.1 -->
 <title>fastpages | An easy to use blogging platform with support for Jupyter Notebooks.</title>
 <meta name="generator" content="Jekyll v4.0.0" />
 <meta property="og:title" content="fastpages" />
@@ -27,7 +26,7 @@
 <meta property="og:url" content="https://byteshiva.github.io/blog/" />
 <meta property="og:site_name" content="fastpages" />
 <script type="application/ld+json">
-{"headline":"fastpages","description":"An easy to use blogging platform with support for Jupyter Notebooks.","@type":"WebSite","url":"https://byteshiva.github.io/blog/","name":"fastpages","@context":"https://schema.org"}</script>
+{"description":"An easy to use blogging platform with support for Jupyter Notebooks.","@type":"WebSite","url":"https://byteshiva.github.io/blog/","name":"fastpages","headline":"fastpages","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 <link href="https://unpkg.com/@primer/css/dist/primer.css" rel="stylesheet" />
@@ -60,9 +59,6 @@ window.onload = wrap_img;
     // add link icon to anchor tags
     var elem = document.querySelectorAll(".anchor-link")
     elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
-    // remove paragraph tags in rendered toc (happens from notebooks)
-    var toctags = document.querySelectorAll(".toc-entry")
-    toctags.forEach(e => (e.firstElementChild.innerText = e.firstElementChild.innerText.replace('¶', '')))
     });
 </script>
 </head><body><header class="site-header">
@@ -94,6 +90,10 @@ window.onload = wrap_img;
 
 
 
+  
+
+  <!-- Hide posts if front matter flag hide:true -->
+  
   <ul class="post-list"><li><h3>
     <a class="post-link" href="/blog/face-api/jupyter/python/2020/03/02/Face-Recongnition-Intro.html">
     Face Recognition KickStarter

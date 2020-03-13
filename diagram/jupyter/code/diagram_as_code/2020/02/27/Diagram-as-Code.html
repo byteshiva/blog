@@ -15,10 +15,9 @@
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2020-02-27T00:00:00-06:00" />
 <script type="application/ld+json">
-{"datePublished":"2020-02-27T00:00:00-06:00","headline":"Diagram as Code","description":"Diagram as Code allows you to tracking the architecture diagram changes on any version control system","mainEntityOfPage":{"@type":"WebPage","@id":"https://byteshiva.github.io/blog/diagram/jupyter/code/diagram_as_code/2020/02/27/Diagram-as-Code.html"},"@type":"BlogPosting","url":"https://byteshiva.github.io/blog/diagram/jupyter/code/diagram_as_code/2020/02/27/Diagram-as-Code.html","dateModified":"2020-02-27T00:00:00-06:00","@context":"https://schema.org"}</script>
+{"datePublished":"2020-02-27T00:00:00-06:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://byteshiva.github.io/blog/diagram/jupyter/code/diagram_as_code/2020/02/27/Diagram-as-Code.html"},"description":"Diagram as Code allows you to tracking the architecture diagram changes on any version control system","@type":"BlogPosting","url":"https://byteshiva.github.io/blog/diagram/jupyter/code/diagram_as_code/2020/02/27/Diagram-as-Code.html","headline":"Diagram as Code","dateModified":"2020-02-27T00:00:00-06:00","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
-<link rel="stylesheet" href="/blog/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://byteshiva.github.io/blog/feed.xml" title="fastpages" /><link rel="shortcut icon" type="image/x-icon" href="/blog/images/favicon.ico">
-<!-- Begin Jekyll SEO tag v2.6.1 -->
+<link rel="stylesheet" href="/blog/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://byteshiva.github.io/blog/feed.xml" title="fastpages" /><link rel="shortcut icon" type="image/x-icon" href="/blog/images/favicon.ico"><!-- Begin Jekyll SEO tag v2.6.1 -->
 <title>Diagram as Code | fastpages</title>
 <meta name="generator" content="Jekyll v4.0.0" />
 <meta property="og:title" content="Diagram as Code" />
@@ -31,7 +30,7 @@
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2020-02-27T00:00:00-06:00" />
 <script type="application/ld+json">
-{"datePublished":"2020-02-27T00:00:00-06:00","headline":"Diagram as Code","description":"Diagram as Code allows you to tracking the architecture diagram changes on any version control system","mainEntityOfPage":{"@type":"WebPage","@id":"https://byteshiva.github.io/blog/diagram/jupyter/code/diagram_as_code/2020/02/27/Diagram-as-Code.html"},"@type":"BlogPosting","url":"https://byteshiva.github.io/blog/diagram/jupyter/code/diagram_as_code/2020/02/27/Diagram-as-Code.html","dateModified":"2020-02-27T00:00:00-06:00","@context":"https://schema.org"}</script>
+{"datePublished":"2020-02-27T00:00:00-06:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://byteshiva.github.io/blog/diagram/jupyter/code/diagram_as_code/2020/02/27/Diagram-as-Code.html"},"description":"Diagram as Code allows you to tracking the architecture diagram changes on any version control system","@type":"BlogPosting","url":"https://byteshiva.github.io/blog/diagram/jupyter/code/diagram_as_code/2020/02/27/Diagram-as-Code.html","headline":"Diagram as Code","dateModified":"2020-02-27T00:00:00-06:00","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 <link href="https://unpkg.com/@primer/css/dist/primer.css" rel="stylesheet" />
@@ -64,9 +63,6 @@ window.onload = wrap_img;
     // add link icon to anchor tags
     var elem = document.querySelectorAll(".anchor-link")
     elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
-    // remove paragraph tags in rendered toc (happens from notebooks)
-    var toctags = document.querySelectorAll(".toc-entry")
-    toctags.forEach(e => (e.firstElementChild.innerText = e.firstElementChild.innerText.replace('¶', '')))
     });
 </script>
 </head><body><header class="site-header">
@@ -121,9 +117,10 @@ window.onload = wrap_img;
       
         <div class="pb-5 d-flex flex-wrap flex-justify-end">
           <div class="px-2">
-<a href="https://github.com/byteshiva/blog/tree/master/_notebooks/2020-02-27-Diagram-as-Code.ipynb" role="button">
-    <img class="notebook-badge-image" src="/blog/assets/badges/github.svg" alt="View On GitHub">
-</a>
+
+    <a href="https://github.com/byteshiva/blog/tree/master/_notebooks/2020-02-27-Diagram-as-Code.ipynb" role="button">
+<img class="notebook-badge-image" src="/blog/assets/badges/github.svg" alt="View On GitHub">
+    </a>
 </div><div class="px-2">
     <a href="https://colab.research.google.com/github/byteshiva/blog/blob/master/_notebooks/2020-02-27-Diagram-as-Code.ipynb">
         <img class="notebook-badge-image" src="/blog/assets/badges/colab.svg" alt="Open In Colab"/>
