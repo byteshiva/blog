@@ -1,0 +1,2595 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Data Analysis of Movie Review using Natural Language Processing | fastpages</title>
+<meta name="generator" content="Jekyll v4.0.0" />
+<meta property="og:title" content="Data Analysis of Movie Review using Natural Language Processing" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="A tutorial of Data Analysis for Movie Review using NLTK." />
+<meta property="og:description" content="A tutorial of Data Analysis for Movie Review using NLTK." />
+<link rel="canonical" href="https://byteshiva.github.io/blog/ntlk/jupyter/python/movie-review/natual%20language%20processing/2020/03/17/_03_18_Movie_Review_Data_Analysis.html" />
+<meta property="og:url" content="https://byteshiva.github.io/blog/ntlk/jupyter/python/movie-review/natual%20language%20processing/2020/03/17/_03_18_Movie_Review_Data_Analysis.html" />
+<meta property="og:site_name" content="fastpages" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-03-17T00:00:00-05:00" />
+<script type="application/ld+json">
+{"datePublished":"2020-03-17T00:00:00-05:00","dateModified":"2020-03-17T00:00:00-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://byteshiva.github.io/blog/ntlk/jupyter/python/movie-review/natual%20language%20processing/2020/03/17/_03_18_Movie_Review_Data_Analysis.html"},"description":"A tutorial of Data Analysis for Movie Review using NLTK.","@type":"BlogPosting","url":"https://byteshiva.github.io/blog/ntlk/jupyter/python/movie-review/natual%20language%20processing/2020/03/17/_03_18_Movie_Review_Data_Analysis.html","headline":"Data Analysis of Movie Review using Natural Language Processing","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/blog/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://byteshiva.github.io/blog/feed.xml" title="fastpages" /><link rel="shortcut icon" type="image/x-icon" href="/blog/images/favicon.ico"><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Data Analysis of Movie Review using Natural Language Processing | fastpages</title>
+<meta name="generator" content="Jekyll v4.0.0" />
+<meta property="og:title" content="Data Analysis of Movie Review using Natural Language Processing" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="A tutorial of Data Analysis for Movie Review using NLTK." />
+<meta property="og:description" content="A tutorial of Data Analysis for Movie Review using NLTK." />
+<link rel="canonical" href="https://byteshiva.github.io/blog/ntlk/jupyter/python/movie-review/natual%20language%20processing/2020/03/17/_03_18_Movie_Review_Data_Analysis.html" />
+<meta property="og:url" content="https://byteshiva.github.io/blog/ntlk/jupyter/python/movie-review/natual%20language%20processing/2020/03/17/_03_18_Movie_Review_Data_Analysis.html" />
+<meta property="og:site_name" content="fastpages" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-03-17T00:00:00-05:00" />
+<script type="application/ld+json">
+{"datePublished":"2020-03-17T00:00:00-05:00","dateModified":"2020-03-17T00:00:00-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://byteshiva.github.io/blog/ntlk/jupyter/python/movie-review/natual%20language%20processing/2020/03/17/_03_18_Movie_Review_Data_Analysis.html"},"description":"A tutorial of Data Analysis for Movie Review using NLTK.","@type":"BlogPosting","url":"https://byteshiva.github.io/blog/ntlk/jupyter/python/movie-review/natual%20language%20processing/2020/03/17/_03_18_Movie_Review_Data_Analysis.html","headline":"Data Analysis of Movie Review using Natural Language Processing","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+<link href="https://unpkg.com/@primer/css/dist/primer.css" rel="stylesheet" />
+<link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css"><link type="application/atom+xml" rel="alternate" href="https://byteshiva.github.io/blog/feed.xml" title="fastpages" />
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head><body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/blog/">fastpages</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/blog/about/">About Me</a><a class="page-link" href="/blog/search/">Search</a><a class="page-link" href="/blog/categories/">Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Data Analysis of Movie Review using Natural Language Processing</h1><p class="page-description">A tutorial of Data Analysis for Movie Review using NLTK.</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2020-03-17T00:00:00-05:00" itemprop="datePublished">
+        Mar 17, 2020
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      37 min read
+    
+</span></p>
+
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/blog/categories/#ntlk">ntlk</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/blog/categories/#jupyter">jupyter</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/blog/categories/#python">python</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/blog/categories/#movie-review">movie-review</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/blog/categories/#natual Language Processing">natual Language Processing</a>
+        
+      
+      </p>
+    
+
+    
+      
+        <div class="pb-5 d-flex flex-wrap flex-justify-end">
+          <div class="px-2">
+
+    <a href="https://github.com/byteshiva/blog/tree/master/_notebooks/2020_03_18_Movie_Review_Data_Analysis.ipynb" role="button">
+<img class="notebook-badge-image" src="/blog/assets/badges/github.svg" alt="View On GitHub">
+    </a>
+</div><div class="px-2">
+    <a href="https://colab.research.google.com/github/byteshiva/blog/blob/master/_notebooks/2020_03_18_Movie_Review_Data_Analysis.ipynb">
+        <img class="notebook-badge-image" src="/blog/assets/badges/colab.svg" alt="Open In Colab"/>
+    </a>
+</div>
+        </div>
+      </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <ul class="section-nav">
+</ul><!--
+#################################################
+### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
+#################################################
+# file to edit: _notebooks/2020_03_18_Movie_Review_Data_Analysis.ipynb
+-->
+
+<div class="container" id="notebook-container">
+        
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">nltk</span>
+
+<span class="n">nltk</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s1">'movie_reviews'</span><span class="p">)</span>
+<span class="n">nltk</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s1">'stopwords'</span><span class="p">)</span>
+<span class="n">nltk</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s1">'averaged_perceptron_tagger'</span><span class="p">)</span>
+<span class="n">nltk</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s1">'wordnet'</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[nltk_data] Downloading package movie_reviews to /root/nltk_data...
+[nltk_data]   Package movie_reviews is already up-to-date!
+[nltk_data] Downloading package stopwords to /root/nltk_data...
+[nltk_data]   Package stopwords is already up-to-date!
+[nltk_data] Downloading package averaged_perceptron_tagger to
+[nltk_data]     /root/nltk_data...
+[nltk_data]   Package averaged_perceptron_tagger is already up-to-
+[nltk_data]       date!
+[nltk_data] Downloading package wordnet to /root/nltk_data...
+[nltk_data]   Unzipping corpora/wordnet.zip.
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>True</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">nltk.corpus</span> <span class="kn">import</span> <span class="n">movie_reviews</span>
+<span class="n">documents</span><span class="o">=</span><span class="p">[]</span>
+<span class="k">for</span> <span class="n">category</span> <span class="ow">in</span> <span class="n">movie_reviews</span><span class="o">.</span><span class="n">categories</span><span class="p">():</span>
+    <span class="k">for</span> <span class="n">fileid</span> <span class="ow">in</span> <span class="n">movie_reviews</span><span class="o">.</span><span class="n">fileids</span><span class="p">(</span><span class="n">category</span><span class="p">):</span>
+        <span class="n">documents</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">movie_reviews</span><span class="o">.</span><span class="n">words</span><span class="p">(</span><span class="n">fileid</span><span class="p">),</span> <span class="n">category</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+<span class="n">random</span><span class="o">.</span><span class="n">shuffle</span><span class="p">(</span><span class="n">documents</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">nltk.corpus</span> <span class="kn">import</span> <span class="n">wordnet</span>
+<span class="kn">from</span> <span class="nn">nltk</span> <span class="kn">import</span> <span class="n">pos_tag</span>
+<span class="kn">from</span> <span class="nn">nltk.corpus</span> <span class="kn">import</span> <span class="n">stopwords</span>
+<span class="kn">import</span> <span class="nn">string</span>
+<span class="kn">from</span> <span class="nn">nltk.stem</span> <span class="kn">import</span> <span class="n">WordNetLemmatizer</span>
+<span class="n">lemmatizer</span><span class="o">=</span><span class="n">WordNetLemmatizer</span><span class="p">()</span>
+<span class="n">stops</span><span class="o">=</span><span class="nb">set</span><span class="p">(</span><span class="n">stopwords</span><span class="o">.</span><span class="n">words</span><span class="p">(</span><span class="s1">'english'</span><span class="p">))</span>
+<span class="n">punctuations</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="n">string</span><span class="o">.</span><span class="n">punctuation</span><span class="p">)</span>
+<span class="n">stops</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">punctuations</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">get_simple_pos</span><span class="p">(</span><span class="n">tag</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">tag</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">'J'</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">wordnet</span><span class="o">.</span><span class="n">ADJ</span>
+    <span class="k">if</span> <span class="n">tag</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">'N'</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">wordnet</span><span class="o">.</span><span class="n">NOUN</span>
+    <span class="k">if</span> <span class="n">tag</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">'V'</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">wordnet</span><span class="o">.</span><span class="n">VERB</span>
+    <span class="k">if</span> <span class="n">tag</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">'R'</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">wordnet</span><span class="o">.</span><span class="n">ADV</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">wordnet</span><span class="o">.</span><span class="n">NOUN</span>
+<span class="k">def</span> <span class="nf">clean_review</span><span class="p">(</span><span class="n">words</span><span class="p">):</span>
+    <span class="n">clean_words</span><span class="o">=</span><span class="p">[]</span>
+    <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">words</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">word</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">stops</span><span class="p">:</span>
+            <span class="n">pos</span><span class="o">=</span><span class="n">pos_tag</span><span class="p">([</span><span class="n">word</span><span class="p">])[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
+            <span class="n">clean_word</span><span class="o">=</span><span class="n">lemmatizer</span><span class="o">.</span><span class="n">lemmatize</span><span class="p">(</span><span class="n">word</span><span class="p">,</span> <span class="n">pos</span><span class="o">=</span><span class="n">get_simple_pos</span><span class="p">(</span><span class="n">pos</span><span class="p">))</span>
+            <span class="n">clean_words</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">clean_word</span><span class="o">.</span><span class="n">lower</span><span class="p">())</span>
+    <span class="k">return</span> <span class="n">clean_words</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">docs</span><span class="o">=</span><span class="p">[(</span><span class="n">clean_review</span><span class="p">(</span><span class="n">document</span><span class="p">),</span> <span class="n">category</span><span class="p">)</span> <span class="k">for</span> <span class="n">document</span><span class="p">,</span> <span class="n">category</span> <span class="ow">in</span> <span class="n">documents</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">all_words</span><span class="o">=</span><span class="p">[]</span>
+<span class="k">for</span> <span class="n">tup</span> <span class="ow">in</span> <span class="n">docs</span><span class="p">:</span>
+    <span class="n">all_words</span><span class="o">+=</span><span class="n">tup</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">nltk</span>
+<span class="n">freq</span><span class="o">=</span><span class="n">nltk</span><span class="o">.</span><span class="n">FreqDist</span><span class="p">(</span><span class="n">all_words</span><span class="p">)</span>
+<span class="n">common</span><span class="o">=</span><span class="n">freq</span><span class="o">.</span><span class="n">most_common</span><span class="p">(</span><span class="mi">3000</span><span class="p">)</span>
+<span class="n">features</span><span class="o">=</span><span class="p">[</span><span class="n">i</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">common</span><span class="p">]</span>
+<span class="n">features</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>['film',
+ 'movie',
+ 'one',
+ 'make',
+ 'like',
+ 'character',
+ 'get',
+ 'see',
+ 'go',
+ 'time',
+ 'well',
+ 'scene',
+ 'even',
+ 'good',
+ 'story',
+ 'take',
+ 'would',
+ 'much',
+ 'come',
+ 'also',
+ 'bad',
+ 'give',
+ 'life',
+ 'two',
+ 'look',
+ 'way',
+ 'know',
+ 'seem',
+ 'first',
+ 'end',
+ '--',
+ 'year',
+ 'work',
+ 'thing',
+ 'plot',
+ 'say',
+ 'play',
+ 'really',
+ 'little',
+ 'show',
+ 'people',
+ 'could',
+ 'man',
+ 'star',
+ 'love',
+ 'never',
+ 'try',
+ 'great',
+ 'director',
+ 'best',
+ 'performance',
+ 'new',
+ 'big',
+ 'many',
+ 'action',
+ 'actor',
+ 'want',
+ 'u',
+ 'watch',
+ 'find',
+ 'think',
+ 'role',
+ 'act',
+ 'another',
+ 'back',
+ 'audience',
+ 'something',
+ 'world',
+ 'turn',
+ 'still',
+ 'day',
+ 'old',
+ 'set',
+ 'however',
+ 'use',
+ 'every',
+ 'begin',
+ 'though',
+ 'guy',
+ 'part',
+ 'comedy',
+ 'feel',
+ 'cast',
+ 'real',
+ 'enough',
+ 'around',
+ 'point',
+ 'interest',
+ 'last',
+ 'run',
+ 'write',
+ 'young',
+ 'may',
+ 'fact',
+ 'name',
+ 'long',
+ 'funny',
+ 'script',
+ 'actually',
+ 'right',
+ 'minute',
+ 'woman',
+ 'effect',
+ 'almost',
+ 'lot',
+ 'friend',
+ 'nothing',
+ 'john',
+ 'place',
+ 'although',
+ 'screen',
+ 'played',
+ 'ever',
+ 'start',
+ 'moment',
+ 'since',
+ 'line',
+ 'call',
+ 'become',
+ 'tell',
+ 'lead',
+ 'kill',
+ 'original',
+ 'help',
+ 'high',
+ 'family',
+ 'without',
+ 'three',
+ 'problem',
+ 'girl',
+ 'picture',
+ 'least',
+ 'quite',
+ 'sequence',
+ 'need',
+ 'away',
+ 'course',
+ 'laugh',
+ 'might',
+ 'far',
+ 'fall',
+ 'rather',
+ 'must',
+ 'anything',
+ 'put',
+ 'bit',
+ 'include',
+ 'child',
+ 'job',
+ 'american',
+ 'yet',
+ 'keep',
+ 'follow',
+ 'wife',
+ 'alien',
+ 'kind',
+ 'hour',
+ 'hard',
+ 'always',
+ 'reason',
+ 'fun',
+ 'head',
+ 'feature',
+ 'special',
+ 'attempt',
+ 'home',
+ 'hand',
+ 'hollywood',
+ 'human',
+ 'instead',
+ 'lose',
+ 'sense',
+ 'move',
+ 'war',
+ 'mind',
+ 'series',
+ 'face',
+ 'black',
+ 'night',
+ 'let',
+ 'half',
+ 'probably',
+ 'kid',
+ 'shot',
+ 'along',
+ 'men',
+ 'everything',
+ 'idea',
+ 'pretty',
+ 'becomes',
+ 'direct',
+ 'dialogue',
+ 'sure',
+ 'together',
+ 'force',
+ 'money',
+ 'involve',
+ 'believe',
+ 'talk',
+ 'father',
+ 'save',
+ 'whole',
+ 'fight',
+ 'horror',
+ 'death',
+ 'appear',
+ 'boy',
+ 'city',
+ 'everyone',
+ 'question',
+ 'sex',
+ 'music',
+ 'less',
+ 'do',
+ 'release',
+ 'second',
+ 'couple',
+ 'thought',
+ 'brother',
+ 'eye',
+ 'perhaps',
+ 'small',
+ 'case',
+ 'next',
+ 'especially',
+ 'expect',
+ 'happen',
+ 'meet',
+ 'relationship',
+ '10',
+ 'word',
+ 'mother',
+ 'base',
+ 'create',
+ 'completely',
+ 'care',
+ 'rest',
+ '2',
+ 'whose',
+ 'evil',
+ 'writer',
+ 'change',
+ 'james',
+ 'different',
+ 'sound',
+ 'simply',
+ 'mean',
+ 'book',
+ 'mr',
+ 'anyone',
+ 'joke',
+ 'school',
+ 'michael',
+ 'late',
+ 'review',
+ 'several',
+ 'top',
+ 'dead',
+ 'humor',
+ 'suppose',
+ 'live',
+ 'lack',
+ 'left',
+ 'add',
+ 'true',
+ 'matter',
+ 'town',
+ 'entire',
+ 'hit',
+ 'group',
+ 'found',
+ 'fan',
+ 'comic',
+ 'soon',
+ 'house',
+ 'someone',
+ 'main',
+ 'entertain',
+ 'tv',
+ 'game',
+ 'side',
+ 'leave',
+ 'wrong',
+ 'present',
+ 'wonder',
+ 'david',
+ 'else',
+ 'either',
+ 'element',
+ 'full',
+ 'final',
+ 'stop',
+ 'unfortunately',
+ 'later',
+ 'viewer',
+ 'murder',
+ 'car',
+ 'open',
+ 'style',
+ 'enjoy',
+ 'camera',
+ 'support',
+ 'return',
+ 'credit',
+ 'robert',
+ 'often',
+ 'provide',
+ 'power',
+ 'die',
+ 'deal',
+ 'son',
+ 'hero',
+ 'behind',
+ 'person',
+ 'certainly',
+ 'title',
+ 'result',
+ 'team',
+ 'scream',
+ 'despite',
+ 'perfect',
+ 'finally',
+ 'video',
+ 'order',
+ 'nice',
+ 'killer',
+ 'stand',
+ 'note',
+ 'miss',
+ 'maybe',
+ 'piece',
+ 'summer',
+ 'past',
+ 'able',
+ 'fine',
+ 'view',
+ 'consider',
+ 'classic',
+ 'strong',
+ 'example',
+ 'voice',
+ 'daughter',
+ 'hope',
+ 'situation',
+ 'theater',
+ 'production',
+ 'sort',
+ 'thriller',
+ 'close',
+ 'event',
+ 'dog',
+ 'white',
+ 'kevin',
+ 'talent',
+ 'break',
+ 'drama',
+ 'joe',
+ 'body',
+ 'worth',
+ 'earth',
+ 'heart',
+ 'bring',
+ 'short',
+ 'cut',
+ 'version',
+ 'level',
+ 'self',
+ 'dark',
+ 'room',
+ 'dream',
+ 'cop',
+ 'early',
+ 'opening',
+ 'nearly',
+ 'upon',
+ 'screenplay',
+ 'light',
+ 'experience',
+ 'ask',
+ 'violence',
+ 'major',
+ 'art',
+ 'age',
+ 'throughout',
+ 'figure',
+ 'ship',
+ 'direction',
+ 'beautiful',
+ 'computer',
+ 'jack',
+ 'exactly',
+ 'realize',
+ 'obvious',
+ 'state',
+ 'genre',
+ 'disney',
+ 'already',
+ 'plan',
+ 'others',
+ 'number',
+ 'fill',
+ 'guess',
+ 'wait',
+ 'space',
+ 'waste',
+ 'five',
+ 'deep',
+ 'simple',
+ 'offer',
+ 'form',
+ 'four',
+ 'jackie',
+ 'surprise',
+ 'twist',
+ 'learn',
+ 'king',
+ 'walk',
+ 'touch',
+ 'pull',
+ 'chase',
+ 'career',
+ 'flick',
+ 'sometimes',
+ 'rise',
+ 'oscar',
+ 'novel',
+ 'member',
+ 'hold',
+ 'truly',
+ 'filmmaker',
+ 'battle',
+ '1',
+ 'tom',
+ 'boring',
+ 'husband',
+ 'easy',
+ 'pace',
+ 'drug',
+ 'lee',
+ 'god',
+ 'peter',
+ 'sequel',
+ 'type',
+ 'york',
+ 'planet',
+ 'fiction',
+ 'charm',
+ 'win',
+ 'carry',
+ 'parent',
+ 'happens',
+ 'yes',
+ 'saw',
+ 'song',
+ 'score',
+ 'remember',
+ 'tale',
+ 'quickly',
+ 'stupid',
+ 'romantic',
+ 'possible',
+ 'gun',
+ 'villain',
+ 'chance',
+ 'material',
+ 'manages',
+ 'extremely',
+ 'mostly',
+ 'de',
+ 'future',
+ 'attention',
+ 'project',
+ 'single',
+ 'particularly',
+ 'escape',
+ 'focus',
+ 'paul',
+ 'quality',
+ 'mention',
+ 'police',
+ 'none',
+ 'co',
+ 'van',
+ 'stay',
+ 'eventually',
+ 'decide',
+ 'crime',
+ 'wild',
+ 'hell',
+ 'emotional',
+ 'science',
+ 'image',
+ 'smith',
+ 'shoot',
+ 'large',
+ 'sit',
+ 'dr',
+ 'girlfriend',
+ 'pay',
+ 'living',
+ 'detail',
+ 'steal',
+ 'rock',
+ 'drive',
+ 'george',
+ 'success',
+ 'low',
+ 'actress',
+ 'alone',
+ 'theme',
+ 'obviously',
+ 'cover',
+ 'television',
+ 'million',
+ 'within',
+ 'usually',
+ 'water',
+ 'among',
+ 'cause',
+ 'premise',
+ 'middle',
+ 'read',
+ 'secret',
+ 'aspect',
+ 'complete',
+ '3',
+ 'understand',
+ 'flaw',
+ 'across',
+ 'subject',
+ 'chris',
+ 'except',
+ 'mission',
+ 'poor',
+ 'history',
+ 'slow',
+ 'reality',
+ 'local',
+ 'wonderful',
+ 'whether',
+ 'serious',
+ 'amaze',
+ 'oh',
+ 'agent',
+ 'crew',
+ 'law',
+ 'important',
+ 'effort',
+ 'motion',
+ 'happy',
+ 'mark',
+ 'explain',
+ 'impressive',
+ 'studio',
+ 'near',
+ 'america',
+ 'told',
+ 'stuff',
+ 'office',
+ 'entertainment',
+ 'street',
+ 'cool',
+ 'robin',
+ 'basically',
+ 'recent',
+ 'produce',
+ 'easily',
+ 'ryan',
+ 'apparently',
+ 'message',
+ 'vampire',
+ 'wish',
+ 'williams',
+ 'screenwriter',
+ 'party',
+ 'mystery',
+ 'attack',
+ 'somehow',
+ 'blood',
+ 'william',
+ 'fear',
+ 'bill',
+ 'lie',
+ 'fast',
+ 'jones',
+ 'control',
+ 'doubt',
+ 'fire',
+ 'batman',
+ 'brings',
+ 'suspense',
+ 'straight',
+ 'producer',
+ 'hilarious',
+ 'difficult',
+ 'red',
+ 'ben',
+ 'ago',
+ 'appeal',
+ 'certain',
+ 'country',
+ 'romance',
+ 'approach',
+ 'popular',
+ 'company',
+ 'presence',
+ 'business',
+ 'due',
+ 'effective',
+ 'critic',
+ 'confuse',
+ 'adult',
+ 'fly',
+ 'throw',
+ 'answer',
+ 'annoy',
+ 'smart',
+ 'teen',
+ 'fail',
+ 'trouble',
+ 'third',
+ 'dramatic',
+ 'general',
+ 'budget',
+ 'class',
+ 'sexual',
+ 'date',
+ 'discover',
+ 'clear',
+ 'speak',
+ 'rich',
+ 'surprisingly',
+ 'anyway',
+ 'us',
+ 'personal',
+ '4',
+ 'emotion',
+ 'decides',
+ 'share',
+ 'cross',
+ 'somewhat',
+ 'rat',
+ 'harry',
+ 'ability',
+ 'choice',
+ 'successful',
+ 'prison',
+ 'absolutely',
+ 'sister',
+ 'cinema',
+ 'former',
+ 'excite',
+ 'jim',
+ 'previous',
+ 'similar',
+ 'allow',
+ 'strange',
+ 'student',
+ 'excellent',
+ 'familiar',
+ 'leaf',
+ 'intelligent',
+ 'rule',
+ 'bob',
+ 'predictable',
+ 'dance',
+ 'towards',
+ 'giant',
+ 'powerful',
+ 'beyond',
+ 'b',
+ 'shock',
+ 'box',
+ 'animate',
+ 'visual',
+ 'r',
+ 'victim',
+ 'trailer',
+ 'nature',
+ 'la',
+ 'sam',
+ 'deliver',
+ 'tone',
+ 'clever',
+ 'blue',
+ 'catch',
+ 'definitely',
+ 'usual',
+ 'martin',
+ 'murphy',
+ 'master',
+ 'felt',
+ 'brilliant',
+ 'scary',
+ 'wedding',
+ 'suspect',
+ 'manage',
+ 'stone',
+ 'capture',
+ 'musical',
+ 'solid',
+ 'reveal',
+ 'appearance',
+ 'bunch',
+ 'mess',
+ 'rating',
+ 'favorite',
+ 'pick',
+ 'land',
+ 'travel',
+ 'handle',
+ 'reach',
+ 'free',
+ 'grow',
+ 'potential',
+ 'seriously',
+ 'treat',
+ 'track',
+ 'wear',
+ 'huge',
+ 'hunt',
+ 'search',
+ 'continue',
+ 'week',
+ 'amount',
+ 'married',
+ 'sweet',
+ 'unlike',
+ 'l',
+ 'perfectly',
+ 'join',
+ 'issue',
+ 'non',
+ 'park',
+ 'ex',
+ 'hate',
+ 'bond',
+ 'adventure',
+ 'enjoyable',
+ 'scott',
+ 'strike',
+ 'e',
+ 'decent',
+ 'likely',
+ 'ten',
+ 'immediately',
+ 'frank',
+ 'heard',
+ 'truman',
+ 'depth',
+ 'cameron',
+ 'private',
+ 'door',
+ 'monster',
+ 'bruce',
+ 'overall',
+ 'carter',
+ 'inside',
+ 'fails',
+ 'impossible',
+ 'richard',
+ 'cold',
+ 'race',
+ 'truth',
+ 'toy',
+ 'trek',
+ 'merely',
+ 'particular',
+ 'step',
+ 'purpose',
+ 'air',
+ 'prove',
+ 'color',
+ 'gag',
+ 'mar',
+ 'sign',
+ 'struggle',
+ 'sight',
+ 'neither',
+ 'design',
+ 'drop',
+ 'ultimately',
+ 'modern',
+ 'thrill',
+ 'personality',
+ 'list',
+ 'brought',
+ 'spirit',
+ 'pop',
+ 'club',
+ 'tim',
+ 'cliche',
+ 'term',
+ 'otherwise',
+ 'society',
+ '5',
+ 'wood',
+ 'allen',
+ 'key',
+ 'dumb',
+ 'player',
+ 'fashion',
+ 'government',
+ 'serve',
+ 'talented',
+ 'west',
+ 'succeed',
+ 'opportunity',
+ 'amuse',
+ 'various',
+ 'political',
+ 'mouth',
+ 'angel',
+ 'army',
+ 'soundtrack',
+ 'development',
+ 'sell',
+ 'female',
+ 'raise',
+ 'english',
+ 'silly',
+ 'haunt',
+ 'detective',
+ 'slightly',
+ 'steve',
+ 'hank',
+ 'train',
+ 'month',
+ 'introduce',
+ 'roll',
+ 'kiss',
+ 'spend',
+ 'tension',
+ 'lover',
+ 'require',
+ 'imagine',
+ 'compare',
+ 'eddie',
+ 'grace',
+ 'foot',
+ 'disaster',
+ 'baby',
+ 'today',
+ 'creature',
+ 'earlier',
+ 'chan',
+ '90',
+ 'six',
+ 'hill',
+ 'memorable',
+ 'heavy',
+ 'award',
+ 'max',
+ 'cannot',
+ 'background',
+ 'rescue',
+ 'episode',
+ 'ground',
+ 'totally',
+ 'notice',
+ 'leader',
+ 'soldier',
+ 'respect',
+ 'front',
+ 'woody',
+ 'fi',
+ 'ape',
+ 'engage',
+ 'machine',
+ 'animation',
+ 'arm',
+ 'hop',
+ 'sci',
+ 'edit',
+ 'simon',
+ 'doctor',
+ 'costume',
+ 'ride',
+ 'mary',
+ 'terrible',
+ 'constantly',
+ 'steven',
+ 'entirely',
+ 'actual',
+ 'impact',
+ 'british',
+ 'queen',
+ 'minor',
+ 'suffer',
+ 'promise',
+ 'convincing',
+ 'standard',
+ 'fantasy',
+ 'brief',
+ 'menace',
+ 'animal',
+ 'atmosphere',
+ 'nick',
+ 'quick',
+ 'cinematography',
+ 'ridiculous',
+ 'officer',
+ 'typical',
+ 'rush',
+ 'island',
+ 'spent',
+ '8',
+ 'violent',
+ 'double',
+ 'partner',
+ 'subtle',
+ 'trip',
+ 'bug',
+ 'adam',
+ 'road',
+ 'building',
+ 'grant',
+ 'cameo',
+ 'fairly',
+ 'seven',
+ 'dollar',
+ 'inspire',
+ 'concept',
+ 'cheap',
+ 'dress',
+ 'beauty',
+ 'suddenly',
+ 'willis',
+ 'whatever',
+ 'bore',
+ 'remain',
+ 'highly',
+ 'store',
+ 'complex',
+ 'college',
+ 'president',
+ 'dull',
+ 'flat',
+ 'indeed',
+ 'pair',
+ 'suit',
+ 'recommend',
+ 'ii',
+ 'basic',
+ 'mike',
+ 'cute',
+ 'godzilla',
+ 'outside',
+ 'brain',
+ 'kick',
+ 'frame',
+ 'recently',
+ 'plenty',
+ 'titanic',
+ 'cinematic',
+ 'meanwhile',
+ 'climax',
+ 'clearly',
+ 'x',
+ 'hear',
+ 'intrigue',
+ 'awful',
+ 'buddy',
+ 'longer',
+ 'prof',
+ 'forget',
+ 'tough',
+ 'common',
+ 'chemistry',
+ 'century',
+ 'sean',
+ 'period',
+ 'realistic',
+ 'believable',
+ 'admit',
+ 'protagonist',
+ 'conclusion',
+ 'scientist',
+ 'lawyer',
+ 'language',
+ 'possibly',
+ 'encounter',
+ 'band',
+ 'male',
+ 'french',
+ 'aside',
+ 'twenty',
+ 'sing',
+ 'camp',
+ 'hang',
+ 'carrey',
+ 'brown',
+ 'jerry',
+ 'thin',
+ 'somewhere',
+ 'slowly',
+ 'center',
+ 'hot',
+ 'witch',
+ 'system',
+ ...]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">training_documents</span><span class="o">=</span><span class="n">docs</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">1500</span><span class="p">]</span>
+<span class="n">testing_documents</span><span class="o">=</span><span class="n">docs</span><span class="p">[</span><span class="mi">1500</span><span class="p">:]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">get_feature_dict</span><span class="p">(</span><span class="n">words</span><span class="p">):</span>
+    <span class="n">current_features</span><span class="o">=</span><span class="p">{}</span>
+    <span class="n">words_set</span><span class="o">=</span><span class="nb">set</span><span class="p">(</span><span class="n">words</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">features</span><span class="p">:</span>
+        <span class="n">current_features</span><span class="p">[</span><span class="n">w</span><span class="p">]</span><span class="o">=</span><span class="n">w</span> <span class="ow">in</span> <span class="n">words_set</span>
+    <span class="k">return</span> <span class="n">current_features</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">training_data</span><span class="o">=</span><span class="p">[(</span><span class="n">get_feature_dict</span><span class="p">(</span><span class="n">doc</span><span class="p">),</span> <span class="n">category</span><span class="p">)</span><span class="k">for</span> <span class="n">doc</span><span class="p">,</span> <span class="n">category</span> <span class="ow">in</span> <span class="n">training_documents</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">testing_data</span><span class="o">=</span><span class="p">[(</span><span class="n">get_feature_dict</span><span class="p">(</span><span class="n">doc</span><span class="p">),</span> <span class="n">category</span><span class="p">)</span><span class="k">for</span> <span class="n">doc</span><span class="p">,</span> <span class="n">category</span> <span class="ow">in</span> <span class="n">testing_documents</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">nltk</span> <span class="kn">import</span> <span class="n">NaiveBayesClassifier</span>
+<span class="n">clf</span><span class="o">=</span><span class="n">NaiveBayesClassifier</span><span class="o">.</span><span class="n">train</span><span class="p">(</span><span class="n">training_data</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">nltk</span><span class="o">.</span><span class="n">classify</span><span class="o">.</span><span class="n">accuracy</span><span class="p">(</span><span class="n">clf</span><span class="p">,</span> <span class="n">testing_data</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>0.834</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">clf</span><span class="o">.</span><span class="n">show_most_informative_features</span><span class="p">(</span><span class="mi">500</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Most Informative Features
+             outstanding = True              pos : neg    =     10.3 : 1.0
+              uninspired = True              neg : pos    =      9.9 : 1.0
+                  seagal = True              neg : pos    =      8.7 : 1.0
+               ludicrous = True              neg : pos    =      8.2 : 1.0
+               stupidity = True              neg : pos    =      7.9 : 1.0
+            breathtaking = True              pos : neg    =      6.9 : 1.0
+                 idiotic = True              neg : pos    =      6.7 : 1.0
+                  castle = True              pos : neg    =      6.7 : 1.0
+                  bottle = True              neg : pos    =      6.5 : 1.0
+                   damon = True              pos : neg    =      6.4 : 1.0
+                   mulan = True              pos : neg    =      6.0 : 1.0
+                   poker = True              pos : neg    =      6.0 : 1.0
+                  turkey = True              neg : pos    =      5.9 : 1.0
+             wonderfully = True              pos : neg    =      5.9 : 1.0
+                    lame = True              neg : pos    =      5.9 : 1.0
+                   awful = True              neg : pos    =      5.8 : 1.0
+                     sat = True              neg : pos    =      5.5 : 1.0
+                  belief = True              pos : neg    =      5.5 : 1.0
+                  poorly = True              neg : pos    =      5.4 : 1.0
+                   anger = True              pos : neg    =      5.3 : 1.0
+                  welles = True              neg : pos    =      5.2 : 1.0
+                religion = True              pos : neg    =      5.0 : 1.0
+                   inane = True              neg : pos    =      4.9 : 1.0
+                   waste = True              neg : pos    =      4.8 : 1.0
+                 emperor = True              pos : neg    =      4.8 : 1.0
+                     era = True              pos : neg    =      4.8 : 1.0
+                  stupid = True              neg : pos    =      4.7 : 1.0
+                  random = True              neg : pos    =      4.7 : 1.0
+                   idiot = True              neg : pos    =      4.7 : 1.0
+                  alicia = True              neg : pos    =      4.6 : 1.0
+              ridiculous = True              neg : pos    =      4.6 : 1.0
+               fantastic = True              pos : neg    =      4.6 : 1.0
+                 chuckle = True              neg : pos    =      4.5 : 1.0
+              whatsoever = True              neg : pos    =      4.5 : 1.0
+             beautifully = True              pos : neg    =      4.5 : 1.0
+                lifeless = True              neg : pos    =      4.4 : 1.0
+                   shine = True              pos : neg    =      4.4 : 1.0
+                 delight = True              pos : neg    =      4.4 : 1.0
+                  affect = True              pos : neg    =      4.3 : 1.0
+                 unfunny = True              neg : pos    =      4.3 : 1.0
+               pointless = True              neg : pos    =      4.3 : 1.0
+               painfully = True              neg : pos    =      4.3 : 1.0
+                ordinary = True              pos : neg    =      4.2 : 1.0
+                    dull = True              neg : pos    =      4.2 : 1.0
+             traditional = True              pos : neg    =      4.1 : 1.0
+                 garbage = True              neg : pos    =      4.1 : 1.0
+                flawless = True              pos : neg    =      4.1 : 1.0
+                   bland = True              neg : pos    =      4.1 : 1.0
+                 freddie = True              neg : pos    =      4.0 : 1.0
+               memorable = True              pos : neg    =      4.0 : 1.0
+                   jolie = True              neg : pos    =      4.0 : 1.0
+                    zeta = True              neg : pos    =      4.0 : 1.0
+                  martha = True              neg : pos    =      4.0 : 1.0
+                   jesus = True              pos : neg    =      3.9 : 1.0
+                  allows = True              pos : neg    =      3.8 : 1.0
+                  sinise = True              neg : pos    =      3.7 : 1.0
+                  prinze = True              neg : pos    =      3.7 : 1.0
+                  insult = True              neg : pos    =      3.7 : 1.0
+               ambitious = True              pos : neg    =      3.7 : 1.0
+                  superb = True              pos : neg    =      3.6 : 1.0
+                    rick = True              neg : pos    =      3.6 : 1.0
+                  german = True              pos : neg    =      3.6 : 1.0
+               embarrass = True              neg : pos    =      3.6 : 1.0
+                 balance = True              pos : neg    =      3.6 : 1.0
+                   badly = True              neg : pos    =      3.5 : 1.0
+                terrible = True              neg : pos    =      3.5 : 1.0
+                   felix = True              pos : neg    =      3.5 : 1.0
+                   flynt = True              pos : neg    =      3.5 : 1.0
+                     gas = True              pos : neg    =      3.5 : 1.0
+                   ideal = True              pos : neg    =      3.5 : 1.0
+            respectively = True              pos : neg    =      3.4 : 1.0
+               initially = True              pos : neg    =      3.4 : 1.0
+                terrific = True              pos : neg    =      3.4 : 1.0
+               companion = True              pos : neg    =      3.4 : 1.0
+                 comfort = True              pos : neg    =      3.4 : 1.0
+                anywhere = True              neg : pos    =      3.4 : 1.0
+                    grip = True              pos : neg    =      3.4 : 1.0
+               excellent = True              pos : neg    =      3.4 : 1.0
+               affection = True              pos : neg    =      3.3 : 1.0
+              delightful = True              pos : neg    =      3.3 : 1.0
+             potentially = True              neg : pos    =      3.3 : 1.0
+                    anna = True              pos : neg    =      3.3 : 1.0
+                  parker = True              pos : neg    =      3.3 : 1.0
+                scorsese = True              pos : neg    =      3.3 : 1.0
+               promising = True              neg : pos    =      3.2 : 1.0
+                   crowe = True              pos : neg    =      3.2 : 1.0
+                  harris = True              pos : neg    =      3.2 : 1.0
+                  boring = True              neg : pos    =      3.2 : 1.0
+                    stun = True              pos : neg    =      3.2 : 1.0
+                    mess = True              neg : pos    =      3.2 : 1.0
+                politics = True              pos : neg    =      3.2 : 1.0
+          schwarzenegger = True              neg : pos    =      3.1 : 1.0
+                remotely = True              neg : pos    =      3.1 : 1.0
+                  bother = True              neg : pos    =      3.1 : 1.0
+                     obi = True              pos : neg    =      3.1 : 1.0
+                   darth = True              pos : neg    =      3.1 : 1.0
+               gradually = True              pos : neg    =      3.1 : 1.0
+                portrait = True              pos : neg    =      3.1 : 1.0
+                 natural = True              pos : neg    =      3.1 : 1.0
+                  lonely = True              pos : neg    =      3.1 : 1.0
+               perfectly = True              pos : neg    =      3.1 : 1.0
+                  subtle = True              pos : neg    =      3.1 : 1.0
+              braveheart = True              pos : neg    =      3.1 : 1.0
+                   shall = True              pos : neg    =      3.1 : 1.0
+                  mature = True              pos : neg    =      3.1 : 1.0
+                    dumb = True              neg : pos    =      3.0 : 1.0
+           uninteresting = True              neg : pos    =      3.0 : 1.0
+                    noir = True              pos : neg    =      3.0 : 1.0
+                   snake = True              neg : pos    =      3.0 : 1.0
+                   inept = True              neg : pos    =      3.0 : 1.0
+           appropriately = True              pos : neg    =      3.0 : 1.0
+                detailed = True              pos : neg    =      3.0 : 1.0
+             consequence = True              pos : neg    =      3.0 : 1.0
+                   clich = True              neg : pos    =      3.0 : 1.0
+                involves = True              neg : pos    =      3.0 : 1.0
+               laughable = True              neg : pos    =      3.0 : 1.0
+               innocence = True              pos : neg    =      3.0 : 1.0
+                 italian = True              pos : neg    =      3.0 : 1.0
+                   tribe = True              neg : pos    =      2.9 : 1.0
+                   shark = True              neg : pos    =      2.9 : 1.0
+                    rare = True              pos : neg    =      2.9 : 1.0
+               offensive = True              neg : pos    =      2.9 : 1.0
+                 refresh = True              pos : neg    =      2.9 : 1.0
+                 freedom = True              pos : neg    =      2.9 : 1.0
+                 luckily = True              pos : neg    =      2.9 : 1.0
+                  dillon = True              pos : neg    =      2.9 : 1.0
+                  tucker = True              pos : neg    =      2.9 : 1.0
+                  anakin = True              pos : neg    =      2.9 : 1.0
+                   alice = True              pos : neg    =      2.9 : 1.0
+              philosophy = True              pos : neg    =      2.9 : 1.0
+                  foster = True              pos : neg    =      2.9 : 1.0
+                  angela = True              pos : neg    =      2.9 : 1.0
+                 unusual = True              pos : neg    =      2.9 : 1.0
+                   loyal = True              pos : neg    =      2.9 : 1.0
+              nomination = True              pos : neg    =      2.9 : 1.0
+                   slide = True              pos : neg    =      2.9 : 1.0
+                 pattern = True              pos : neg    =      2.9 : 1.0
+                  sidney = True              pos : neg    =      2.9 : 1.0
+                   fargo = True              pos : neg    =      2.9 : 1.0
+                      li = True              neg : pos    =      2.8 : 1.0
+                   patch = True              neg : pos    =      2.8 : 1.0
+                   chick = True              neg : pos    =      2.8 : 1.0
+                 frankly = True              neg : pos    =      2.8 : 1.0
+               portrayal = True              pos : neg    =      2.8 : 1.0
+                 tedious = True              neg : pos    =      2.8 : 1.0
+              friendship = True              pos : neg    =      2.8 : 1.0
+                   damme = True              neg : pos    =      2.8 : 1.0
+                  depict = True              pos : neg    =      2.8 : 1.0
+                 citizen = True              pos : neg    =      2.8 : 1.0
+                 triumph = True              pos : neg    =      2.8 : 1.0
+                terribly = True              neg : pos    =      2.7 : 1.0
+                contrast = True              pos : neg    =      2.7 : 1.0
+                    crap = True              neg : pos    =      2.7 : 1.0
+                   dread = True              pos : neg    =      2.7 : 1.0
+                   antic = True              neg : pos    =      2.7 : 1.0
+                   clone = True              neg : pos    =      2.7 : 1.0
+                 painful = True              neg : pos    =      2.7 : 1.0
+                training = True              pos : neg    =      2.7 : 1.0
+                    niro = True              pos : neg    =      2.7 : 1.0
+               happiness = True              pos : neg    =      2.7 : 1.0
+                 justice = True              pos : neg    =      2.7 : 1.0
+                subtitle = True              pos : neg    =      2.7 : 1.0
+                banderas = True              neg : pos    =      2.7 : 1.0
+              sutherland = True              neg : pos    =      2.7 : 1.0
+                  golden = True              pos : neg    =      2.7 : 1.0
+                  france = True              pos : neg    =      2.7 : 1.0
+                     rip = True              neg : pos    =      2.7 : 1.0
+                   randy = True              neg : pos    =      2.7 : 1.0
+               inventive = True              pos : neg    =      2.7 : 1.0
+                  lethal = True              neg : pos    =      2.7 : 1.0
+                    yell = True              neg : pos    =      2.6 : 1.0
+                    jedi = True              pos : neg    =      2.6 : 1.0
+                    liam = True              pos : neg    =      2.6 : 1.0
+                    mass = True              pos : neg    =      2.6 : 1.0
+                     gem = True              pos : neg    =      2.6 : 1.0
+                  normal = True              pos : neg    =      2.6 : 1.0
+                 overall = True              pos : neg    =      2.6 : 1.0
+               effective = True              pos : neg    =      2.6 : 1.0
+                    rent = True              neg : pos    =      2.6 : 1.0
+                designer = True              pos : neg    =      2.6 : 1.0
+                   drunk = True              neg : pos    =      2.6 : 1.0
+                    greg = True              neg : pos    =      2.6 : 1.0
+                 massive = True              neg : pos    =      2.6 : 1.0
+                nonsense = True              neg : pos    =      2.6 : 1.0
+                    porn = True              neg : pos    =      2.6 : 1.0
+                 satisfy = True              pos : neg    =      2.6 : 1.0
+                dicaprio = True              pos : neg    =      2.6 : 1.0
+                     ace = True              neg : pos    =      2.6 : 1.0
+                 sandler = True              neg : pos    =      2.6 : 1.0
+               fascinate = True              pos : neg    =      2.6 : 1.0
+               influence = True              pos : neg    =      2.6 : 1.0
+                    epic = True              pos : neg    =      2.6 : 1.0
+                  regard = True              pos : neg    =      2.5 : 1.0
+           extraordinary = True              pos : neg    =      2.5 : 1.0
+                   screw = True              neg : pos    =      2.5 : 1.0
+                   upset = True              pos : neg    =      2.5 : 1.0
+                creation = True              pos : neg    =      2.5 : 1.0
+                 trilogy = True              pos : neg    =      2.5 : 1.0
+                midnight = True              pos : neg    =      2.5 : 1.0
+                 stiller = True              pos : neg    =      2.5 : 1.0
+                  highly = True              pos : neg    =      2.5 : 1.0
+                    pulp = True              pos : neg    =      2.5 : 1.0
+                   tyler = True              neg : pos    =      2.5 : 1.0
+                  admire = True              pos : neg    =      2.5 : 1.0
+               intensity = True              pos : neg    =      2.5 : 1.0
+                   fails = True              neg : pos    =      2.5 : 1.0
+               portrayed = True              pos : neg    =      2.5 : 1.0
+                somebody = True              neg : pos    =      2.5 : 1.0
+                    suck = True              neg : pos    =      2.5 : 1.0
+               malkovich = True              pos : neg    =      2.5 : 1.0
+                strength = True              pos : neg    =      2.5 : 1.0
+                 briefly = True              pos : neg    =      2.5 : 1.0
+                   upper = True              pos : neg    =      2.5 : 1.0
+                pleasant = True              pos : neg    =      2.5 : 1.0
+                  endear = True              pos : neg    =      2.5 : 1.0
+                saturday = True              neg : pos    =      2.4 : 1.0
+                    zero = True              neg : pos    =      2.4 : 1.0
+                    bury = True              neg : pos    =      2.4 : 1.0
+                  jungle = True              neg : pos    =      2.4 : 1.0
+                anaconda = True              neg : pos    =      2.4 : 1.0
+                      54 = True              neg : pos    =      2.4 : 1.0
+                   stalk = True              neg : pos    =      2.4 : 1.0
+               political = True              pos : neg    =      2.4 : 1.0
+              remarkable = True              pos : neg    =      2.4 : 1.0
+               schindler = True              pos : neg    =      2.4 : 1.0
+                 suppose = True              neg : pos    =      2.4 : 1.0
+                   sadly = True              neg : pos    =      2.4 : 1.0
+                 perfect = True              pos : neg    =      2.4 : 1.0
+                    andy = True              pos : neg    =      2.4 : 1.0
+                   uncle = True              pos : neg    =      2.4 : 1.0
+                 october = True              pos : neg    =      2.4 : 1.0
+                    mine = True              neg : pos    =      2.4 : 1.0
+                deserves = True              pos : neg    =      2.4 : 1.0
+                  famous = True              pos : neg    =      2.4 : 1.0
+              phenomenon = True              pos : neg    =      2.4 : 1.0
+                likeable = True              pos : neg    =      2.4 : 1.0
+                    snow = True              pos : neg    =      2.4 : 1.0
+                     eve = True              neg : pos    =      2.4 : 1.0
+                 acclaim = True              pos : neg    =      2.4 : 1.0
+                neighbor = True              pos : neg    =      2.4 : 1.0
+                   beach = True              pos : neg    =      2.4 : 1.0
+            nevertheless = True              pos : neg    =      2.4 : 1.0
+                    slip = True              pos : neg    =      2.4 : 1.0
+               wonderful = True              pos : neg    =      2.4 : 1.0
+             masterpiece = True              pos : neg    =      2.4 : 1.0
+                 reality = True              pos : neg    =      2.4 : 1.0
+                  warren = True              neg : pos    =      2.4 : 1.0
+                  period = True              pos : neg    =      2.4 : 1.0
+               realistic = True              pos : neg    =      2.4 : 1.0
+                 command = True              pos : neg    =      2.4 : 1.0
+                   notch = True              pos : neg    =      2.4 : 1.0
+                   north = True              pos : neg    =      2.4 : 1.0
+                   laura = True              pos : neg    =      2.4 : 1.0
+                secretly = True              pos : neg    =      2.4 : 1.0
+                   study = True              pos : neg    =      2.4 : 1.0
+              stereotype = True              neg : pos    =      2.4 : 1.0
+                    gary = True              neg : pos    =      2.4 : 1.0
+             sentimental = True              pos : neg    =      2.4 : 1.0
+               criticism = True              pos : neg    =      2.4 : 1.0
+                   lucas = True              pos : neg    =      2.4 : 1.0
+                 medical = True              pos : neg    =      2.4 : 1.0
+                 creates = True              pos : neg    =      2.3 : 1.0
+                 generic = True              neg : pos    =      2.3 : 1.0
+                   julie = True              neg : pos    =      2.3 : 1.0
+              incredible = True              pos : neg    =      2.3 : 1.0
+                     kim = True              neg : pos    =      2.3 : 1.0
+                    wire = True              neg : pos    =      2.3 : 1.0
+                    mill = True              pos : neg    =      2.3 : 1.0
+                    iron = True              pos : neg    =      2.3 : 1.0
+                harrison = True              pos : neg    =      2.3 : 1.0
+                   solid = True              pos : neg    =      2.3 : 1.0
+                  breast = True              neg : pos    =      2.3 : 1.0
+                 visuals = True              pos : neg    =      2.3 : 1.0
+                    mood = True              pos : neg    =      2.3 : 1.0
+                       b = True              neg : pos    =      2.3 : 1.0
+                   snipe = True              neg : pos    =      2.3 : 1.0
+                   comet = True              neg : pos    =      2.3 : 1.0
+             superficial = True              neg : pos    =      2.3 : 1.0
+                   smoke = True              neg : pos    =      2.3 : 1.0
+            demonstrates = True              pos : neg    =      2.3 : 1.0
+                    bore = True              neg : pos    =      2.3 : 1.0
+                   hokey = True              neg : pos    =      2.3 : 1.0
+                 equally = True              pos : neg    =      2.3 : 1.0
+              revelation = True              pos : neg    =      2.3 : 1.0
+               spielberg = True              pos : neg    =      2.3 : 1.0
+                  social = True              pos : neg    =      2.3 : 1.0
+                    tony = True              pos : neg    =      2.3 : 1.0
+                 vehicle = True              neg : pos    =      2.3 : 1.0
+                drinking = True              neg : pos    =      2.3 : 1.0
+                 teacher = True              pos : neg    =      2.3 : 1.0
+                portrays = True              pos : neg    =      2.3 : 1.0
+                  cheesy = True              neg : pos    =      2.3 : 1.0
+                 flubber = True              neg : pos    =      2.2 : 1.0
+                horribly = True              neg : pos    =      2.2 : 1.0
+                     war = True              pos : neg    =      2.2 : 1.0
+                   share = True              pos : neg    =      2.2 : 1.0
+               hilarious = True              pos : neg    =      2.2 : 1.0
+                    fake = True              neg : pos    =      2.2 : 1.0
+                  jordan = True              pos : neg    =      2.2 : 1.0
+                mcgregor = True              pos : neg    =      2.2 : 1.0
+             independent = True              pos : neg    =      2.2 : 1.0
+                  paulie = True              pos : neg    =      2.2 : 1.0
+             fortunately = True              pos : neg    =      2.2 : 1.0
+                visually = True              pos : neg    =      2.2 : 1.0
+                   oscar = True              pos : neg    =      2.2 : 1.0
+                 stewart = True              pos : neg    =      2.2 : 1.0
+                  howard = True              pos : neg    =      2.2 : 1.0
+                 vincent = True              pos : neg    =      2.2 : 1.0
+                   squad = True              neg : pos    =      2.2 : 1.0
+                    ross = True              neg : pos    =      2.2 : 1.0
+                thompson = True              neg : pos    =      2.2 : 1.0
+                  visual = True              pos : neg    =      2.2 : 1.0
+                       8 = True              pos : neg    =      2.2 : 1.0
+                   naked = True              neg : pos    =      2.2 : 1.0
+                personal = True              pos : neg    =      2.2 : 1.0
+                  deeply = True              pos : neg    =      2.2 : 1.0
+              perfection = True              pos : neg    =      2.2 : 1.0
+                  kilmer = True              neg : pos    =      2.2 : 1.0
+                 gabriel = True              neg : pos    =      2.2 : 1.0
+                   sorry = True              neg : pos    =      2.2 : 1.0
+                  guilty = True              neg : pos    =      2.2 : 1.0
+             predictable = True              neg : pos    =      2.2 : 1.0
+                     gag = True              neg : pos    =      2.2 : 1.0
+                    yeah = True              neg : pos    =      2.2 : 1.0
+                 cliched = True              neg : pos    =      2.2 : 1.0
+                   sport = True              neg : pos    =      2.2 : 1.0
+                  dazzle = True              pos : neg    =      2.2 : 1.0
+               universal = True              pos : neg    =      2.2 : 1.0
+             shakespeare = True              pos : neg    =      2.2 : 1.0
+                  batman = True              neg : pos    =      2.2 : 1.0
+                  gordon = True              neg : pos    =      2.2 : 1.0
+               brilliant = True              pos : neg    =      2.2 : 1.0
+                   plant = True              neg : pos    =      2.2 : 1.0
+                   clerk = True              neg : pos    =      2.2 : 1.0
+                 natasha = True              neg : pos    =      2.2 : 1.0
+                  watson = True              pos : neg    =      2.2 : 1.0
+              thankfully = True              pos : neg    =      2.2 : 1.0
+                    phil = True              neg : pos    =      2.2 : 1.0
+         straightforward = True              pos : neg    =      2.2 : 1.0
+                 correct = True              pos : neg    =      2.2 : 1.0
+                    ford = True              pos : neg    =      2.2 : 1.0
+                painting = True              pos : neg    =      2.2 : 1.0
+                    pack = True              pos : neg    =      2.2 : 1.0
+                 portray = True              pos : neg    =      2.2 : 1.0
+                 passion = True              pos : neg    =      2.2 : 1.0
+                   cable = True              neg : pos    =      2.2 : 1.0
+               profanity = True              neg : pos    =      2.2 : 1.0
+               animation = True              pos : neg    =      2.2 : 1.0
+                   range = True              pos : neg    =      2.2 : 1.0
+                    edge = True              pos : neg    =      2.2 : 1.0
+                  absurd = True              neg : pos    =      2.1 : 1.0
+                   devil = True              neg : pos    =      2.1 : 1.0
+              gratuitous = True              neg : pos    =      2.1 : 1.0
+               obnoxious = True              neg : pos    =      2.1 : 1.0
+                  expert = True              neg : pos    =      2.1 : 1.0
+             emotionally = True              pos : neg    =      2.1 : 1.0
+                    doom = True              pos : neg    =      2.1 : 1.0
+            disappointed = True              pos : neg    =      2.1 : 1.0
+              definitely = True              pos : neg    =      2.1 : 1.0
+                     con = True              neg : pos    =      2.1 : 1.0
+                 variety = True              pos : neg    =      2.1 : 1.0
+                  remake = True              neg : pos    =      2.1 : 1.0
+                  beauty = True              pos : neg    =      2.1 : 1.0
+                     neo = True              pos : neg    =      2.1 : 1.0
+                  carrie = True              pos : neg    =      2.1 : 1.0
+                    none = True              neg : pos    =      2.1 : 1.0
+                  others = True              pos : neg    =      2.1 : 1.0
+                  homage = True              pos : neg    =      2.1 : 1.0
+                 robocop = True              pos : neg    =      2.1 : 1.0
+                  ripley = True              pos : neg    =      2.1 : 1.0
+                  empire = True              pos : neg    =      2.1 : 1.0
+                  strain = True              pos : neg    =      2.1 : 1.0
+                 quentin = True              pos : neg    =      2.1 : 1.0
+                   frank = True              pos : neg    =      2.1 : 1.0
+                   craft = True              pos : neg    =      2.1 : 1.0
+                 journey = True              pos : neg    =      2.1 : 1.0
+                   bunch = True              neg : pos    =      2.1 : 1.0
+                  desire = True              pos : neg    =      2.1 : 1.0
+                  unlike = True              pos : neg    =      2.1 : 1.0
+                pathetic = True              neg : pos    =      2.1 : 1.0
+                 collect = True              pos : neg    =      2.1 : 1.0
+                   eager = True              pos : neg    =      2.1 : 1.0
+                powerful = True              pos : neg    =      2.1 : 1.0
+               tradition = True              pos : neg    =      2.1 : 1.0
+                  modern = True              pos : neg    =      2.1 : 1.0
+                  worker = True              pos : neg    =      2.1 : 1.0
+               condition = True              pos : neg    =      2.1 : 1.0
+                irritate = True              neg : pos    =      2.1 : 1.0
+                   rocky = True              pos : neg    =      2.1 : 1.0
+                   river = True              pos : neg    =      2.1 : 1.0
+                  redeem = True              neg : pos    =      2.1 : 1.0
+                   loser = True              neg : pos    =      2.1 : 1.0
+                   corny = True              neg : pos    =      2.0 : 1.0
+               halloween = True              neg : pos    =      2.0 : 1.0
+                   blair = True              neg : pos    =      2.0 : 1.0
+                   spice = True              neg : pos    =      2.0 : 1.0
+                 diamond = True              neg : pos    =      2.0 : 1.0
+                  arnold = True              neg : pos    =      2.0 : 1.0
+                  spacey = True              pos : neg    =      2.0 : 1.0
+                 reflect = True              pos : neg    =      2.0 : 1.0
+             brilliantly = True              pos : neg    =      2.0 : 1.0
+                  spoken = True              pos : neg    =      2.0 : 1.0
+                    tour = True              pos : neg    =      2.0 : 1.0
+                festival = True              pos : neg    =      2.0 : 1.0
+                  oppose = True              pos : neg    =      2.0 : 1.0
+                   split = True              pos : neg    =      2.0 : 1.0
+                   blame = True              neg : pos    =      2.0 : 1.0
+                   guess = True              neg : pos    =      2.0 : 1.0
+                  erotic = True              neg : pos    =      2.0 : 1.0
+              disappoint = True              neg : pos    =      2.0 : 1.0
+                 intense = True              pos : neg    =      2.0 : 1.0
+                 remains = True              pos : neg    =      2.0 : 1.0
+                   today = True              pos : neg    =      2.0 : 1.0
+                troubled = True              pos : neg    =      2.0 : 1.0
+                  update = True              neg : pos    =      2.0 : 1.0
+                  amanda = True              neg : pos    =      2.0 : 1.0
+                 failure = True              neg : pos    =      2.0 : 1.0
+              compelling = True              pos : neg    =      2.0 : 1.0
+                identify = True              pos : neg    =      2.0 : 1.0
+                develops = True              pos : neg    =      2.0 : 1.0
+                  threat = True              pos : neg    =      2.0 : 1.0
+                prisoner = True              pos : neg    =      2.0 : 1.0
+                  cousin = True              neg : pos    =      2.0 : 1.0
+                   meyer = True              neg : pos    =      2.0 : 1.0
+                showgirl = True              neg : pos    =      2.0 : 1.0
+                 culture = True              pos : neg    =      2.0 : 1.0
+                   fully = True              pos : neg    =      2.0 : 1.0
+                    trap = True              neg : pos    =      2.0 : 1.0
+          disappointment = True              neg : pos    =      2.0 : 1.0
+                 tragedy = True              pos : neg    =      2.0 : 1.0
+             perspective = True              pos : neg    =      2.0 : 1.0
+                   equal = True              pos : neg    =      2.0 : 1.0
+                   carol = True              pos : neg    =      2.0 : 1.0
+                    cave = True              neg : pos    =      2.0 : 1.0
+               wrestling = True              neg : pos    =      2.0 : 1.0
+                 paltrow = True              neg : pos    =      2.0 : 1.0
+                    loud = True              neg : pos    =      2.0 : 1.0
+                    bomb = True              neg : pos    =      2.0 : 1.0
+                 suffers = True              neg : pos    =      2.0 : 1.0
+                    flaw = True              pos : neg    =      2.0 : 1.0
+                  austin = True              pos : neg    =      2.0 : 1.0
+                richards = True              pos : neg    =      2.0 : 1.0
+                  driver = True              pos : neg    =      2.0 : 1.0
+                 francis = True              pos : neg    =      2.0 : 1.0
+               interview = True              pos : neg    =      2.0 : 1.0
+                    poor = True              neg : pos    =      2.0 : 1.0
+                subplots = True              neg : pos    =      2.0 : 1.0
+                  honest = True              pos : neg    =      2.0 : 1.0
+                    matt = True              pos : neg    =      2.0 : 1.0
+                realizes = True              pos : neg    =      2.0 : 1.0
+                   palma = True              neg : pos    =      2.0 : 1.0
+              henstridge = True              neg : pos    =      2.0 : 1.0
+                    warm = True              pos : neg    =      2.0 : 1.0
+                   witty = True              pos : neg    =      2.0 : 1.0
+                 fiennes = True              pos : neg    =      2.0 : 1.0
+                    neve = True              pos : neg    =      2.0 : 1.0
+                   grand = True              pos : neg    =      2.0 : 1.0
+                   trite = True              neg : pos    =      2.0 : 1.0
+                   grade = True              neg : pos    =      2.0 : 1.0
+                   ethan = True              pos : neg    =      2.0 : 1.0
+                narrator = True              pos : neg    =      2.0 : 1.0
+                 america = True              pos : neg    =      2.0 : 1.0
+                  barely = True              neg : pos    =      2.0 : 1.0
+                      ad = True              neg : pos    =      2.0 : 1.0
+                astonish = True              pos : neg    =      2.0 : 1.0
+                   spell = True              pos : neg    =      2.0 : 1.0
+                complain = True              pos : neg    =      2.0 : 1.0
+                 directs = True              pos : neg    =      2.0 : 1.0
+                    deny = True              pos : neg    =      2.0 : 1.0
+                     pat = True              pos : neg    =      2.0 : 1.0
+                  crisis = True              pos : neg    =      2.0 : 1.0
+                   irony = True              pos : neg    =      2.0 : 1.0
+                 crucial = True              pos : neg    =      2.0 : 1.0
+                 convict = True              pos : neg    =      2.0 : 1.0
+                 anymore = True              pos : neg    =      2.0 : 1.0
+                   fifth = True              neg : pos    =      1.9 : 1.0
+                     hey = True              neg : pos    =      1.9 : 1.0
+                     sub = True              neg : pos    =      1.9 : 1.0
+                     8mm = True              neg : pos    =      1.9 : 1.0
+                  jackal = True              neg : pos    =      1.9 : 1.0
+              commentary = True              pos : neg    =      1.9 : 1.0
+                  silver = True              pos : neg    =      1.9 : 1.0
+                   maybe = True              neg : pos    =      1.9 : 1.0
+                    blow = True              neg : pos    =      1.9 : 1.0
+                 connect = True              pos : neg    =      1.9 : 1.0
+                    flow = True              pos : neg    =      1.9 : 1.0
+                   class = True              pos : neg    =      1.9 : 1.0
+                 cameron = True              pos : neg    =      1.9 : 1.0
+                    gift = True              pos : neg    =      1.9 : 1.0
+                    true = True              pos : neg    =      1.9 : 1.0
+               knowledge = True              pos : neg    =      1.9 : 1.0
+                 willing = True              pos : neg    =      1.9 : 1.0
+                 wannabe = True              neg : pos    =      1.9 : 1.0
+                 academy = True              pos : neg    =      1.9 : 1.0
+                       7 = True              pos : neg    =      1.9 : 1.0
+               structure = True              pos : neg    =      1.9 : 1.0
+                   queen = True              pos : neg    =      1.9 : 1.0
+                   empty = True              neg : pos    =      1.9 : 1.0
+                 disturb = True              pos : neg    =      1.9 : 1.0
+                   moral = True              pos : neg    =      1.9 : 1.0
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">clf</span><span class="o">.</span><span class="n">classify_many</span><span class="p">([</span><span class="n">tup</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">tup</span> <span class="ow">in</span> <span class="n">testing_data</span><span class="p">])</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>['pos',
+ 'neg',
+ 'pos',
+ 'neg',
+ 'pos',
+ 'pos',
+ 'neg',
+ 'neg',
+ 'pos',
+ 'pos',
+ 'pos',
+ 'pos',
+ 'neg',
+ 'pos',
+ 'pos',
+ 'pos',
+ 'pos',
+ 'neg',
+ 'pos',
+ 'pos',
+ 'pos',
+ 'pos',
+ 'neg',
+ 'pos',
+ 'neg',
+ 'neg',
+ 'neg',
+ 'pos',
+ 'neg',
+ 'pos',
+ 'neg',
+ 'neg',
+ 'pos',
+ 'pos',
+ 'pos',
+ 'pos',
+ 'pos',
+ 'pos',
+ 'neg',
+ 'pos',
+ 'pos',
+ 'pos',
+ 'neg',
+ 'neg',
+ 'neg',
+ 'pos',
+ 'pos',
+ 'pos',
+ 'neg',
+ 'neg',
+ 'pos',
+ 'neg',
+ 'neg',
+ 'pos',
+ 'neg',
+ 'pos',
+ 'neg',
+ 'neg',
+ 'neg',
+ 'neg',
+ 'neg',
+ 'pos',
+ 'neg',
+ 'neg',
+ 'pos',
+ 'pos',
+ 'pos',
+ 'pos',
+ 'neg',
+ 'pos',
+ 'neg',
+ 'neg',
+ 'neg',
+ 'neg',
+ 'pos',
+ 'pos',
+ 'neg',
+ 'neg',
+ 'pos',
+ 'pos',
+ 'neg',
+ 'neg',
+ 'neg',
+ 'neg',
+ 'neg',
+ 'pos',
+ 'pos',
+ 'pos',
+ 'neg',
+ 'pos',
+ 'neg',
+ 'neg',
+ 'neg',
+ 'neg',
+ 'pos',
+ 'neg',
+ 'pos',
+ 'pos',
+ 'neg',
+ 'neg',
+ 'neg',
+ 'pos',
+ 'pos',
+ 'pos',
+ 'pos',
+ 'neg',
+ 'pos',
+ 'neg',
+ 'pos',
+ 'neg',
+ 'neg',
+ 'neg',
+ 'neg',
+ 'pos',
+ 'neg',
+ 'pos',
+ 'pos',
+ 'pos',
+ 'neg',
+ 'neg',
+ 'neg',
+ 'pos',
+ 'neg',
+ 'pos',
+ 'neg',
+ 'pos',
+ 'neg',
+ 'pos',
+ 'pos',
+ 'pos',
+ 'pos',
+ 'neg',
+ 'neg',
+ 'pos',
+ 'neg',
+ 'pos',
+ 'neg',
+ 'pos',
+ 'neg',
+ 'neg',
+ 'pos',
+ 'neg',
+ 'neg',
+ 'neg',
+ 'pos',
+ 'neg',
+ 'neg',
+ 'neg',
+ 'neg',
+ 'pos',
+ 'pos',
+ 'neg',
+ 'neg',
+ 'neg',
+ 'neg',
+ 'pos',
+ 'pos',
+ 'pos',
+ 'neg',
+ 'neg',
+ 'pos',
+ 'neg',
+ 'pos',
+ 'pos',
+ 'neg',
+ 'neg',
+ 'neg',
+ 'neg',
+ 'pos',
+ 'pos',
+ 'neg',
+ 'neg',
+ 'pos',
+ 'pos',
+ 'pos',
+ 'pos',
+ 'neg',
+ 'pos',
+ 'pos',
+ 'neg',
+ 'neg',
+ 'pos',
+ 'pos',
+ 'pos',
+ 'neg',
+ 'neg',
+ 'neg',
+ 'neg',
+ 'neg',
+ 'neg',
+ 'neg',
+ 'neg',
+ 'pos',
+ 'pos',
+ 'pos',
+ 'neg',
+ 'pos',
+ 'neg',
+ 'pos',
+ 'pos',
+ 'pos',
+ 'neg',
+ 'neg',
+ 'neg',
+ 'pos',
+ 'pos',
+ 'pos',
+ 'neg',
+ 'neg',
+ 'neg',
+ 'pos',
+ 'neg',
+ 'pos',
+ 'pos',
+ 'neg',
+ 'neg',
+ 'pos',
+ 'neg',
+ 'neg',
+ 'neg',
+ 'neg',
+ 'pos',
+ 'neg',
+ 'neg',
+ 'neg',
+ 'neg',
+ 'neg',
+ 'pos',
+ 'neg',
+ 'neg',
+ 'pos',
+ 'pos',
+ 'pos',
+ 'pos',
+ 'neg',
+ 'pos',
+ 'neg',
+ 'neg',
+ 'pos',
+ 'neg',
+ 'pos',
+ 'neg',
+ 'neg',
+ 'pos',
+ 'neg',
+ 'pos',
+ 'neg',
+ 'neg',
+ 'neg',
+ 'neg',
+ 'neg',
+ 'neg',
+ 'neg',
+ 'pos',
+ 'neg',
+ 'pos',
+ 'neg',
+ 'pos',
+ 'neg',
+ 'neg',
+ 'neg',
+ 'neg',
+ 'neg',
+ 'neg',
+ 'neg',
+ 'pos',
+ 'pos',
+ 'neg',
+ 'neg',
+ 'neg',
+ 'pos',
+ 'neg',
+ 'neg',
+ 'neg',
+ 'neg',
+ 'neg',
+ 'neg',
+ 'neg',
+ 'neg',
+ 'pos',
+ 'neg',
+ 'neg',
+ 'neg',
+ 'pos',
+ 'neg',
+ 'neg',
+ 'pos',
+ 'neg',
+ 'neg',
+ 'neg',
+ 'neg',
+ 'pos',
+ 'pos',
+ 'neg',
+ 'neg',
+ 'neg',
+ 'neg',
+ 'pos',
+ 'pos',
+ 'neg',
+ 'pos',
+ 'neg',
+ 'neg',
+ 'neg',
+ 'pos',
+ 'neg',
+ 'neg',
+ 'neg',
+ 'pos',
+ 'pos',
+ 'neg',
+ 'pos',
+ 'pos',
+ 'neg',
+ 'neg',
+ 'pos',
+ 'neg',
+ 'neg',
+ 'pos',
+ 'neg',
+ 'neg',
+ 'pos',
+ 'neg',
+ 'pos',
+ 'neg',
+ 'neg',
+ 'pos',
+ 'pos',
+ 'neg',
+ 'neg',
+ 'pos',
+ 'neg',
+ 'pos',
+ 'pos',
+ 'pos',
+ 'neg',
+ 'neg',
+ 'neg',
+ 'pos',
+ 'pos',
+ 'neg',
+ 'neg',
+ 'neg',
+ 'neg',
+ 'pos',
+ 'pos',
+ 'pos',
+ 'neg',
+ 'pos',
+ 'neg',
+ 'pos',
+ 'pos',
+ 'neg',
+ 'neg',
+ 'pos',
+ 'pos',
+ 'pos',
+ 'pos',
+ 'neg',
+ 'neg',
+ 'neg',
+ 'neg',
+ 'neg',
+ 'neg',
+ 'pos',
+ 'pos',
+ 'neg',
+ 'pos',
+ 'neg',
+ 'pos',
+ 'neg',
+ 'neg',
+ 'neg',
+ 'pos',
+ 'neg',
+ 'neg',
+ 'neg',
+ 'pos',
+ 'neg',
+ 'pos',
+ 'neg',
+ 'pos',
+ 'pos',
+ 'neg',
+ 'neg',
+ 'pos',
+ 'pos',
+ 'pos',
+ 'pos',
+ 'neg',
+ 'neg',
+ 'neg',
+ 'neg',
+ 'neg',
+ 'neg',
+ 'neg',
+ 'neg',
+ 'neg',
+ 'pos',
+ 'neg',
+ 'pos',
+ 'neg',
+ 'pos',
+ 'pos',
+ 'neg',
+ 'neg',
+ 'pos',
+ 'neg',
+ 'pos',
+ 'neg',
+ 'neg',
+ 'neg',
+ 'pos',
+ 'neg',
+ 'neg',
+ 'neg',
+ 'neg',
+ 'neg',
+ 'pos',
+ 'neg',
+ 'neg',
+ 'neg',
+ 'pos',
+ 'neg',
+ 'pos',
+ 'neg',
+ 'pos',
+ 'pos',
+ 'pos',
+ 'pos',
+ 'pos',
+ 'pos',
+ 'neg',
+ 'neg',
+ 'pos',
+ 'neg',
+ 'pos',
+ 'pos',
+ 'neg',
+ 'pos',
+ 'pos',
+ 'pos',
+ 'neg',
+ 'neg',
+ 'neg',
+ 'neg',
+ 'neg',
+ 'pos',
+ 'neg',
+ 'neg',
+ 'neg',
+ 'neg',
+ 'pos',
+ 'neg',
+ 'neg',
+ 'pos',
+ 'pos',
+ 'neg',
+ 'pos',
+ 'neg',
+ 'neg',
+ 'neg',
+ 'neg',
+ 'neg',
+ 'pos',
+ 'pos',
+ 'pos',
+ 'pos',
+ 'neg',
+ 'neg',
+ 'pos',
+ 'pos',
+ 'neg',
+ 'pos',
+ 'neg',
+ 'neg',
+ 'pos',
+ 'neg',
+ 'neg',
+ 'neg',
+ 'neg',
+ 'pos',
+ 'neg',
+ 'pos',
+ 'neg',
+ 'neg',
+ 'pos',
+ 'neg',
+ 'pos',
+ 'neg',
+ 'pos',
+ 'pos',
+ 'neg',
+ 'neg',
+ 'pos',
+ 'pos',
+ 'neg',
+ 'pos',
+ 'neg',
+ 'neg']</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+</div>
+
+
+
+  </div><!-- from https://github.com/utterance/utterances -->
+<script src="https://utteranc.es/client.js"
+        repo="byteshiva/blog"
+        issue-term="title"
+        label="blogpost-comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script><a class="u-url" href="/blog/ntlk/jupyter/python/movie-review/natual%20language%20processing/2020/03/17/_03_18_Movie_Review_Data_Analysis.html" hidden></a>
+</article>
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/blog/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/blog/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/blog/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>An easy to use blogging platform with support for Jupyter Notebooks.</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/fastai" title="fastai"><svg class="svg-icon grey"><use xlink:href="/blog/assets/minima-social-icons.svg#github"></use></svg></a></li><li><a rel="me" href="https://twitter.com/fastdotai" title="fastdotai"><svg class="svg-icon grey"><use xlink:href="/blog/assets/minima-social-icons.svg#twitter"></use></svg></a></li></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
