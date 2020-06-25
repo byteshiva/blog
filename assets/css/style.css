@@ -428,4 +428,6 @@ table td { text-overflow: ellipsis; overflow: hidden; max-width: 15em; }
 @media only screen and (max-width: 900px) { /* for mobile phone and tablet devices */
   .output_wrapper { overflow: scroll; } }
 
+.svg-icon.orange { width: 30px; height: 23px; }
+
 /*# sourceMappingURL=style.css.map */
