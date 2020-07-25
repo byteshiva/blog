@@ -91,9 +91,7 @@
 
   
   
-
-  
-      ,"page1": {
+      ,"page0": {
           "title": "",
           "content": "404 . Page not found :( . The requested page could not be found. .",
           "url": "https://byteshiva.github.io/blog/404.html",
@@ -101,6 +99,8 @@
           "date": ""
       }
       
+  
+
   
 
   
