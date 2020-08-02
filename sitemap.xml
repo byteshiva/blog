@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
+<loc>https://byteshiva.github.io/blog/2020/01/01/Microsoft-Word-Example-Post.html</loc>
+<lastmod>2020-01-01T00:00:00-06:00</lastmod>
+</url>
+<url>
 <loc>https://byteshiva.github.io/blog/markdown/2020/01/14/test-markdown-post.html</loc>
 <lastmod>2020-01-14T00:00:00-06:00</lastmod>
 </url>
@@ -29,14 +33,15 @@
 <lastmod>2020-03-02T00:00:00-06:00</lastmod>
 </url>
 <url>
+<loc>https://byteshiva.github.io/blog/actions/markdown/2020/03/06/fastpages-actions.html</loc>
+<lastmod>2020-03-06T00:00:00-06:00</lastmod>
+</url>
+<url>
 <loc>https://byteshiva.github.io/blog/ntlk/jupyter/python/movie-review/natual%20language%20processing/2020/03/18/Movie-Review-Data-Analysis.html</loc>
 <lastmod>2020-03-18T00:00:00-05:00</lastmod>
 </url>
 <url>
 <loc>https://byteshiva.github.io/blog/about/</loc>
-</url>
-<url>
-<loc>https://byteshiva.github.io/blog/</loc>
 </url>
 <url>
 <loc>https://byteshiva.github.io/blog/</loc>
