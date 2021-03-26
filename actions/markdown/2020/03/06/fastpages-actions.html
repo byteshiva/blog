@@ -24,10 +24,19 @@
 
 
 
-<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-57531313-5','auto');ga('require','displayfeatures');ga('send','pageview');</script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-57531313-5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-<link rel="shortcut icon" type="image/x-icon" href="/blog/images/favicon.ico"><link href="https://unpkg.com/@primer/css/dist/primer.css" rel="stylesheet" />
-<link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css">
+  gtag('config', 'UA-57531313-5');
+</script>
+
+
+<link rel="shortcut icon" type="image/x-icon" href="/blog/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
 
 <script>
 function wrap_img(fn) {
@@ -253,7 +262,7 @@ window.onload = wrap_img;
 <h3 id="part-1-define-workflow-triggers">
 <a class="anchor" href="#part-1-define-workflow-triggers" aria-hidden="true"><span class="octicon octicon-link"></span></a>Part 1: Define Workflow Triggers</h3>
 
-<p>blog, <a href="https://github.com/fastai/fastpages/blob/master/.github/workflows/ci.yaml">defined in ci.yaml</a>.  Like all Actions workflows, this is YAML file is located in the .github/workflows directory of the GitHub repo.</p>
+<p>First, we define triggers in <a href="https://github.com/fastai/fastpages/blob/master/.github/workflows/ci.yaml">ci.yaml</a>. Like all Actions workflows, this is a YAML file located in the .github/workflows directory of the GitHub repo.</p>
 
 <p>The top of this YAML file looks like this:</p>
 
@@ -361,7 +370,7 @@ window.onload = wrap_img;
         <span class="s">sudo chmod -R 777 .</span>
 
     <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Jekyll build</span>
-      <span class="na">uses</span><span class="pi">:</span> <span class="s">docker://hamelsmu/fastpages-jekyll</span>
+      <span class="na">uses</span><span class="pi">:</span> <span class="s">docker://fastai/fastpages-jekyll</span>
       <span class="na">with</span><span class="pi">:</span>
         <span class="na">args</span><span class="pi">:</span> <span class="s">bash -c "gem install bundler &amp;&amp; jekyll build -V"</span>
       <span class="na">env</span><span class="pi">:</span>
@@ -375,7 +384,7 @@ window.onload = wrap_img;
 
 <p>The step named <code class="language-plaintext highlighter-rouge">setup directories for Jekyll build</code> executes shell commands that remove the <code class="language-plaintext highlighter-rouge">_site</code> folder in order to get rid of stale files related to the page we want to build, as well as grant permissions to all the files in our repo to subsequent steps.</p>
 
-<p>The step named <code class="language-plaintext highlighter-rouge">Jekyll build</code> executes a docker container hosted by the Jekyll community <a href="https://hub.docker.com/r/jekyll/jekyll/">on Dockerhub called <code class="language-plaintext highlighter-rouge">jekyll/jekyll</code></a>.  For those not familiar with Docker, see <a href="https://towardsdatascience.com/how-docker-can-help-you-become-a-more-effective-data-scientist-7fc048ef91d5?source=friends_link&amp;sk=c554b55109102d47145c4b3381bee3ee">this tutorial</a>.  The name of this container is called <code class="language-plaintext highlighter-rouge">hamelsmu/fastpages-jekyll</code> because I’m adding some additional dependencies to <code class="language-plaintext highlighter-rouge">jekyll/jekyll</code> and hosting those on my DockerHub account for faster build times<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote">2</a></sup>.  The <a href="https://help.github.com/en/actions/reference/workflow-syntax-for-github-actions#jobsjob_idstepswithargs">args parameter</a> allows you to execute arbitrary commands with the Docker container by overriding the CMD instruction in the Dockerfile.  We use this Docker container hosted on Dockerhub so we don’t have to deal with installing and configuring all of the complicated dependencies for Jekyll.  The files from our repo are already available in the Actions runtime due to the first step in this workflow, and are mounted into this Docker container automatically for us.  In this case, we are running the command <code class="language-plaintext highlighter-rouge">jekyll build</code>, which builds our website and places relevant assets them into the <code class="language-plaintext highlighter-rouge">_site</code> folder. For more information about Jekyll, <a href="https://jekyllrb.com/docs/">read the official docs</a>.  Finally, the <code class="language-plaintext highlighter-rouge">env</code> parameter allows me to pass an environment variable into the Docker container.</p>
+<p>The step named <code class="language-plaintext highlighter-rouge">Jekyll build</code> executes a docker container hosted by the Jekyll community <a href="https://hub.docker.com/r/jekyll/jekyll/">on Dockerhub called <code class="language-plaintext highlighter-rouge">jekyll/jekyll</code></a>.  For those not familiar with Docker, see <a href="https://towardsdatascience.com/how-docker-can-help-you-become-a-more-effective-data-scientist-7fc048ef91d5?source=friends_link&amp;sk=c554b55109102d47145c4b3381bee3ee">this tutorial</a>.  The name of this container is called <code class="language-plaintext highlighter-rouge">fastai/fastpages-jekyll</code> because I’m adding some additional dependencies to <code class="language-plaintext highlighter-rouge">jekyll/jekyll</code> and hosting those on my DockerHub account for faster build times<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote">2</a></sup>.  The <a href="https://help.github.com/en/actions/reference/workflow-syntax-for-github-actions#jobsjob_idstepswithargs">args parameter</a> allows you to execute arbitrary commands with the Docker container by overriding the CMD instruction in the Dockerfile.  We use this Docker container hosted on Dockerhub so we don’t have to deal with installing and configuring all of the complicated dependencies for Jekyll.  The files from our repo are already available in the Actions runtime due to the first step in this workflow, and are mounted into this Docker container automatically for us.  In this case, we are running the command <code class="language-plaintext highlighter-rouge">jekyll build</code>, which builds our website and places relevant assets them into the <code class="language-plaintext highlighter-rouge">_site</code> folder. For more information about Jekyll, <a href="https://jekyllrb.com/docs/">read the official docs</a>.  Finally, the <code class="language-plaintext highlighter-rouge">env</code> parameter allows me to pass an environment variable into the Docker container.</p>
 
 <p>The final command above copies a <code class="language-plaintext highlighter-rouge">CNAME</code> file into the _site folder, which we need for the custom domain <a href="https://fastpages.fast.ai/">https://fastpages.fast.ai</a>. Setting up custom domains are outside the scope of this article.</p>
 
