@@ -39,7 +39,7 @@ jobs:
 
     - name: Create issue if baseurl rule is violated
       if: steps.baseurl.outcome == 'failure'
-      uses: actions/github-script@0.6.0
+      uses: actions/github-script@0.9.0
       with:
         github-token: ${{secrets.GITHUB_TOKEN}}
         script: |
@@ -66,7 +66,7 @@ jobs:
 
     - name: Create Issue if User Pages rule is violated
       if: steps.userpage.outcome == 'failure'
-      uses: actions/github-script@0.6.0
+      uses: actions/github-script@0.9.0
       with:
         github-token: ${{secrets.GITHUB_TOKEN}}
         script: |
