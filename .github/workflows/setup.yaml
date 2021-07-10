@@ -89,7 +89,7 @@ jobs:
         GH_USERNAME: ${{ github.event.commits[0].author.username }}
 
     - name: Open a PR
-      uses: actions/github-script@0.9.0
+      uses: actions/github-script@v4.0.2
       with:
         github-token: ${{secrets.GITHUB_TOKEN}}
         script: |
