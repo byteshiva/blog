@@ -4,8 +4,8 @@
         "post0": {
             "title": "Introducing NetworkX and Pandas with NumPy",
             "content": "!wget https://raw.githubusercontent.com/byteshiva/blog/master/_notebooks/my_csvs/sample_trans.csv . !pip install networkx !pip install pandas !pip install tqdm !pip install numpy !pip install matplotlib . import networkx as nx import matplotlib.pyplot as plt from tqdm import tqdm import pandas as pd import numpy as np df = pd.read_csv(&quot;./sample_trans.csv&quot;) import networkx as nx import matplotlib.pyplot as plt from tqdm import tqdm df.head(100) target = df[&#39;Description&#39;] source = &quot;Account Holder&quot; relations = df[&#39;DR&#39;] # print(relations) kg_df = pd.DataFrame({&#39;source&#39;:source, &#39;target&#39;:target, &#39;Debit&#39;:relations}) G = nx.from_pandas_edgelist(kg_df, &quot;source&quot;, &quot;target&quot;, edge_attr=True, create_using=nx.MultiDiGraph()) # G = nx.Graph() CR = df[&#39;CR&#39;] DR = df[&#39;DR&#39;] for target, cr, dr in zip(df[&#39;Description&#39;], CR, DR): if pd.isna(cr): G.add_edge(target, source, debit=dr) else: G.add_edge(source, target, credit=cr) plt.figure(figsize=(12,12)) pos = nx.spring_layout(G, k = 0.5) pos1 = nx.spring_layout(G, k = 0.9) pos2 = nx.spring_layout(G, k = 1.2) nx.draw(G, with_labels=True, node_color=&#39;skyblue&#39;,node_size=1500, edge_cmap=plt.cm.Blues, pos = pos2) nx.draw_networkx_edge_labels(G, pos=pos2) plt.show() .",
-            "url": "https://byteshiva.github.io/blog/fastlinkcheck/",
-            "relUrl": "/fastlinkcheck/",
+            "url": "https://byteshiva.github.io/blog/networkxpandasnumpy/",
+            "relUrl": "/networkxpandasnumpy/",
             "date": " • Jan 19, 2022"
         }
         
