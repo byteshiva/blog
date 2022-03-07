@@ -13,7 +13,7 @@ jobs:
         python-version: 3.6
 
     - name: Copy Repository Contents
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
         
     - name: modify files
       run: |
