@@ -62,14 +62,14 @@ jobs:
         python-version: 3.7
     
     - name: checkout latest fastpages
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
       with:
         repository: 'fastai/fastpages'
         path: 'new_files'
         persist-credentials: false
         
     - name: copy this repo's contents
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
       with:
         path: 'current_files'
         persist-credentials: false
