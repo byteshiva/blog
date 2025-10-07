@@ -43,7 +43,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v3
         with:
-          python-version: 3.6
+          python-version: 3.14
           
       - name: install requests
         run: pip3 install requests
