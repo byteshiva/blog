@@ -1,5 +1,5 @@
 # Defines https://hub.docker.com/repository/docker/fastai/fastpages-jekyll
-FROM jekyll/jekyll:4.2.2
+FROM jekyll/jekyll:4.4.1
 
 COPY . .
 RUN chmod -R 777 .
